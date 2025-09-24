@@ -1,4 +1,4 @@
-# Giving Tuesday FR — WordPress (theme + mu-plugins) !!
+# Giving Tuesday FR — WordPress (theme + mu-plugins) !!!
 
 Ce dépôt ne versionne **que le code que nous maitrisons** : thème, mu-plugins et éventuels plugins custom. Pas de coeur WordPress, pas d'uploads.
 
