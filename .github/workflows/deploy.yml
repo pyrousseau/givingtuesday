@@ -1,4 +1,4 @@
-name: Deploy wp-content (DEV & PROD via FTP/SFTP)
+name: Deploy wp-content (DEV via SFTP, PROD via FTP/FTPS)
 
 on:
   push:
@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Create ZIP (facultatif)
+      - name: Créer l’artefact wp-content.zip (facultatif)
         run: |
           mkdir -p out
           zip -r out/wp-content.zip wp-content || echo "no wp-content"
@@ -24,36 +24,41 @@ jobs:
           name: wp-content
           path: out/wp-content.zip
 
+  # === DEPLOY DEV (branche dev → webdevserver.fr) ===
   deploy-dev:
     if: github.ref == 'refs/heads/dev'
     runs-on: ubuntu-latest
     needs: build
     steps:
       - uses: actions/checkout@v4
-      - name: Deploy to DEV via SCP (SFTP)
-        uses: appleboy/scp-action@v0.1.4
+      - name: Déploiement DEV via SFTP (appleboy/sftp-action)
+        uses: appleboy/sftp-action@v0.6.0
         with:
           host: ${{ secrets.DEV_FTP_SERVER }}
           username: ${{ secrets.DEV_FTP_USERNAME }}
           password: ${{ secrets.DEV_FTP_PASSWORD }}
           port: 22
           source: "wp-content/*"
-          target: ${{ secrets.DEV_SERVER_DIR }}/
+          target: ${{ secrets.DEV_SERVER_DIR }}
           strip_components: 1
+          overwrite: true
+          # timeout: 300s
+          # use_insecure_cipher: true  # à activer si le serveur le demande
 
+  # === DEPLOY PROD (branche main → prod officielle) ===
   deploy-prod:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     needs: build
     steps:
       - uses: actions/checkout@v4
-      - name: Deploy to PROD via FTP/FTPS
+      - name: Déploiement PROD via FTPS
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server:   ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps                        # ou 'ftp' si ton hébergeur le demande
+          protocol: ftps                          # ou ftp / ftps-legacy selon l'hébergeur
           local-dir: wp-content/
           server-dir: ${{ secrets.SERVER_DIR }}
           exclude: |
