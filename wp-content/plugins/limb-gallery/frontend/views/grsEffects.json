@@ -1,0 +1,224 @@
+{"noEffect" : {
+  "label": "No effect",
+  "effects" : {
+    "no": {
+      "title" : "No",
+      "plan": [null, "free", "personal", "pro", "elite"]
+    }
+  },
+  "doEffect" : "grsNoEffect"
+},"noCutting" : {
+  "label": "No cutting",
+  "effects" : {
+    "fade": {
+      "selected": 1,
+      "in": "grsFadeIn grsAnDur inAnimationEnd",
+      "out" : "grsFadeOut grsAnDur outAnimationEnd",
+      "title" : "Fade",
+      "plan": [null, "free", "personal", "pro", "elite"]
+    },
+    "slideInLeft" : {
+      "in": "grsSlideInLeft grsAnDurNoCuttingEff inAnimationEnd",
+      "out" : "grsSlideOutLeft grsAnDurNoCuttingEff outAnimationEnd",
+      "title" : "Slide In left",
+      "plan": ["personal", "pro", "elite"]
+    },
+    "slideInDown" : {
+      "in": "grsSlideInDown grsAnDurNoCuttingEff inAnimationEnd",
+      "out" : "grsSlideOutDown grsAnDurNoCuttingEff outAnimationEnd",
+      "title" : "Slide In Down",
+      "plan": ["personal", "pro", "elite"]
+    },
+    "flip": {
+      "in": "grsZoomInLeft grsAnDurNoCuttingEff inAnimationEnd",
+      "out" : "grsFlipOutY grsAnDurNoCuttingEff outAnimationEnd",
+      "title" : "Flip & Zoom",
+      "plan": ["personal", "pro", "elite"]
+    },
+    "zoomIn" : {
+      "in": "grsZoomIn grsAnDurNoCuttingEff inAnimationEnd",
+      "out" : "grsZoomOut grsAnDurNoCuttingEff outAnimationEnd",
+      "title": "Zoom In",
+      "plan": ["personal", "pro", "elite"]
+    },
+    "zoomInLeft" : {
+      "in": "grsZoomInLeft grsAnDurNoCuttingEff inAnimationEnd",
+      "out" : "grsZoomOutRight grsAnDurNoCuttingEff outAnimationEnd",
+      "title": "Zoom In Left",
+      "plan": ["personal", "pro", "elite"]
+    },
+    "zoomInDown" : {
+      "in": "grsZoomInDown grsAnDurNoCuttingEff inAnimationEnd",
+      "out" : "grsZoomOutUp grsAnDurNoCuttingEff outAnimationEnd",
+      "title": "Zoom In Down",
+      "plan": ["pro", "elite"]
+    }
+  },
+  "doEffect" : "grsNoCuting"
+},"cuttingX" : {
+  "label": "Cutting vertical",
+  "effects" : {
+    "zoomX": {
+      "name" : "grsZoomOut",
+      "transformStyle" : "",
+      "activeC": "grsZoomIn grsAnDurNoCuttingEff",
+      "title": "Zoom",
+      "plan": ["pro", "elite"]
+    },
+    "flipX": {
+      "name" : "grsFlipOutX",
+      "transformStyle" : "transform-style: preserve-3d;",
+      "activeC": "grsFadeIn grsAnDurNoCuttingEff",
+      "title": "Flip",
+      "plan": ["pro", "elite"]
+    },
+    "fadeX": {
+      "name" : "grsFadeOutUp",
+      "transformStyle" : "",
+      "activeC": "grsFadeIn grsAnDurNoCuttingEff",
+      "title": "Fade out up",
+      "plan": ["pro", "elite"]
+    },
+    "rotateX": {
+      "name" : "grsFlipOutY",
+      "transformStyle" : "transform-style: preserve-3d;",
+      "activeC": "grsZoomInLeft grsAnDurNoCuttingEff",
+      "title": "Rotate",
+      "plan": ["pro", "elite"]
+    }
+  },
+  "doEffect" : "grsXcutting"
+},"cuttingY" : {
+  "label": "Cutting horizontal",
+  "effects" : {
+    "zoomY": {
+      "name" : "grsZoomOut",
+      "transformStyle" : "",
+      "activeC": "grsZoomIn grsAnDurNoCuttingEff",
+      "title": "Zoom",
+      "plan": ["pro", "elite"]
+    },
+    "flipY": {
+      "name" : "grsFlipOutY",
+      "transformStyle" : "",
+      "activeC": "grsZoomInLeft grsAnDurNoCuttingEff",
+      "title": "Flip",
+      "plan": ["pro", "elite"]
+    },
+    "fadeY": {
+      "name" : "grsFadeOutRight",
+      "transformStyle" : "",
+      "activeC": "grsZoomIn grsAnDurNoCuttingEff",
+      "title": "Fade out right",
+      "plan": ["pro", "elite"]
+    },
+    "rotateY": {
+      "name" : "grsFlipOutX",
+      "transformStyle" : "transform-style: preserve-3d;",
+      "activeC": "grsZoomIn grsAnDurNoCuttingEff",
+      "title": "Rotate",
+      "plan": ["pro", "elite"]
+    }
+  },
+  "doEffect" : "grsYcutting"
+},"cuttingXY" : {
+  "label": "Mix cutting out",
+  "effects" : {
+    "rollXY": {
+      "name" : "grsRollOutSec",
+      "transformStyle" : "transform-style: preserve-3d;",
+      "type": "standart",
+      "activeC": "grsZoomIn grsAnDurNoCuttingEff",
+      "title": "Roll",
+      "plan": ["pro", "elite"]
+    },
+    "zoomXY": {
+      "name" : "grsZoomOut",
+      "transformStyle" : "",
+      "type": "standart",
+      "activeC": "grsFadeIn grsAnDurNoCuttingEff",
+      "title": "Zoom",
+      "plan": ["pro", "elite"]
+    },
+    "rotateXY": {
+      "name" : "grsFlipOutY",
+      "transformStyle" : "transform-style: preserve-3d;",
+      "type": "standart",
+      "activeC": "grsZoomIn grsAnDurNoCuttingEff",
+      "title": "Rotate",
+      "plan": ["pro", "elite"]
+    },
+    "zoomLeftXY": {
+      "name" : "grsZoomOutLeft",
+      "transformStyle" : "transform-style: preserve-3d;",
+      "type": "standart",
+      "activeC": "grsZoomIn grsAnDurNoCuttingEff",
+      "title": "Zoom out Left",
+      "plan": ["pro", "elite"]
+    },
+    "zoomXYFun": {
+      "name" : "grsZoomOut",
+      "transformStyle" : "",
+      "type": "fun",
+      "activeC": "grsZoomIn grsAnDurNoCuttingEff",
+      "title": "Zoom (Fun)",
+      "plan": ["pro", "elite"]
+    },
+    "fadeXYFun": {
+      "name" : "grsFadeOut",
+      "transformStyle" : "",
+      "type": "fun",
+      "activeC": "grsFadeIn grsAnDurNoCuttingEff",
+      "title": "Fade (Fun)",
+      "plan": ["pro", "elite"]
+    },
+    "zoomXYDownFun": {
+      "name" : "grsZoomOutDown",
+      "transformStyle" : "transform-style: preserve-3d;",
+      "type": "fun",
+      "activeC": "grsZoomIn grsAnDurNoCuttingEff",
+      "title": "Zoom Down (Fun)",
+      "plan": ["pro", "elite"]
+    }
+  },
+  "doEffect" : "grsXYcutting"
+},"cuttingXYIn" : {
+  "label": "Mix cutting in",
+  "effects" : {
+    "zoomXYInFun": {
+      "name" : "grsZoomIn",
+      "transformStyle" : "",
+      "type": "fun",
+      "pasiveC": "grsZoomOut grsAnDurNoCuttingEff",
+      "title": "Zoom",
+      "plan": ["pro", "elite"]
+    },
+    "zoomXYInUpFun": {
+      "name" : "grsZoomInUp",
+      "transformStyle" : "",
+      "type": "fun",
+      "pasiveC": "grsFadeOut grsAnDurNoCuttingEff",
+      "title": "Zoom Up",
+      "plan": ["pro", "elite"]
+    },
+    "fadeXYInFun": {
+      "name" : "grsFadeIn",
+      "transformStyle" : "",
+      "type": "fun",
+      "pasiveC": "grsFadeOut grsAnDurNoCuttingEff",
+      "title": "Fade (Fun)",
+      "plan": ["pro", "elite"]
+    }
+  },
+  "doEffect" : "grsXYcuttingIn"
+},"random" : {
+  "label": "Random",
+  "effects" : {
+    "random": {
+      "name" : "random",
+      "title": "Random",
+      "plan": ["pro", "elite"]
+    }
+  }
+}
+}

@@ -1,0 +1,1460 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Limb Gallery\n"
+"POT-Creation-Date: 2018-05-20 02:24+0400\n"
+"PO-Revision-Date: 2018-05-28 19:38+0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.4\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-KeywordsList: __;_e;esc_html__\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: admin/controllers/Controller.php:32
+msgid "There is no view type like "
+msgstr "Нет типа просмотра, как "
+
+#: admin/controllers/LimbGalleryMosaicWidgetController.php:96
+#: admin/controllers/LimbGalleryThumbnailWidgetController.php:97
+msgid "Title:"
+msgstr "Название:"
+
+#: admin/controllers/LimbGalleryMosaicWidgetController.php:102
+#: admin/controllers/LimbGalleryThumbnailWidgetController.php:103
+msgid "Select gallery:"
+msgstr "Выбрать галлерею:"
+
+#: admin/controllers/LimbGalleryMosaicWidgetController.php:116
+#: admin/controllers/LimbGalleryThumbnailWidgetController.php:117
+msgid "Select theme:"
+msgstr "Выбрать тему:"
+
+#: admin/controllers/LimbGalleryMosaicWidgetController.php:130
+#: admin/controllers/LimbGalleryThumbnailWidgetController.php:131
+msgid "Count"
+msgstr "Количество"
+
+#: admin/controllers/LimbGalleryMosaicWidgetController.php:136
+#: admin/controllers/LimbGalleryThumbnailWidgetController.php:137
+msgid "Thumbnail width:"
+msgstr "Ширина Картинки:"
+
+#: admin/controllers/LimbGalleryMosaicWidgetController.php:142
+#: admin/controllers/LimbGalleryThumbnailWidgetController.php:149
+#: admin/views/ViewShortcode.php:216 admin/views/ViewShortcode.php:326
+#: admin/views/ViewShortcode.php:462 admin/views/ViewShortcode.php:587
+#: admin/views/ViewShortcode.php:713 admin/views/ViewShortcode.php:824
+#: admin/views/ViewShortcode.php:898
+msgid "Order by:"
+msgstr "Сортировать по:"
+
+#: admin/controllers/LimbGalleryMosaicWidgetController.php:155
+#: admin/controllers/LimbGalleryThumbnailWidgetController.php:162
+#: admin/views/ViewShortcode.php:226 admin/views/ViewShortcode.php:336
+#: admin/views/ViewShortcode.php:472 admin/views/ViewShortcode.php:597
+#: admin/views/ViewShortcode.php:723 admin/views/ViewShortcode.php:834
+#: admin/views/ViewShortcode.php:908
+msgid "Ordering:"
+msgstr "Сортировка:"
+
+#: admin/controllers/LimbGalleryThumbnailWidgetController.php:143
+msgid "Thumbnail height:"
+msgstr "Высота Картинки:"
+
+#: admin/models/Model.php:55 gallery-rs.php:199
+msgid "Custom Order"
+msgstr "Ручная сортировка"
+
+#: admin/models/Model.php:56 admin/models/Model.php:66 gallery-rs.php:286
+msgid "Date"
+msgstr "Дата"
+
+#: admin/models/Model.php:57 admin/models/Model.php:67
+msgid "Id"
+msgstr "Id"
+
+#: admin/models/Model.php:58 admin/models/Model.php:68 gallery-rs.php:183
+msgid "Title"
+msgstr "Название"
+
+#: admin/models/Model.php:59 admin/models/Model.php:69 gallery-rs.php:184
+msgid "Description"
+msgstr "Описание"
+
+#: admin/models/Model.php:60 admin/models/Model.php:70
+msgid "Type"
+msgstr "Тип"
+
+#: admin/models/Model.php:76
+msgid "Open lightbox"
+msgstr "Открыть лайтбокс"
+
+#: admin/models/Model.php:77
+msgid "Open link"
+msgstr "Открыть ссылку"
+
+#: admin/models/Model.php:78
+msgid "Do nothing"
+msgstr "Ничего не делать"
+
+#: admin/models/Model.php:84
+msgid "Same tab"
+msgstr "Во вкладке"
+
+#: admin/models/Model.php:85
+msgid "New tab"
+msgstr "Новая вкладка"
+
+#: admin/models/Model.php:86
+msgid "Same frame"
+msgstr "То же окно"
+
+#: admin/models/Model.php:87
+msgid "Parent frame"
+msgstr "Родительская окно"
+
+#: admin/views/ViewGalleries.php:29 gallery-rs.php:287
+msgid "Add gallery"
+msgstr "Добавить галерею"
+
+#: admin/views/ViewGalleries.php:54
+msgid "Galleries"
+msgstr "Галерея"
+
+#: admin/views/ViewGalleries.php:60
+msgid "Media"
+msgstr "Медиа"
+
+#: admin/views/ViewGalleries.php:66
+msgid "Settings"
+msgstr "Настройки"
+
+#: admin/views/ViewGalleries.php:72
+msgid "Themes"
+msgstr "Темы"
+
+#: admin/views/ViewGalleries.php:78
+msgid "Albums"
+msgstr "Альбомы"
+
+#: admin/views/ViewGalleries.php:85
+msgid "Pro features !"
+msgstr "Платная функциональность !"
+
+#: admin/views/ViewGalleries.php:105
+msgid "Save"
+msgstr "Сохранить"
+
+#: admin/views/ViewGalleries.php:122
+msgid "Yes"
+msgstr "Да"
+
+#: admin/views/ViewGalleries.php:123 admin/views/ViewShortcode.php:175
+#: admin/views/ViewShortcode.php:300 admin/views/ViewShortcode.php:454
+#: admin/views/ViewShortcode.php:561 admin/views/ViewShortcode.php:687
+#: admin/views/ViewShortcode.php:816 admin/views/ViewShortcode.php:890
+#: admin/views/ViewShortcode.php:1042
+msgid "No"
+msgstr "Нет"
+
+#: admin/views/ViewShortcode.php:62
+msgid "Select Gallery"
+msgstr "Выбрать галлерею"
+
+#: admin/views/ViewShortcode.php:81
+msgid "Select Album"
+msgstr "Выбрать альбом"
+
+#: admin/views/ViewShortcode.php:100
+msgid "Select view"
+msgstr "Выбрать вид"
+
+#: admin/views/ViewShortcode.php:120
+msgid "Select theme"
+msgstr "Выбрать тему"
+
+#: admin/views/ViewShortcode.php:143
+msgid "Thumbnail view"
+msgstr "Вид Thumbnail"
+
+#: admin/views/ViewShortcode.php:151 admin/views/ViewShortcode.php:276
+#: admin/views/ViewShortcode.php:386 admin/views/ViewShortcode.php:537
+#: admin/views/ViewShortcode.php:662 admin/views/ViewShortcode.php:792
+#: admin/views/ViewShortcode.php:866 admin/views/ViewShortcode.php:994
+#: gallery-rs.php:248
+msgid "Width:"
+msgstr "Ширина:"
+
+#: admin/views/ViewShortcode.php:157 admin/views/ViewShortcode.php:282
+#: admin/views/ViewShortcode.php:392 admin/views/ViewShortcode.php:543
+#: admin/views/ViewShortcode.php:668 admin/views/ViewShortcode.php:798
+#: admin/views/ViewShortcode.php:872 admin/views/ViewShortcode.php:1000
+#: gallery-rs.php:249
+msgid "Height:"
+msgstr "Высота:"
+
+#: admin/views/ViewShortcode.php:165 admin/views/ViewShortcode.php:290
+#: admin/views/ViewShortcode.php:400 admin/views/ViewShortcode.php:549
+#: admin/views/ViewShortcode.php:675
+msgid "Container Width:"
+msgstr "Ширина контейнера:"
+
+#: admin/views/ViewShortcode.php:171 admin/views/ViewShortcode.php:296
+#: admin/views/ViewShortcode.php:450 admin/views/ViewShortcode.php:557
+#: admin/views/ViewShortcode.php:683 admin/views/ViewShortcode.php:812
+#: admin/views/ViewShortcode.php:886
+msgid "Show title:"
+msgstr "Показать название:"
+
+#: admin/views/ViewShortcode.php:176 admin/views/ViewShortcode.php:301
+#: admin/views/ViewShortcode.php:455 admin/views/ViewShortcode.php:562
+#: admin/views/ViewShortcode.php:688 admin/views/ViewShortcode.php:817
+#: admin/views/ViewShortcode.php:891
+msgid "On hover"
+msgstr "При наведении"
+
+#: admin/views/ViewShortcode.php:177 admin/views/ViewShortcode.php:302
+#: admin/views/ViewShortcode.php:456 admin/views/ViewShortcode.php:563
+#: admin/views/ViewShortcode.php:689 admin/views/ViewShortcode.php:818
+#: admin/views/ViewShortcode.php:892
+msgid "Always"
+msgstr "Всегда"
+
+#: admin/views/ViewShortcode.php:183
+msgid "Polaroid:"
+msgstr "Полароид:"
+
+#: admin/views/ViewShortcode.php:186 admin/views/ViewShortcode.php:981
+#: admin/views/ViewShortcode.php:1011 admin/views/ViewShortcode.php:1020
+#: admin/views/ViewShortcode.php:1031 admin/views/ViewShortcode.php:1090
+#: admin/views/ViewShortcode.php:1099 admin/views/ViewShortcode.php:1110
+#: admin/views/ViewShortcode.php:1119 admin/views/ViewShortcode.php:1130
+#: admin/views/ViewShortcode.php:1139 admin/views/ViewShortcode.php:1150
+#: admin/views/ViewShortcode.php:1159 admin/views/ViewShortcode.php:1170
+#: admin/views/ViewShortcode.php:1179 admin/views/ViewShortcode.php:1202
+#: admin/views/ViewShortcode.php:1211 gallery-rs.php:211
+msgid "Yes:"
+msgstr "Да:"
+
+#: admin/views/ViewShortcode.php:188 admin/views/ViewShortcode.php:983
+#: admin/views/ViewShortcode.php:1013 admin/views/ViewShortcode.php:1022
+#: admin/views/ViewShortcode.php:1033 admin/views/ViewShortcode.php:1092
+#: admin/views/ViewShortcode.php:1101 admin/views/ViewShortcode.php:1112
+#: admin/views/ViewShortcode.php:1121 admin/views/ViewShortcode.php:1132
+#: admin/views/ViewShortcode.php:1141 admin/views/ViewShortcode.php:1152
+#: admin/views/ViewShortcode.php:1161 admin/views/ViewShortcode.php:1172
+#: admin/views/ViewShortcode.php:1181 admin/views/ViewShortcode.php:1204
+#: admin/views/ViewShortcode.php:1213 gallery-rs.php:206
+msgid "No:"
+msgstr "Нет:"
+
+#: admin/views/ViewShortcode.php:198 admin/views/ViewShortcode.php:308
+#: admin/views/ViewShortcode.php:436 admin/views/ViewShortcode.php:569
+#: admin/views/ViewShortcode.php:695 admin/views/ViewShortcode.php:929
+msgid "Items Perpage:"
+msgstr "Количество элементов на странице:"
+
+#: admin/views/ViewShortcode.php:204 admin/views/ViewShortcode.php:575
+#: admin/views/ViewShortcode.php:701 admin/views/ViewShortcode.php:919
+msgid "Pagination:"
+msgstr "Страницы:"
+
+#: admin/views/ViewShortcode.php:208 admin/views/ViewShortcode.php:579
+#: admin/views/ViewShortcode.php:705 admin/views/ViewShortcode.php:923
+msgid "Numbers"
+msgstr "Числа"
+
+#: admin/views/ViewShortcode.php:209 admin/views/ViewShortcode.php:580
+#: admin/views/ViewShortcode.php:706 admin/views/ViewShortcode.php:924
+#: gallery-rs.php:431
+msgid "Load more"
+msgstr "Очередная Загрузка"
+
+#: admin/views/ViewShortcode.php:210 admin/views/ViewShortcode.php:319
+#: admin/views/ViewShortcode.php:581 admin/views/ViewShortcode.php:707
+#: admin/views/ViewShortcode.php:925
+msgid "Scrolling"
+msgstr "Скроллинг"
+
+#: admin/views/ViewShortcode.php:230 admin/views/ViewShortcode.php:340
+#: admin/views/ViewShortcode.php:476 admin/views/ViewShortcode.php:601
+#: admin/views/ViewShortcode.php:727 admin/views/ViewShortcode.php:838
+#: admin/views/ViewShortcode.php:912
+msgid "ASC"
+msgstr "ASC"
+
+#: admin/views/ViewShortcode.php:231 admin/views/ViewShortcode.php:341
+#: admin/views/ViewShortcode.php:477 admin/views/ViewShortcode.php:602
+#: admin/views/ViewShortcode.php:728 admin/views/ViewShortcode.php:839
+#: admin/views/ViewShortcode.php:913
+msgid "DESC"
+msgstr "DESC"
+
+#: admin/views/ViewShortcode.php:237 admin/views/ViewShortcode.php:347
+#: admin/views/ViewShortcode.php:483 admin/views/ViewShortcode.php:608
+#: admin/views/ViewShortcode.php:734 admin/views/ViewShortcode.php:937
+msgid "Click action:"
+msgstr "Действие после нажатия:"
+
+#: admin/views/ViewShortcode.php:247 admin/views/ViewShortcode.php:357
+#: admin/views/ViewShortcode.php:493 admin/views/ViewShortcode.php:618
+#: admin/views/ViewShortcode.php:744 admin/views/ViewShortcode.php:947
+msgid "Link target:"
+msgstr "Цель ссылки:"
+
+#: admin/views/ViewShortcode.php:266
+msgid "Carousel view"
+msgstr "Вид Carousel"
+
+#: admin/views/ViewShortcode.php:314
+msgid "Navigation:"
+msgstr "Навигация:"
+
+#: admin/views/ViewShortcode.php:318 gallery-rs.php:246
+msgid "Buttons"
+msgstr "Кнопки"
+
+#: admin/views/ViewShortcode.php:320
+msgid "Buttons and scrolling"
+msgstr "Кнопки и прокрутка"
+
+#: admin/views/ViewShortcode.php:376
+msgid "3D Carousel view"
+msgstr "Вид 3D Carousel"
+
+#: admin/views/ViewShortcode.php:408
+msgid "Left Side Depth:"
+msgstr "Глубина левой стороны:"
+
+#: admin/views/ViewShortcode.php:414
+msgid "Right Side Depth:"
+msgstr "Глубина правой стороны:"
+
+#: admin/views/ViewShortcode.php:422
+msgid "Image Maximum Scale:"
+msgstr "Максимальный масштаб изображения:"
+
+#: admin/views/ViewShortcode.php:428
+msgid "Image Minimum Scale:"
+msgstr "Минимальная масштаб изображения:"
+
+#: admin/views/ViewShortcode.php:442
+msgid "View Images Count:"
+msgstr "Количество просмотренных изображений:"
+
+#: admin/views/ViewShortcode.php:512
+msgid "Masonry view"
+msgstr "Вид Masonry"
+
+#: admin/views/ViewShortcode.php:522 admin/views/ViewShortcode.php:647
+#: admin/views/ViewShortcode.php:781 admin/views/ViewShortcode.php:855
+msgid "Type:"
+msgstr "Тип:"
+
+#: admin/views/ViewShortcode.php:525 admin/views/ViewShortcode.php:650
+#: admin/views/ViewShortcode.php:784 admin/views/ViewShortcode.php:858
+msgid "Vertical:"
+msgstr "По вертикали:"
+
+#: admin/views/ViewShortcode.php:527 admin/views/ViewShortcode.php:652
+#: admin/views/ViewShortcode.php:786 admin/views/ViewShortcode.php:860
+msgid "Horizontal:"
+msgstr "По горизонтали:"
+
+#: admin/views/ViewShortcode.php:637
+msgid "Mosaic view"
+msgstr "Вид Mosaic"
+
+#: admin/views/ViewShortcode.php:763
+msgid "Album view"
+msgstr "Вид Album"
+
+#: admin/views/ViewShortcode.php:771
+msgid "Main view type:"
+msgstr "Тип основного вида:"
+
+#: admin/views/ViewShortcode.php:775 admin/views/ViewShortcode.php:849
+msgid "Thumbnail"
+msgstr "Thumbnail"
+
+#: admin/views/ViewShortcode.php:776 admin/views/ViewShortcode.php:850
+msgid "Masonry"
+msgstr "Masonry"
+
+#: admin/views/ViewShortcode.php:777 admin/views/ViewShortcode.php:851
+msgid "Mosaic"
+msgstr "Mosaic"
+
+#: admin/views/ViewShortcode.php:806
+msgid "Main container Width:"
+msgstr "Ширина основного контейнера:"
+
+#: admin/views/ViewShortcode.php:845
+msgid "Gallery view type:"
+msgstr "Вид галереи:"
+
+#: admin/views/ViewShortcode.php:880
+msgid "Gallery container Width:"
+msgstr "Ширина контейнера галереи:"
+
+#: admin/views/ViewShortcode.php:968
+msgid "Lightbox"
+msgstr "Лайтбокс"
+
+#: admin/views/ViewShortcode.php:977 gallery-rs.php:263
+msgid "Full width:"
+msgstr "Полная ширина:"
+
+#: admin/views/ViewShortcode.php:1008
+msgid "Filmstrip:"
+msgstr "Диафильм:"
+
+#: admin/views/ViewShortcode.php:1017
+msgid "Comments:"
+msgstr "Комментарии:"
+
+#: admin/views/ViewShortcode.php:1028
+msgid "Control buttons:"
+msgstr "Кнопки управления:"
+
+#: admin/views/ViewShortcode.php:1037 gallery-rs.php:231
+msgid "Effect:"
+msgstr "Эффект:"
+
+#: admin/views/ViewShortcode.php:1041
+msgid "No effect"
+msgstr "Нет эффекта"
+
+#: admin/views/ViewShortcode.php:1044
+msgid "No cutting"
+msgstr "Нет резки"
+
+#: admin/views/ViewShortcode.php:1045
+msgid "Fade"
+msgstr "Исчезновение"
+
+#: admin/views/ViewShortcode.php:1046
+msgid "Slide In left"
+msgstr "Слайд в лево"
+
+#: admin/views/ViewShortcode.php:1047
+msgid "Slide In Down"
+msgstr "Слайд в вниз"
+
+#: admin/views/ViewShortcode.php:1048
+msgid "Flip & Zoom"
+msgstr "Перевернуть и Увеличить"
+
+#: admin/views/ViewShortcode.php:1049
+msgid "Zoom In"
+msgstr "Увеличить"
+
+#: admin/views/ViewShortcode.php:1050
+msgid "Zoom In Left"
+msgstr "Увеличить слева"
+
+#: admin/views/ViewShortcode.php:1051
+msgid "Zoom In Down"
+msgstr "Увеличить снизу"
+
+#: admin/views/ViewShortcode.php:1053
+msgid "Cutting vertical"
+msgstr "Резка по вертикали"
+
+#: admin/views/ViewShortcode.php:1054 admin/views/ViewShortcode.php:1060
+#: admin/views/ViewShortcode.php:1068 admin/views/ViewShortcode.php:1075
+msgid "Zoom"
+msgstr "Увеличить"
+
+#: admin/views/ViewShortcode.php:1055 admin/views/ViewShortcode.php:1061
+msgid "Flip"
+msgstr "Перевернуть"
+
+#: admin/views/ViewShortcode.php:1056 admin/views/ViewShortcode.php:1062
+#: admin/views/ViewShortcode.php:1069
+msgid "Rotate"
+msgstr "Вращаться"
+
+#: admin/views/ViewShortcode.php:1057
+msgid "Fade out up"
+msgstr "Исчезновение сверху"
+
+#: admin/views/ViewShortcode.php:1059
+msgid "Cutting horizontal"
+msgstr "Резка по горизонтали"
+
+#: admin/views/ViewShortcode.php:1063
+msgid "Fade out right"
+msgstr "Исчезновение справа"
+
+#: admin/views/ViewShortcode.php:1065
+msgid "Mix cutting out"
+msgstr "Смешивание вырезания"
+
+#: admin/views/ViewShortcode.php:1066 admin/views/ViewShortcode.php:1077
+msgid "Fade (Fun)"
+msgstr "Исчезновение (Забава)"
+
+#: admin/views/ViewShortcode.php:1067
+msgid "Roll"
+msgstr "Катить"
+
+#: admin/views/ViewShortcode.php:1070
+msgid "Zoom out Left"
+msgstr "Уменьшить слева"
+
+#: admin/views/ViewShortcode.php:1071
+msgid "Zoom (Fun)"
+msgstr "Увеличить (Забава)"
+
+#: admin/views/ViewShortcode.php:1072
+msgid "Zoom Down (Fun)"
+msgstr "Увеличить вниз (Забава)"
+
+#: admin/views/ViewShortcode.php:1074
+msgid "Mix cutting in"
+msgstr "Смешивание разреза"
+
+#: admin/views/ViewShortcode.php:1076
+msgid "Zoom Up"
+msgstr "Увеличить вверх"
+
+#: admin/views/ViewShortcode.php:1079 admin/views/ViewShortcode.php:1080
+msgid "Random"
+msgstr "Случайно"
+
+#: admin/views/ViewShortcode.php:1087
+msgid "Facebook:"
+msgstr "Facebook:"
+
+#: admin/views/ViewShortcode.php:1096
+msgid "Google+:"
+msgstr "Google+:"
+
+#: admin/views/ViewShortcode.php:1107
+msgid "Twitter:"
+msgstr "Twitter:"
+
+#: admin/views/ViewShortcode.php:1116
+msgid "Pinterest:"
+msgstr "Pinterest:"
+
+#: admin/views/ViewShortcode.php:1127
+msgid "Tumblr:"
+msgstr "Tumblr:"
+
+#: admin/views/ViewShortcode.php:1136
+msgid "LinkedIn:"
+msgstr "LinkedIn:"
+
+#: admin/views/ViewShortcode.php:1147
+msgid "Reddit:"
+msgstr "Reddit:"
+
+#: admin/views/ViewShortcode.php:1156
+msgid "Fullscreen:"
+msgstr "Полноэкранный:"
+
+#: admin/views/ViewShortcode.php:1167
+msgid "Autoplay:"
+msgstr "Автовоспроизведение:"
+
+#: admin/views/ViewShortcode.php:1176
+msgid "Image Info:"
+msgstr "Информация об изображении:"
+
+#: admin/views/ViewShortcode.php:1187
+msgid "Autoplay interval:"
+msgstr "Интервал автовоспроизведения:"
+
+#: admin/views/ViewShortcode.php:1190
+msgid "sec"
+msgstr "сек"
+
+#: admin/views/ViewShortcode.php:1199
+msgid "Image counting"
+msgstr "Подсчет изображений"
+
+#: admin/views/ViewShortcode.php:1208
+msgid "Swipe:"
+msgstr "Проведите пальцем:"
+
+#: admin/views/ViewShortcode.php:1224
+msgid "Update"
+msgstr "Обновить"
+
+#: admin/views/ViewShortcode.php:1224
+msgid "Insert"
+msgstr "Вставить"
+
+#: ajax/GRSAdminActions.php:118
+msgid "Something went wrong"
+msgstr "Что-то пошло не так"
+
+#: ajax/GRSAdminActions.php:393
+msgid "There is no items selected or"
+msgstr "Нет выбранных элементов или"
+
+#: ajax/GRSAdminActions.php:398
+msgid "Problem with Order saving"
+msgstr "Проблема с сохранением порядка"
+
+#: ajax/GRSAdminActions.php:435
+msgid "Problem with gallery save"
+msgstr "Проблема с сохранением галереи"
+
+#: ajax/GRSAdminActions.php:488
+msgid "Problem with image or gallery update"
+msgstr "Проблема с обновлением изображения или галереи"
+
+#: ajax/GRSAdminActions.php:557 ajax/GRSAdminActions.php:618
+#: ajax/GRSAdminActions.php:655 ajax/GRSAdminActions.php:792
+#: ajax/GRSAdminActions.php:860 ajax/GRSAdminActions.php:883
+#: ajax/GRSAdminActions.php:991 ajax/GRSAdminActions.php:995
+#: ajax/GRSAdminActions.php:1071 ajax/GRSAdminActions.php:1110
+#: ajax/GRSAdminActions.php:1167 ajax/GRSComment.php:79
+#: embed/GRSGalleryEmbed.php:233
+msgid "Problem with save"
+msgstr "Проблема с сохранением"
+
+#: ajax/GRSAdminActions.php:579 ajax/GRSAdminActions.php:634
+msgid "Function not found: getimagesize. Please connect to plugin support."
+msgstr "Функция не найдена: getimagesize. Подключитесь к поддержке плагина."
+
+#: ajax/GRSAdminActions.php:677 ajax/GRSAdminActions.php:691
+#: ajax/GRSAdminActions.php:705 ajax/GRSAdminActions.php:926
+msgid "Problem with delete"
+msgstr "Проблема с удалением"
+
+#: ajax/GRSAdminActions.php:708
+msgid "Invalid comment id"
+msgstr "Недопустимый id комментария"
+
+#: ajax/GRSAdminActions.php:771
+msgid "You are trying to duplicate content or there is some other problem."
+msgstr "Вы пытаетесь дублировать контент или возникают другие проблемы."
+
+#: ajax/GRSAdminActions.php:790 ajax/GRSAdminActions.php:881
+#: ajax/GRSAdminActions.php:1165
+msgid "Successfully delete"
+msgstr "Успешно удалено"
+
+#: ajax/GRSAdminActions.php:796 ajax/GRSAdminActions.php:999
+#: ajax/GRSAdminActions.php:1171
+msgid "Oh there is a problem"
+msgstr "О, есть проблема"
+
+#: ajax/GRSAdminActions.php:887 gallery-rs.php:290
+msgid "Error something went wrong"
+msgstr "Ошибка, что-то пошло не так"
+
+#: ajax/GRSAdminActions.php:960
+msgid "Problem with uninstall"
+msgstr "Проблема с удалением"
+
+#: ajax/GRSAdminActions.php:989 smart/GRSGallerySmart.php:30
+#: smart/GRSGallerySmart.php:79
+msgid "Successfully update"
+msgstr "Успешно обновлено"
+
+#: ajax/GRSAdminActions.php:1068 ajax/GRSAdminActions.php:1108
+msgid "Unable to create css file."
+msgstr "Не удалось создать файл css."
+
+#: ajax/GRSCaptcha.php:104
+msgid "Required GD library is missing"
+msgstr "Необходимая библиотека GD отсутствует"
+
+#: ajax/GRSComment.php:25
+msgid "Invalid name"
+msgstr "Неверное имя"
+
+#: ajax/GRSComment.php:29
+msgid "Invalid email address"
+msgstr "Неверный эл. адрес"
+
+#: ajax/GRSComment.php:33
+msgid "Invalid comment"
+msgstr "Недопустимый комментарий"
+
+#: ajax/GRSComment.php:37
+msgid "Invalid image"
+msgstr "Недопустимое изображение"
+
+#: ajax/GRSComment.php:41
+msgid "Invalid gallery"
+msgstr "Недопустимая галерея"
+
+#: ajax/GRSComment.php:85
+msgid "Incorrect captcha code"
+msgstr "Неверный код captcha"
+
+#: ajax/GRSComment.php:107
+msgid "Invalid image id"
+msgstr "Недопустимый id изображения"
+
+#: ajax/GRSGalleryAjax.php:62
+msgid "It isn't grs action"
+msgstr "Это не GRS действие"
+
+#: ajax/GRSGalleryAjax.php:71
+msgid "Unknown action."
+msgstr "Неизвестное действие."
+
+#: ajax/GRSGalleryAjax.php:76
+msgid "Your nonce is not verified"
+msgstr "Ваш nonce не подтвержден"
+
+#: ajax/GRSGalleryAjax.php:88
+msgid "try to reactivate plugin."
+msgstr "попробуйте реактивировать плагин."
+
+#: embed/GRSGalleryEmbed.php:77
+msgid "Unknown provider"
+msgstr "Неизвестный поставщик"
+
+#: embed/GRSGalleryEmbed.php:104
+msgid "Invalid scheme "
+msgstr "Неверная схема "
+
+#: embed/GRSGalleryEmbed.php:106
+msgid "Invalid host "
+msgstr "Недопустимый хост "
+
+#: embed/GRSGalleryEmbed.php:106
+msgid " for "
+msgstr " для "
+
+#: embed/GRSGalleryEmbed.php:106
+msgid " provider"
+msgstr " поставщик"
+
+#: embed/GRSGalleryEmbed.php:130
+msgid "Only image urls allowed for flickr provider"
+msgstr "Только url изображений разрешены для поставщика flickr"
+
+#: gallery-rs.php:182
+msgid "Add Album"
+msgstr "Добавить Альбом"
+
+#: gallery-rs.php:185
+msgid "Update Preview Image"
+msgstr "Обновить предварительное изображение"
+
+#: gallery-rs.php:186
+msgid "Url Examples"
+msgstr "Примеры Url"
+
+#: gallery-rs.php:187
+msgid "Add"
+msgstr "Добавить"
+
+#: gallery-rs.php:188 gallery-rs.php:443
+msgid "Close"
+msgstr "Закрыть"
+
+#: gallery-rs.php:189
+msgid "Add youtube embed"
+msgstr "Добавить youtube embed"
+
+#: gallery-rs.php:190
+msgid "Add instagram photo/video"
+msgstr "Добавить instagram фото/видео"
+
+#: gallery-rs.php:191
+msgid "Add vimeo embed"
+msgstr "Добавить vimeo embed"
+
+#: gallery-rs.php:192
+msgid "Add flickr photo"
+msgstr "Добавить flickr фото"
+
+#: gallery-rs.php:193
+msgid "Add images from Limb library"
+msgstr "Добавить изображения из библиотеки Limb"
+
+#: gallery-rs.php:194
+msgid "Add images from WP library"
+msgstr "Добавить изображения из библиотеки WP"
+
+#: gallery-rs.php:195
+msgid "Delete"
+msgstr "Удалить"
+
+#: gallery-rs.php:196
+msgid "Select all"
+msgstr "Выбрать все"
+
+#: gallery-rs.php:197
+msgid "Order By:"
+msgstr "Сортировать по:"
+
+#: gallery-rs.php:198
+msgid "ID"
+msgstr "ID"
+
+#: gallery-rs.php:200
+msgid "Items per page"
+msgstr "Элементов на каждом странице"
+
+#: gallery-rs.php:201
+msgid "Edit"
+msgstr "Редактировать"
+
+#: gallery-rs.php:202
+msgid "Link"
+msgstr "Ссылка"
+
+#: gallery-rs.php:203
+msgid "Remove"
+msgstr "Удалить"
+
+#: gallery-rs.php:204
+msgid "Timezone:"
+msgstr "Часовой пояс:"
+
+#: gallery-rs.php:205
+msgid "Collapse navigation clicks while animation in progress:"
+msgstr "Свернуть клики навигации во время анимации:"
+
+#: gallery-rs.php:207
+msgid "Timeformat:"
+msgstr "Формат времени:"
+
+#: gallery-rs.php:208
+msgid "Clicks count:"
+msgstr "Количество кликов:"
+
+#: gallery-rs.php:209
+msgid "Show Comments immediately after Lightbox opens:"
+msgstr "Показывать Комментарии сразу после открытия Лайтбокса:"
+
+#: gallery-rs.php:210
+msgid "if Comments is enabled in shortcode"
+msgstr "если Комментарии включены в shortcode"
+
+#: gallery-rs.php:212
+msgid "Show Info immediately after Lightbox opens:"
+msgstr "Показывать Информацию сразу после открытия Лайтбокса:"
+
+#: gallery-rs.php:213
+msgid "if Info is enabled in shortcode"
+msgstr "если Информация включена в коротком коде"
+
+#: gallery-rs.php:214
+msgid "Lightbox filmstrip image move count:"
+msgstr "Количество движений изображения диафильма в лайтбокс:"
+
+#: gallery-rs.php:215
+msgid "Hide navigation button while reaching to the end(start):"
+msgstr "Скрыть навигационную кнопку при достижении конца (начала):"
+
+#: gallery-rs.php:216
+msgid "Carousel image move count:"
+msgstr "Количество движений изображения в каруселе:"
+
+#: gallery-rs.php:217
+msgid "Close lightbox by click on side:"
+msgstr "Закрыть лайтбокс, нажав на стороне:"
+
+#: gallery-rs.php:218
+msgid "Uninstall plugin:"
+msgstr "Удалить плагин:"
+
+#: gallery-rs.php:219
+msgid "Uninstall"
+msgstr "Удалить"
+
+#: gallery-rs.php:220
+msgid "Set default"
+msgstr "Установить по умолчанию"
+
+#: gallery-rs.php:221
+msgid "Add theme"
+msgstr "Добавить тему"
+
+#: gallery-rs.php:222
+msgid "Image"
+msgstr "Изображение"
+
+#: gallery-rs.php:223
+msgid "Margin:"
+msgstr "Поле:"
+
+#: gallery-rs.php:224
+msgid "Border:"
+msgstr "Граница:"
+
+#: gallery-rs.php:225
+msgid "Padding:"
+msgstr "Отступ:"
+
+#: gallery-rs.php:226
+msgid "Border-radius:"
+msgstr "Радиус границы:"
+
+#: gallery-rs.php:227
+msgid "Background color:"
+msgstr "Фоновый цвет:"
+
+#: gallery-rs.php:228
+msgid "Shadow:"
+msgstr "Тень:"
+
+#: gallery-rs.php:229
+msgid "Hover effect:"
+msgstr "Эффект зависания:"
+
+#: gallery-rs.php:230
+msgid "Position:"
+msgstr "Позиция:"
+
+#: gallery-rs.php:232
+msgid "Font size:"
+msgstr "Размер шрифта:"
+
+#: gallery-rs.php:233
+msgid "Color:"
+msgstr "Цвет:"
+
+#: gallery-rs.php:234
+msgid "Mask color:"
+msgstr "Цвет маски:"
+
+#: gallery-rs.php:235
+msgid "Font Family:"
+msgstr "Семейство шрифтов:"
+
+#: gallery-rs.php:236
+msgid "Font weight:"
+msgstr "Плотность шрифта:"
+
+#: gallery-rs.php:237
+msgid "Font style:"
+msgstr "Стиль шрифта:"
+
+#: gallery-rs.php:238
+msgid "Container"
+msgstr "Контейнер"
+
+#: gallery-rs.php:239
+msgid "Upload images"
+msgstr "Загрузить изображения"
+
+#: gallery-rs.php:240
+msgid "Add images to gallery"
+msgstr "Добавить изображения в галерею"
+
+#: gallery-rs.php:241
+msgid "Add folder"
+msgstr "Добавить папку"
+
+#: gallery-rs.php:242 gallery-rs.php:425
+msgid "Back"
+msgstr "Назад"
+
+#: gallery-rs.php:243
+msgid "Rename"
+msgstr "Переименовать"
+
+#: gallery-rs.php:244
+msgid "Navigation"
+msgstr "Навигация"
+
+#: gallery-rs.php:245
+msgid "Buttons:"
+msgstr "Кнопки:"
+
+#: gallery-rs.php:247
+msgid "Size:"
+msgstr "Размер:"
+
+#: gallery-rs.php:250
+msgid "Hover color:"
+msgstr "Цвет зависания:"
+
+#: gallery-rs.php:251
+msgid "Hover Background color:"
+msgstr "Фоновый цвет зависания:"
+
+#: gallery-rs.php:252
+msgid "Offset(Right,Left):"
+msgstr "Офсет(Право,Лево)"
+
+#: gallery-rs.php:253
+msgid "Margin Top:"
+msgstr "Верхнее поле:"
+
+#: gallery-rs.php:254
+msgid "Alignment:"
+msgstr "Выравнивание:"
+
+#: gallery-rs.php:255
+msgid "Active background color:"
+msgstr "Активный цвет фона:"
+
+#: gallery-rs.php:256
+msgid "Back button"
+msgstr "Кнопка назад"
+
+#: gallery-rs.php:257
+msgid "Main"
+msgstr "Основной"
+
+#: gallery-rs.php:258
+msgid "Box background color"
+msgstr "Фоновый цвет блока"
+
+#: gallery-rs.php:259
+msgid "Close button"
+msgstr "Кнопка закрытия"
+
+#: gallery-rs.php:260
+msgid "Box size:"
+msgstr "Размер блока:"
+
+#: gallery-rs.php:261
+msgid "Box shadow:"
+msgstr "Тень блока:"
+
+#: gallery-rs.php:262
+msgid "Title and Description"
+msgstr "Название и описание"
+
+#: gallery-rs.php:264
+msgid "Background"
+msgstr "Фон"
+
+#: gallery-rs.php:265
+msgid "Max-width:"
+msgstr "Максимальная ширина:"
+
+#: gallery-rs.php:266
+msgid "Show:"
+msgstr "Показать:"
+
+#: gallery-rs.php:267
+msgid "Hover Shadow:"
+msgstr "Тень зависания:"
+
+#: gallery-rs.php:268
+msgid "Filmstrip"
+msgstr "Диафильм"
+
+#: gallery-rs.php:269
+msgid "Margin(Top,Bottom):"
+msgstr "Поле(Верхнее,Нижнее):"
+
+#: gallery-rs.php:270
+msgid "Thumb"
+msgstr "Thumb"
+
+#: gallery-rs.php:271
+msgid "Selected effect:"
+msgstr "Выбранный эффект:"
+
+#: gallery-rs.php:272
+msgid "Selected thumb Border:"
+msgstr "Граница выбранного thumb:"
+
+#: gallery-rs.php:273
+msgid "Control buttons"
+msgstr "Кнопки управления"
+
+#: gallery-rs.php:274
+msgid "Image count"
+msgstr "Количество изображений"
+
+#: gallery-rs.php:275
+msgid "Comments container"
+msgstr "Контейнер комментариев"
+
+#: gallery-rs.php:276
+msgid "Margin(vertical):"
+msgstr "Поле(по вертикали):"
+
+#: gallery-rs.php:277
+msgid "Margin(horizontal):"
+msgstr "Поле(по горизонтали:):"
+
+#: gallery-rs.php:278
+msgid "Labels"
+msgstr "Этикетки"
+
+#: gallery-rs.php:279
+msgid "Inputs"
+msgstr "Входные"
+
+#: gallery-rs.php:280
+msgid "Active border color:"
+msgstr "Цвет активной границы:"
+
+#: gallery-rs.php:281
+msgid "Active shadow:"
+msgstr "Активная тень:"
+
+#: gallery-rs.php:282
+msgid "Position(Top,Left):"
+msgstr "Позиция(Верх,Лево)"
+
+#: gallery-rs.php:283
+msgid "Captcha button"
+msgstr "Кнопка Captcha"
+
+#: gallery-rs.php:284
+msgid "Author"
+msgstr "Автор"
+
+#: gallery-rs.php:285
+msgid "Comment"
+msgstr "Комментарий"
+
+#: gallery-rs.php:288
+msgid "Order successfully saved"
+msgstr "Сортировка успешно сохранен"
+
+#: gallery-rs.php:289
+msgid "Items successfully saved"
+msgstr "Элементы успешно сохранены"
+
+#: gallery-rs.php:291
+msgid "Images successfully added"
+msgstr "Изображения успешно добавлены"
+
+#: gallery-rs.php:292
+msgid "Add gallery preview image"
+msgstr "Добавить предварительное изображение галереи"
+
+#: gallery-rs.php:293
+msgid "Are you sure , you want to delete "
+msgstr "Вы уверены, что хотите удалить "
+
+#: gallery-rs.php:294
+msgid " item ?"
+msgstr " элемент ?"
+
+#: gallery-rs.php:295
+msgid "Are you sure , you want to delete selected items ?"
+msgstr "Вы уверены, что хотите удалить выбранные элементы?"
+
+#: gallery-rs.php:296
+msgid "Items successfully deleted"
+msgstr "Элементы успешно удаленные"
+
+#: gallery-rs.php:297
+msgid "Item successfully saved"
+msgstr "Элемент успешно сохранен"
+
+#: gallery-rs.php:298
+msgid "Fill the url input"
+msgstr "Заполните ввод URL"
+
+#: gallery-rs.php:299
+msgid "Unable to get themes data"
+msgstr "Не удалось получить данные темы"
+
+#: gallery-rs.php:300
+msgid "Theme successfully saved"
+msgstr "Тема успешно сохранена"
+
+#: gallery-rs.php:301
+msgid "You can't delete default theme"
+msgstr "Вы не можете удалить тему по умолчанию"
+
+#: gallery-rs.php:302
+msgid " theme ?"
+msgstr " тема ?"
+
+#: gallery-rs.php:303
+msgid "Theme successfully deleted"
+msgstr "Тема успешно удалена"
+
+#: gallery-rs.php:304
+msgid "Unable to get albums data"
+msgstr "Не удалось получить данные альбомов"
+
+#: gallery-rs.php:305
+msgid "Album successfully saved"
+msgstr "Альбом успешно сохранен"
+
+#: gallery-rs.php:306
+msgid " album ?"
+msgstr " альбом ?"
+
+#: gallery-rs.php:307
+msgid "Are you sure , you want to delete selected albums ?"
+msgstr "Вы уверены, что хотите удалить выбранные альбомы?"
+
+#: gallery-rs.php:308
+msgid "Albums successfully deleted"
+msgstr "Альбомы успешно удалены"
+
+#: gallery-rs.php:309
+msgid "successfully deleted"
+msgstr "успешно удалено"
+
+#: gallery-rs.php:310
+msgid "Add album preview image"
+msgstr "Добавить изображение предварительного просмотра альбома"
+
+#: gallery-rs.php:311
+msgid "Select album"
+msgstr "Выбрать альбом"
+
+#: gallery-rs.php:312
+msgid "Unable to get settings data"
+msgstr "Не удалось получить данные настроек"
+
+#: gallery-rs.php:313
+msgid "Settings successfully saved"
+msgstr "Настройки успешно сохранены"
+
+#: gallery-rs.php:314
+msgid "The following Database Tables will be deleted:"
+msgstr "Следующие Таблицы Базы Данных будут удалены:"
+
+#: gallery-rs.php:315
+msgid "Are you sure , you want to uninstall this plugin ?"
+msgstr "Вы уверены, что хотите удалить этот плагин?"
+
+#: gallery-rs.php:316 smart/GRSGallerySmart.php:45
+msgid "Plugin uninstalled"
+msgstr "Плагин удален"
+
+#: gallery-rs.php:317
+msgid "Unable to get uploader data"
+msgstr "Не удалось получить данные о загрузке"
+
+#: gallery-rs.php:318
+msgid "Wait while image is being uploaded"
+msgstr "Подождите, пока изображение загружается"
+
+#: gallery-rs.php:319
+msgid "Folder successfully created"
+msgstr "Папка успешно создана"
+
+#: gallery-rs.php:320
+msgid " folder ?"
+msgstr " папка ?"
+
+#: gallery-rs.php:321
+msgid " image ?"
+msgstr " изображение ?"
+
+#: gallery-rs.php:322
+msgid "Select at list one item"
+msgstr "Выберите в списке один элемент"
+
+#: gallery-rs.php:323
+msgid "Item successfully deleted"
+msgstr "Элемент успешно удален"
+
+#: gallery-rs.php:324
+msgid "A file name can't contain this (\") character"
+msgstr "Имя файла не может содержать этот символ (\")"
+
+#: gallery-rs.php:325
+msgid "A file name can't be empty"
+msgstr "Имя файла не может быть пустым"
+
+#: gallery-rs.php:326
+msgid "Item successfully renamed"
+msgstr "Элемент успешно переименован"
+
+#: gallery-rs.php:327
+msgid "Select at list one image"
+msgstr "Выберите в списке одно изображение"
+
+#: gallery-rs.php:328
+msgid "Select gallery or press \"Add images\" button from gallery cont"
+msgstr "Выберите галерею или нажмите кнопку «Добавить изображения» в галерее"
+
+#: gallery-rs.php:329
+msgid "Adding folder not allowed yet"
+msgstr "Добавление папки еще не разрешено"
+
+#: gallery-rs.php:330
+msgid "Preview image updated"
+msgstr "Обновлено предварительное изображение"
+
+#: gallery-rs.php:331
+msgid "Highlighted items upload failed, check your server post max size"
+msgstr ""
+"Загрузка выделенных элементов не удалась, проверьте максимальный размер "
+"сервера"
+
+#: gallery-rs.php:332
+msgid "Please be patient, try after current request ends"
+msgstr ""
+"Пожалуйста, будьте терпеливы, попробуйте после завершения текущего запроса"
+
+#: gallery-rs.php:333
+msgid "Unable to get galleries data"
+msgstr "Не удалось получить данные о галереях"
+
+#: gallery-rs.php:334
+msgid " gallery ?"
+msgstr " галерея ?"
+
+#: gallery-rs.php:335
+msgid "Please wait until loading ends."
+msgstr "Подождите, пока загрузка закончится."
+
+#: gallery-rs.php:336
+msgid "There is no gallery , create it from the button left."
+msgstr "Нет галереи, создайте ее с помощью кнопки слева."
+
+#: gallery-rs.php:337
+msgid "You need to install pro version containing themes feature."
+msgstr "Вам нужно установить pro версию, содержащую функцию темы."
+
+#: gallery-rs.php:338
+msgid "Show video's(Vimeo) title in lightbox:"
+msgstr "Показать название видео(Vimeo) в лайтбоксе:"
+
+#: gallery-rs.php:339
+msgid "Show video's(YouTube) title in lightbox:"
+msgstr "Показать название видео(YouTube) в лайтбоксе:"
+
+#: gallery-rs.php:421
+msgid "There is no images in this gallery"
+msgstr "В этой галерее нет изображений"
+
+#: gallery-rs.php:422
+msgid "Album is empty"
+msgstr "Альбом пуст"
+
+#: gallery-rs.php:423
+msgid "There is no gallery matching your id or it was deleted"
+msgstr "Нет галереи, соответствующей вашему id, или она была удалена"
+
+#: gallery-rs.php:424
+msgid "There is no album matching your id or it was deleted"
+msgstr "Нет альбома, соответствующего вашему id, или он был удален"
+
+#: gallery-rs.php:426
+msgid "Close comments"
+msgstr "Закрыть комментарии"
+
+#: gallery-rs.php:427
+msgid "Name"
+msgstr "Имя"
+
+#: gallery-rs.php:428
+msgid "Email"
+msgstr "Эл. адрес"
+
+#: gallery-rs.php:429
+msgid "Leave a comment"
+msgstr "Оставить комментарий"
+
+#: gallery-rs.php:430
+msgid "Reload captcha"
+msgstr "Обновить капчу"
+
+#: gallery-rs.php:432
+msgid "Your browser does not support the video tag."
+msgstr "Ваш браузер не поддерживает video тег."
+
+#: gallery-rs.php:433
+msgid "Share on Facebook"
+msgstr "Поделиться на Facebook"
+
+#: gallery-rs.php:434
+msgid "Share on Twitter"
+msgstr "Поделиться на Twitter"
+
+#: gallery-rs.php:435
+msgid "Share on Google+"
+msgstr "Поделиться в Google+"
+
+#: gallery-rs.php:436
+msgid "Share on Pinterest"
+msgstr "Поделиться на Pinterest"
+
+#: gallery-rs.php:437
+msgid "Share on Tumblr"
+msgstr "Поделиться на Tumblr"
+
+#: gallery-rs.php:438
+msgid "Share on Linkedin"
+msgstr "Поделиться на Linkedin"
+
+#: gallery-rs.php:439
+msgid "Share on Reddit"
+msgstr "Поделиться на Reddit"
+
+#: gallery-rs.php:440
+msgid "Play/Pause"
+msgstr "Воспроизведение/Пауза"
+
+#: gallery-rs.php:441
+msgid "Show/Hide info"
+msgstr "Показать/Скрыть информацию"
+
+#: gallery-rs.php:442
+msgid "Show comments"
+msgstr "Показать комментарии"
+
+#: gallery-rs.php:444
+msgid " of "
+msgstr " из "
+
+#: smart/GRSGallerySmart.php:34 smart/GRSGallerySmart.php:82
+msgid "Problems with update"
+msgstr "Проблемы с обновлением"
+
+#: smart/GRSGallerySmart.php:62
+msgid ""
+"Trying to update old version, Please uninstall current then install your "
+"version"
+msgstr ""
+"Попытка обновления старой версии, пожалуйста, удалите текущий, затем "
+"установите свою версию"
+
+#: smart/GRSGallerySmart.php:67
+msgid "Successfully activate"
+msgstr "Успешно активировано"
+
+#: smart/GRSGallerySmart.php:70
+msgid "Some rows dropped and can't be inserted"
+msgstr "Некоторые строки удалены и не могут быть вставлены"
+
+#: smart/GRSGallerySmart.php:73
+msgid "Some tables dropped, or can't be created"
+msgstr "Некоторые таблицы удалены или не могут быть созданы"
+
+#: smart/GRSGallerySmart.php:86
+msgid "Some tables not exists and can't created"
+msgstr "Некоторые таблицы удалены или не могут быть созданы"
+
+#: smart/GRSGallerySmart.php:90
+msgid "Unknown version"
+msgstr "Неизвестная версия"
+
+#: smart/GRSGallerySmart.php:98
+msgid "Plugin successfully activate"
+msgstr "Плагин успешно активирован"
+
+#: smart/GRSGallerySmart.php:101
+msgid "Data has not been inserted"
+msgstr "Данные не были вставлены"
+
+#: smart/GRSGallerySmart.php:104
+msgid "Some tables have not been created"
+msgstr "Некоторые таблицы не созданы"
+
+#~ msgid "Depth:"
+#~ msgstr "Глубина:"
+
+#~ msgid "Add Gallery"
+#~ msgstr "Добавить галерею"
+
+#~ msgid "Select All"
+#~ msgstr "Выбрать Все:"

@@ -1,0 +1,53 @@
+# === WordPress base ===
+/wp-admin/
+/wp-includes/
+/wp-content/upgrade/
+/wp-content/cache/
+/wp-content/ai1wm-backups/
+/wp-content/debug.log
+/wp-content/object-cache.php
+
+# === Media & generated ===
+/wp-content/uploads/
+/wp-content/languages/
+
+# === Vendor / build artifacts ===
+node_modules/
+vendor/
+dist/
+build/
+*.map
+
+# === OS & editor ===
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# === Env / secrets ===
+.env
+.env.*
+*.local.php
+wp-config.php
+
+# === Composer / lockfiles (optional) ===
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# === Keep only what we customize ===
+# Allow custom themes, child themes, mu-plugins and project plugins
+!wp-content/themes/
+!wp-content/themes/**
+
+!wp-content/mu-plugins/
+!wp-content/mu-plugins/**
+
+!wp-content/plugins/
+!wp-content/plugins/**
+
+# But still ignore vendor inside plugins/themes unless explicitly committed
+wp-content/**/vendor/
+wp-content/**/node_modules/

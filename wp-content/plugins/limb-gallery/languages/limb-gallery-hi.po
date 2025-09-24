@@ -1,0 +1,1418 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Limb Gallery\n"
+"POT-Creation-Date: 2018-05-20 02:23+0400\n"
+"PO-Revision-Date: 2018-05-20 03:00+0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.4\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e;esc_html__\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: admin/controllers/Controller.php:32
+msgid "There is no view type like "
+msgstr "इसमें कोई दृश्य प्रकार नहीं है "
+
+#: admin/controllers/LimbGalleryMosaicWidgetController.php:96
+#: admin/controllers/LimbGalleryThumbnailWidgetController.php:97
+msgid "Title:"
+msgstr "शीर्षक:"
+
+#: admin/controllers/LimbGalleryMosaicWidgetController.php:102
+#: admin/controllers/LimbGalleryThumbnailWidgetController.php:103
+msgid "Select gallery:"
+msgstr "गैलरी का चयन करें:"
+
+#: admin/controllers/LimbGalleryMosaicWidgetController.php:116
+#: admin/controllers/LimbGalleryThumbnailWidgetController.php:117
+msgid "Select theme:"
+msgstr "चुनिंदा विषय:"
+
+#: admin/controllers/LimbGalleryMosaicWidgetController.php:130
+#: admin/controllers/LimbGalleryThumbnailWidgetController.php:131
+msgid "Count"
+msgstr "गिनती"
+
+#: admin/controllers/LimbGalleryMosaicWidgetController.php:136
+#: admin/controllers/LimbGalleryThumbnailWidgetController.php:137
+msgid "Thumbnail width:"
+msgstr "थंबनेल की चौड़ाई:"
+
+#: admin/controllers/LimbGalleryMosaicWidgetController.php:142
+#: admin/controllers/LimbGalleryThumbnailWidgetController.php:149 admin/views/ViewShortcode.php:216
+#: admin/views/ViewShortcode.php:326 admin/views/ViewShortcode.php:462 admin/views/ViewShortcode.php:587
+#: admin/views/ViewShortcode.php:713 admin/views/ViewShortcode.php:824 admin/views/ViewShortcode.php:898
+msgid "Order by:"
+msgstr "द्वारा आदेश:"
+
+#: admin/controllers/LimbGalleryMosaicWidgetController.php:155
+#: admin/controllers/LimbGalleryThumbnailWidgetController.php:162 admin/views/ViewShortcode.php:226
+#: admin/views/ViewShortcode.php:336 admin/views/ViewShortcode.php:472 admin/views/ViewShortcode.php:597
+#: admin/views/ViewShortcode.php:723 admin/views/ViewShortcode.php:834 admin/views/ViewShortcode.php:908
+msgid "Ordering:"
+msgstr "आदेश:"
+
+#: admin/controllers/LimbGalleryThumbnailWidgetController.php:143
+msgid "Thumbnail height:"
+msgstr "थंबनेल ऊंचाई:"
+
+#: admin/models/Model.php:55 gallery-rs.php:199
+msgid "Custom Order"
+msgstr "कस्टम ऑर्डर"
+
+#: admin/models/Model.php:56 admin/models/Model.php:66 gallery-rs.php:286
+msgid "Date"
+msgstr "तारीख"
+
+#: admin/models/Model.php:57 admin/models/Model.php:67
+msgid "Id"
+msgstr "Id"
+
+#: admin/models/Model.php:58 admin/models/Model.php:68 gallery-rs.php:183
+msgid "Title"
+msgstr "शीर्षक"
+
+#: admin/models/Model.php:59 admin/models/Model.php:69 gallery-rs.php:184
+msgid "Description"
+msgstr "विवरण"
+
+#: admin/models/Model.php:60 admin/models/Model.php:70
+msgid "Type"
+msgstr "प्रकार"
+
+#: admin/models/Model.php:76
+msgid "Open lightbox"
+msgstr "ओपन लाइटबॉक्स"
+
+#: admin/models/Model.php:77
+msgid "Open link"
+msgstr "खुली लिंक"
+
+#: admin/models/Model.php:78
+msgid "Do nothing"
+msgstr "कुछ मत करो"
+
+#: admin/models/Model.php:84
+msgid "Same tab"
+msgstr "एक ही टैब"
+
+#: admin/models/Model.php:85
+msgid "New tab"
+msgstr "नया टैब"
+
+#: admin/models/Model.php:86
+msgid "Same frame"
+msgstr "एक ही फ्रेम"
+
+#: admin/models/Model.php:87
+msgid "Parent frame"
+msgstr "मूल फ्रेम"
+
+#: admin/views/ViewGalleries.php:29 gallery-rs.php:287
+msgid "Add gallery"
+msgstr "गैलरी जोड़ें"
+
+#: admin/views/ViewGalleries.php:54
+msgid "Galleries"
+msgstr "गैलरी"
+
+#: admin/views/ViewGalleries.php:60
+msgid "Media"
+msgstr "मीडिया"
+
+#: admin/views/ViewGalleries.php:66
+msgid "Settings"
+msgstr "सेटिंग्स"
+
+#: admin/views/ViewGalleries.php:72
+msgid "Themes"
+msgstr "थीम्स"
+
+#: admin/views/ViewGalleries.php:78
+msgid "Albums"
+msgstr "एल्बम"
+
+#: admin/views/ViewGalleries.php:85
+msgid "Pro features !"
+msgstr "प्रो सुविधाओं!"
+
+#: admin/views/ViewGalleries.php:105
+msgid "Save"
+msgstr "बचा ले"
+
+#: admin/views/ViewGalleries.php:122
+msgid "Yes"
+msgstr "हाँ"
+
+#: admin/views/ViewGalleries.php:123 admin/views/ViewShortcode.php:175 admin/views/ViewShortcode.php:300
+#: admin/views/ViewShortcode.php:454 admin/views/ViewShortcode.php:561 admin/views/ViewShortcode.php:687
+#: admin/views/ViewShortcode.php:816 admin/views/ViewShortcode.php:890 admin/views/ViewShortcode.php:1042
+msgid "No"
+msgstr "नहीं"
+
+#: admin/views/ViewShortcode.php:62
+msgid "Select Gallery"
+msgstr "गैलरी चुनें"
+
+#: admin/views/ViewShortcode.php:81
+msgid "Select Album"
+msgstr "एल्बम का चयन करें"
+
+#: admin/views/ViewShortcode.php:100
+msgid "Select view"
+msgstr "दृश्य चुनें"
+
+#: admin/views/ViewShortcode.php:120
+msgid "Select theme"
+msgstr "चुनिंदा विषय"
+
+#: admin/views/ViewShortcode.php:143
+msgid "Thumbnail view"
+msgstr "Thumbnail राय"
+
+#: admin/views/ViewShortcode.php:151 admin/views/ViewShortcode.php:276 admin/views/ViewShortcode.php:386
+#: admin/views/ViewShortcode.php:537 admin/views/ViewShortcode.php:662 admin/views/ViewShortcode.php:792
+#: admin/views/ViewShortcode.php:866 admin/views/ViewShortcode.php:994 gallery-rs.php:248
+msgid "Width:"
+msgstr "चौड़ाई:"
+
+#: admin/views/ViewShortcode.php:157 admin/views/ViewShortcode.php:282 admin/views/ViewShortcode.php:392
+#: admin/views/ViewShortcode.php:543 admin/views/ViewShortcode.php:668 admin/views/ViewShortcode.php:798
+#: admin/views/ViewShortcode.php:872 admin/views/ViewShortcode.php:1000 gallery-rs.php:249
+msgid "Height:"
+msgstr "ऊंचाई:"
+
+#: admin/views/ViewShortcode.php:165 admin/views/ViewShortcode.php:290 admin/views/ViewShortcode.php:400
+#: admin/views/ViewShortcode.php:549 admin/views/ViewShortcode.php:675
+msgid "Container Width:"
+msgstr "कंटेनर चौड़ाई:"
+
+#: admin/views/ViewShortcode.php:171 admin/views/ViewShortcode.php:296 admin/views/ViewShortcode.php:450
+#: admin/views/ViewShortcode.php:557 admin/views/ViewShortcode.php:683 admin/views/ViewShortcode.php:812
+#: admin/views/ViewShortcode.php:886
+msgid "Show title:"
+msgstr "शीर्षक दिखाओ:"
+
+#: admin/views/ViewShortcode.php:176 admin/views/ViewShortcode.php:301 admin/views/ViewShortcode.php:455
+#: admin/views/ViewShortcode.php:562 admin/views/ViewShortcode.php:688 admin/views/ViewShortcode.php:817
+#: admin/views/ViewShortcode.php:891
+msgid "On hover"
+msgstr "हॉवर पर"
+
+#: admin/views/ViewShortcode.php:177 admin/views/ViewShortcode.php:302 admin/views/ViewShortcode.php:456
+#: admin/views/ViewShortcode.php:563 admin/views/ViewShortcode.php:689 admin/views/ViewShortcode.php:818
+#: admin/views/ViewShortcode.php:892
+msgid "Always"
+msgstr "हमेशा"
+
+#: admin/views/ViewShortcode.php:183
+msgid "Polaroid:"
+msgstr "Polaroid:"
+
+#: admin/views/ViewShortcode.php:186 admin/views/ViewShortcode.php:981 admin/views/ViewShortcode.php:1011
+#: admin/views/ViewShortcode.php:1020 admin/views/ViewShortcode.php:1031
+#: admin/views/ViewShortcode.php:1090 admin/views/ViewShortcode.php:1099
+#: admin/views/ViewShortcode.php:1110 admin/views/ViewShortcode.php:1119
+#: admin/views/ViewShortcode.php:1130 admin/views/ViewShortcode.php:1139
+#: admin/views/ViewShortcode.php:1150 admin/views/ViewShortcode.php:1159
+#: admin/views/ViewShortcode.php:1170 admin/views/ViewShortcode.php:1179
+#: admin/views/ViewShortcode.php:1202 admin/views/ViewShortcode.php:1211 gallery-rs.php:211
+msgid "Yes:"
+msgstr "हाँ:"
+
+#: admin/views/ViewShortcode.php:188 admin/views/ViewShortcode.php:983 admin/views/ViewShortcode.php:1013
+#: admin/views/ViewShortcode.php:1022 admin/views/ViewShortcode.php:1033
+#: admin/views/ViewShortcode.php:1092 admin/views/ViewShortcode.php:1101
+#: admin/views/ViewShortcode.php:1112 admin/views/ViewShortcode.php:1121
+#: admin/views/ViewShortcode.php:1132 admin/views/ViewShortcode.php:1141
+#: admin/views/ViewShortcode.php:1152 admin/views/ViewShortcode.php:1161
+#: admin/views/ViewShortcode.php:1172 admin/views/ViewShortcode.php:1181
+#: admin/views/ViewShortcode.php:1204 admin/views/ViewShortcode.php:1213 gallery-rs.php:206
+msgid "No:"
+msgstr "नहीं:"
+
+#: admin/views/ViewShortcode.php:198 admin/views/ViewShortcode.php:308 admin/views/ViewShortcode.php:436
+#: admin/views/ViewShortcode.php:569 admin/views/ViewShortcode.php:695 admin/views/ViewShortcode.php:929
+msgid "Items Perpage:"
+msgstr "आइटम प्रति पेज:"
+
+#: admin/views/ViewShortcode.php:204 admin/views/ViewShortcode.php:575 admin/views/ViewShortcode.php:701
+#: admin/views/ViewShortcode.php:919
+msgid "Pagination:"
+msgstr "पृष्ठ पर अंक लगाना:"
+
+#: admin/views/ViewShortcode.php:208 admin/views/ViewShortcode.php:579 admin/views/ViewShortcode.php:705
+#: admin/views/ViewShortcode.php:923
+msgid "Numbers"
+msgstr "नंबरों"
+
+#: admin/views/ViewShortcode.php:209 admin/views/ViewShortcode.php:580 admin/views/ViewShortcode.php:706
+#: admin/views/ViewShortcode.php:924 gallery-rs.php:431
+msgid "Load more"
+msgstr "और लोड करें"
+
+#: admin/views/ViewShortcode.php:210 admin/views/ViewShortcode.php:319 admin/views/ViewShortcode.php:581
+#: admin/views/ViewShortcode.php:707 admin/views/ViewShortcode.php:925
+msgid "Scrolling"
+msgstr "स्क्रॉल"
+
+#: admin/views/ViewShortcode.php:230 admin/views/ViewShortcode.php:340 admin/views/ViewShortcode.php:476
+#: admin/views/ViewShortcode.php:601 admin/views/ViewShortcode.php:727 admin/views/ViewShortcode.php:838
+#: admin/views/ViewShortcode.php:912
+msgid "ASC"
+msgstr "ASC"
+
+#: admin/views/ViewShortcode.php:231 admin/views/ViewShortcode.php:341 admin/views/ViewShortcode.php:477
+#: admin/views/ViewShortcode.php:602 admin/views/ViewShortcode.php:728 admin/views/ViewShortcode.php:839
+#: admin/views/ViewShortcode.php:913
+msgid "DESC"
+msgstr "DESC"
+
+#: admin/views/ViewShortcode.php:237 admin/views/ViewShortcode.php:347 admin/views/ViewShortcode.php:483
+#: admin/views/ViewShortcode.php:608 admin/views/ViewShortcode.php:734 admin/views/ViewShortcode.php:937
+msgid "Click action:"
+msgstr "कार्रवाई पर क्लिक करें:"
+
+#: admin/views/ViewShortcode.php:247 admin/views/ViewShortcode.php:357 admin/views/ViewShortcode.php:493
+#: admin/views/ViewShortcode.php:618 admin/views/ViewShortcode.php:744 admin/views/ViewShortcode.php:947
+msgid "Link target:"
+msgstr "लिंक लक्ष्य:"
+
+#: admin/views/ViewShortcode.php:266
+msgid "Carousel view"
+msgstr "Carousel राय"
+
+#: admin/views/ViewShortcode.php:314
+msgid "Navigation:"
+msgstr "पथ प्रदर्शन:"
+
+#: admin/views/ViewShortcode.php:318 gallery-rs.php:246
+msgid "Buttons"
+msgstr "बटन"
+
+#: admin/views/ViewShortcode.php:320
+msgid "Buttons and scrolling"
+msgstr "बटन और स्क्रॉलिंग"
+
+#: admin/views/ViewShortcode.php:376
+msgid "3D Carousel view"
+msgstr "3D Carousel राय"
+
+#: admin/views/ViewShortcode.php:408
+msgid "Left Side Depth:"
+msgstr "वाम साइड गहराई:"
+
+#: admin/views/ViewShortcode.php:414
+msgid "Right Side Depth:"
+msgstr "सही तरफ गहराई:"
+
+#: admin/views/ViewShortcode.php:422
+msgid "Image Maximum Scale:"
+msgstr "छवि अधिकतम स्केल:"
+
+#: admin/views/ViewShortcode.php:428
+msgid "Image Minimum Scale:"
+msgstr "छवि न्यूनतम स्केल:"
+
+#: admin/views/ViewShortcode.php:442
+msgid "View Images Count:"
+msgstr "छवियों को देखने गणना:"
+
+#: admin/views/ViewShortcode.php:512
+msgid "Masonry view"
+msgstr "Masonry राय"
+
+#: admin/views/ViewShortcode.php:522 admin/views/ViewShortcode.php:647 admin/views/ViewShortcode.php:781
+#: admin/views/ViewShortcode.php:855
+msgid "Type:"
+msgstr "प्रकार:"
+
+#: admin/views/ViewShortcode.php:525 admin/views/ViewShortcode.php:650 admin/views/ViewShortcode.php:784
+#: admin/views/ViewShortcode.php:858
+msgid "Vertical:"
+msgstr "कार्यक्षेत्र:"
+
+#: admin/views/ViewShortcode.php:527 admin/views/ViewShortcode.php:652 admin/views/ViewShortcode.php:786
+#: admin/views/ViewShortcode.php:860
+msgid "Horizontal:"
+msgstr "क्षैतिज:"
+
+#: admin/views/ViewShortcode.php:637
+msgid "Mosaic view"
+msgstr "Mosaic राय"
+
+#: admin/views/ViewShortcode.php:763
+msgid "Album view"
+msgstr "एल्बम दृश्य"
+
+#: admin/views/ViewShortcode.php:771
+msgid "Main view type:"
+msgstr "मुख्य दृश्य प्रकार:"
+
+#: admin/views/ViewShortcode.php:775 admin/views/ViewShortcode.php:849
+msgid "Thumbnail"
+msgstr "Thumbnail"
+
+#: admin/views/ViewShortcode.php:776 admin/views/ViewShortcode.php:850
+msgid "Masonry"
+msgstr "Masonry"
+
+#: admin/views/ViewShortcode.php:777 admin/views/ViewShortcode.php:851
+msgid "Mosaic"
+msgstr "Mosaic"
+
+#: admin/views/ViewShortcode.php:806
+msgid "Main container Width:"
+msgstr "मुख्य कंटेनर चौड़ाई:"
+
+#: admin/views/ViewShortcode.php:845
+msgid "Gallery view type:"
+msgstr "गैलरी दृश्य प्रकार:"
+
+#: admin/views/ViewShortcode.php:880
+msgid "Gallery container Width:"
+msgstr "गैलरी कंटेनर चौड़ाई:"
+
+#: admin/views/ViewShortcode.php:968
+msgid "Lightbox"
+msgstr "लाइटबॉक्स"
+
+#: admin/views/ViewShortcode.php:977 gallery-rs.php:263
+msgid "Full width:"
+msgstr "पूर्ण चौड़ाई:"
+
+#: admin/views/ViewShortcode.php:1008
+msgid "Filmstrip:"
+msgstr "फिल्मस्ट्रिप:"
+
+#: admin/views/ViewShortcode.php:1017
+msgid "Comments:"
+msgstr "टिप्पणियाँ:"
+
+#: admin/views/ViewShortcode.php:1028
+msgid "Control buttons:"
+msgstr "नियंत्रण बटन:"
+
+#: admin/views/ViewShortcode.php:1037 gallery-rs.php:231
+msgid "Effect:"
+msgstr "प्रभाव:"
+
+#: admin/views/ViewShortcode.php:1041
+msgid "No effect"
+msgstr "कोई प्रभाव नहीं"
+
+#: admin/views/ViewShortcode.php:1044
+msgid "No cutting"
+msgstr "कोई काटने"
+
+#: admin/views/ViewShortcode.php:1045
+msgid "Fade"
+msgstr "फ़ेड करें"
+
+#: admin/views/ViewShortcode.php:1046
+msgid "Slide In left"
+msgstr "बाईं ओर स्थित स्लाइड"
+
+#: admin/views/ViewShortcode.php:1047
+msgid "Slide In Down"
+msgstr "स्लाइड डाउन में"
+
+#: admin/views/ViewShortcode.php:1048
+msgid "Flip & Zoom"
+msgstr "फ्लिप और ज़ूम करें"
+
+#: admin/views/ViewShortcode.php:1049
+msgid "Zoom In"
+msgstr "ज़ूम इन"
+
+#: admin/views/ViewShortcode.php:1050
+msgid "Zoom In Left"
+msgstr "ज़ूम इन बाएं"
+
+#: admin/views/ViewShortcode.php:1051
+msgid "Zoom In Down"
+msgstr "ज़ूम इन डाउन"
+
+#: admin/views/ViewShortcode.php:1053
+msgid "Cutting vertical"
+msgstr "ऊर्ध्वाधर काटने"
+
+#: admin/views/ViewShortcode.php:1054 admin/views/ViewShortcode.php:1060
+#: admin/views/ViewShortcode.php:1068 admin/views/ViewShortcode.php:1075
+msgid "Zoom"
+msgstr "ज़ूम"
+
+#: admin/views/ViewShortcode.php:1055 admin/views/ViewShortcode.php:1061
+msgid "Flip"
+msgstr "फ्लिप"
+
+#: admin/views/ViewShortcode.php:1056 admin/views/ViewShortcode.php:1062
+#: admin/views/ViewShortcode.php:1069
+msgid "Rotate"
+msgstr "घुमाएँ"
+
+#: admin/views/ViewShortcode.php:1057
+msgid "Fade out up"
+msgstr "फ़ेड आउट करें शीर्ष पर"
+
+#: admin/views/ViewShortcode.php:1059
+msgid "Cutting horizontal"
+msgstr "क्षैतिज काटना"
+
+#: admin/views/ViewShortcode.php:1063
+msgid "Fade out right"
+msgstr "सही बाहर फीका"
+
+#: admin/views/ViewShortcode.php:1065
+msgid "Mix cutting out"
+msgstr "बाहर काटने मिक्स"
+
+#: admin/views/ViewShortcode.php:1066 admin/views/ViewShortcode.php:1077
+msgid "Fade (Fun)"
+msgstr "फीका (मज़ा)"
+
+#: admin/views/ViewShortcode.php:1067
+msgid "Roll"
+msgstr "रोल"
+
+#: admin/views/ViewShortcode.php:1070
+msgid "Zoom out Left"
+msgstr "ज़ूम आउट बाएं"
+
+#: admin/views/ViewShortcode.php:1071
+msgid "Zoom (Fun)"
+msgstr "ज़ूम (मज़ा)"
+
+#: admin/views/ViewShortcode.php:1072
+msgid "Zoom Down (Fun)"
+msgstr "ज़ूम डाउन (मज़ा)"
+
+#: admin/views/ViewShortcode.php:1074
+msgid "Mix cutting in"
+msgstr "मिक्स में काटने"
+
+#: admin/views/ViewShortcode.php:1076
+msgid "Zoom Up"
+msgstr "ज़ूम अप"
+
+#: admin/views/ViewShortcode.php:1079 admin/views/ViewShortcode.php:1080
+msgid "Random"
+msgstr "बेतरतीब"
+
+#: admin/views/ViewShortcode.php:1087
+msgid "Facebook:"
+msgstr "Facebook:"
+
+#: admin/views/ViewShortcode.php:1096
+msgid "Google+:"
+msgstr "Google+:"
+
+#: admin/views/ViewShortcode.php:1107
+msgid "Twitter:"
+msgstr "Twitter:"
+
+#: admin/views/ViewShortcode.php:1116
+msgid "Pinterest:"
+msgstr "Pinterest:"
+
+#: admin/views/ViewShortcode.php:1127
+msgid "Tumblr:"
+msgstr "Tumblr:"
+
+#: admin/views/ViewShortcode.php:1136
+msgid "LinkedIn:"
+msgstr "LinkedIn:"
+
+#: admin/views/ViewShortcode.php:1147
+msgid "Reddit:"
+msgstr "Reddit:"
+
+#: admin/views/ViewShortcode.php:1156
+msgid "Fullscreen:"
+msgstr "पूर्ण स्क्रीन:"
+
+#: admin/views/ViewShortcode.php:1167
+msgid "Autoplay:"
+msgstr "ऑटोप्ले:"
+
+#: admin/views/ViewShortcode.php:1176
+msgid "Image Info:"
+msgstr "छवि जानकारी:"
+
+#: admin/views/ViewShortcode.php:1187
+msgid "Autoplay interval:"
+msgstr "ऑटोप्ले अंतराल:"
+
+#: admin/views/ViewShortcode.php:1190
+msgid "sec"
+msgstr "सेक"
+
+#: admin/views/ViewShortcode.php:1199
+msgid "Image counting"
+msgstr "छवि गणना"
+
+#: admin/views/ViewShortcode.php:1208
+msgid "Swipe:"
+msgstr "कड़ी चोट:"
+
+#: admin/views/ViewShortcode.php:1224
+msgid "Update"
+msgstr "अद्यतन करें"
+
+#: admin/views/ViewShortcode.php:1224
+msgid "Insert"
+msgstr "सम्मिलित करें"
+
+#: ajax/GRSAdminActions.php:118
+msgid "Something went wrong"
+msgstr "कुछ गलत हो गया"
+
+#: ajax/GRSAdminActions.php:393
+msgid "There is no items selected or"
+msgstr "कोई आइटम नहीं चुना जाता है या"
+
+#: ajax/GRSAdminActions.php:398
+msgid "Problem with Order saving"
+msgstr "आदेश बचत के साथ समस्या"
+
+#: ajax/GRSAdminActions.php:435
+msgid "Problem with gallery save"
+msgstr "गैलरी को बचाने के साथ समस्या"
+
+#: ajax/GRSAdminActions.php:488
+msgid "Problem with image or gallery update"
+msgstr "छवि या गैलरी अपडेट के साथ समस्या"
+
+#: ajax/GRSAdminActions.php:557 ajax/GRSAdminActions.php:618 ajax/GRSAdminActions.php:655
+#: ajax/GRSAdminActions.php:792 ajax/GRSAdminActions.php:860 ajax/GRSAdminActions.php:883
+#: ajax/GRSAdminActions.php:991 ajax/GRSAdminActions.php:995 ajax/GRSAdminActions.php:1071
+#: ajax/GRSAdminActions.php:1110 ajax/GRSAdminActions.php:1167 ajax/GRSComment.php:79
+#: embed/GRSGalleryEmbed.php:233
+msgid "Problem with save"
+msgstr "बचाने के साथ समस्या"
+
+#: ajax/GRSAdminActions.php:579 ajax/GRSAdminActions.php:634
+msgid "Function not found: getimagesize. Please connect to plugin support."
+msgstr "समारोह नहीं मिला: getimagesize कृपया प्लगिन समर्थन से जुड़ें"
+
+#: ajax/GRSAdminActions.php:677 ajax/GRSAdminActions.php:691 ajax/GRSAdminActions.php:705
+#: ajax/GRSAdminActions.php:926
+msgid "Problem with delete"
+msgstr "हटाने में समस्या"
+
+#: ajax/GRSAdminActions.php:708
+msgid "Invalid comment id"
+msgstr "अमान्य टिप्पणी आईडी"
+
+#: ajax/GRSAdminActions.php:771
+msgid "You are trying to duplicate content or there is some other problem."
+msgstr "आप सामग्री डुप्लिकेट करने की कोशिश कर रहे हैं या कोई अन्य समस्या है"
+
+#: ajax/GRSAdminActions.php:790 ajax/GRSAdminActions.php:881 ajax/GRSAdminActions.php:1165
+msgid "Successfully delete"
+msgstr "सफलतापूर्वक हटाया गया"
+
+#: ajax/GRSAdminActions.php:796 ajax/GRSAdminActions.php:999 ajax/GRSAdminActions.php:1171
+msgid "Oh there is a problem"
+msgstr "ओह वहाँ एक समस्या है"
+
+#: ajax/GRSAdminActions.php:887 gallery-rs.php:290
+msgid "Error something went wrong"
+msgstr "त्रुटि कुछ गलत हो गया"
+
+#: ajax/GRSAdminActions.php:960
+msgid "Problem with uninstall"
+msgstr "स्थापना रद्द करें के साथ समस्या"
+
+#: ajax/GRSAdminActions.php:989 smart/GRSGallerySmart.php:30 smart/GRSGallerySmart.php:79
+msgid "Successfully update"
+msgstr "सफलतापूर्वक अद्यतन"
+
+#: ajax/GRSAdminActions.php:1068 ajax/GRSAdminActions.php:1108
+msgid "Unable to create css file."
+msgstr "सीएसएस फ़ाइल बनाने में असमर्थ"
+
+#: ajax/GRSCaptcha.php:104
+msgid "Required GD library is missing"
+msgstr "आवश्यक जीडी लाइब्रेरी गायब है"
+
+#: ajax/GRSComment.php:25
+msgid "Invalid name"
+msgstr "गलत नाम"
+
+#: ajax/GRSComment.php:29
+msgid "Invalid email address"
+msgstr "अमान्य ईमेल पता"
+
+#: ajax/GRSComment.php:33
+msgid "Invalid comment"
+msgstr "अमान्य टिप्पणी"
+
+#: ajax/GRSComment.php:37
+msgid "Invalid image"
+msgstr "अमान्य छवि"
+
+#: ajax/GRSComment.php:41
+msgid "Invalid gallery"
+msgstr "अमान्य गैलरी"
+
+#: ajax/GRSComment.php:85
+msgid "Incorrect captcha code"
+msgstr "गलत कैप्चा कोड"
+
+#: ajax/GRSComment.php:107
+msgid "Invalid image id"
+msgstr "अमान्य छवि आईडी"
+
+#: ajax/GRSGalleryAjax.php:62
+msgid "It isn't grs action"
+msgstr "यह GRS की कार्रवाई नहीं है"
+
+#: ajax/GRSGalleryAjax.php:71
+msgid "Unknown action."
+msgstr "अज्ञात कार्रवाई"
+
+#: ajax/GRSGalleryAjax.php:76
+msgid "Your nonce is not verified"
+msgstr "आपका अस्वीकृत सत्यापित नहीं है"
+
+#: ajax/GRSGalleryAjax.php:88
+msgid "try to reactivate plugin."
+msgstr "प्लगइन को पुन: सक्रिय करने के लिए प्रयास करें।"
+
+#: embed/GRSGalleryEmbed.php:77
+msgid "Unknown provider"
+msgstr "अज्ञात प्रदाता"
+
+#: embed/GRSGalleryEmbed.php:104
+msgid "Invalid scheme "
+msgstr "अमान्य योजना "
+
+#: embed/GRSGalleryEmbed.php:106
+msgid "Invalid host "
+msgstr "अमान्य होस्ट "
+
+#: embed/GRSGalleryEmbed.php:106
+msgid " for "
+msgstr " लिए "
+
+#: embed/GRSGalleryEmbed.php:106
+msgid " provider"
+msgstr " प्रदाता"
+
+#: embed/GRSGalleryEmbed.php:130
+msgid "Only image urls allowed for flickr provider"
+msgstr "फ़्लिकर प्रदाता के लिए केवल छवि यूआरएल की अनुमति है"
+
+#: gallery-rs.php:182
+msgid "Add Album"
+msgstr "एल्बम जोड़ें"
+
+#: gallery-rs.php:185
+msgid "Update Preview Image"
+msgstr "पूर्वावलोकन छवि अपडेट करें"
+
+#: gallery-rs.php:186
+msgid "Url Examples"
+msgstr "यूआरएल उदाहरण"
+
+#: gallery-rs.php:187
+msgid "Add"
+msgstr "ऐड"
+
+#: gallery-rs.php:188 gallery-rs.php:443
+msgid "Close"
+msgstr "पास"
+
+#: gallery-rs.php:189
+msgid "Add youtube embed"
+msgstr "youtube एम्बेड ऐड"
+
+#: gallery-rs.php:190
+msgid "Add instagram photo/video"
+msgstr "instagram फोटो/वीडियो जोड़ें"
+
+#: gallery-rs.php:191
+msgid "Add vimeo embed"
+msgstr "vimeo एम्बेड ऐड"
+
+#: gallery-rs.php:192
+msgid "Add flickr photo"
+msgstr "flickr तस्वीर ऐड"
+
+#: gallery-rs.php:193
+msgid "Add images from Limb library"
+msgstr "LIMB पुस्तकालय से चित्र जोड़ें"
+
+#: gallery-rs.php:194
+msgid "Add images from WP library"
+msgstr "WP पुस्तकालय से छवियां जोड़ें"
+
+#: gallery-rs.php:195
+msgid "Delete"
+msgstr "हटाना"
+
+#: gallery-rs.php:196
+msgid "Select all"
+msgstr "सभी का चयन करे"
+
+#: gallery-rs.php:197
+msgid "Order By:"
+msgstr "द्वारा आदेश:"
+
+#: gallery-rs.php:198
+msgid "ID"
+msgstr "ID"
+
+#: gallery-rs.php:200
+msgid "Items per page"
+msgstr "आइटम प्रति पेज"
+
+#: gallery-rs.php:201
+msgid "Edit"
+msgstr "संपादित करें"
+
+#: gallery-rs.php:202
+msgid "Link"
+msgstr "लिंक"
+
+#: gallery-rs.php:203
+msgid "Remove"
+msgstr "हटाना"
+
+#: gallery-rs.php:204
+msgid "Timezone:"
+msgstr "समय क्षेत्र:"
+
+#: gallery-rs.php:205
+msgid "Collapse navigation clicks while animation in progress:"
+msgstr "प्रगति में एनीमेशन चालू होने पर मार्गदर्शक क्लिक संकुचित करें:"
+
+#: gallery-rs.php:207
+msgid "Timeformat:"
+msgstr "समय प्रारूप:"
+
+#: gallery-rs.php:208
+msgid "Clicks count:"
+msgstr "क्लिकों की गणना:"
+
+#: gallery-rs.php:209
+msgid "Show Comments immediately after Lightbox opens:"
+msgstr "लाइटबॉक्स खोलने के तुरंत बाद टिप्पणियां दिखाएं:"
+
+#: gallery-rs.php:210
+msgid "if Comments is enabled in shortcode"
+msgstr "यदि टिप्पणियां शोर्ट में सक्षम हैं"
+
+#: gallery-rs.php:212
+msgid "Show Info immediately after Lightbox opens:"
+msgstr "लाइटबॉक्स खोलने के तुरंत बाद जानकारी दिखाएं:"
+
+#: gallery-rs.php:213
+msgid "if Info is enabled in shortcode"
+msgstr "यदि जानकारी शोर्ट में सक्षम है"
+
+#: gallery-rs.php:214
+msgid "Lightbox filmstrip image move count:"
+msgstr "लाइटबॉक्स फिल्मस्ट्रिप छवि चाल की संख्या:"
+
+#: gallery-rs.php:215
+msgid "Hide navigation button while reaching to the end(start):"
+msgstr "अंत तक पहुंचने के दौरान नेविगेशन बटन छुपाएं (प्रारंभ करें):"
+
+#: gallery-rs.php:216
+msgid "Carousel image move count:"
+msgstr "हिंडोला छवि चाल की संख्या:"
+
+#: gallery-rs.php:217
+msgid "Close lightbox by click on side:"
+msgstr "क्लिक करके लाइटबॉक्स बंद करें:"
+
+#: gallery-rs.php:218
+msgid "Uninstall plugin:"
+msgstr "प्लगइन अनइंस्टॉल करें:"
+
+#: gallery-rs.php:219
+msgid "Uninstall"
+msgstr "स्थापना रद्द करें"
+
+#: gallery-rs.php:220
+msgid "Set default"
+msgstr "डिफॉल्ट सेट करें"
+
+#: gallery-rs.php:221
+msgid "Add theme"
+msgstr "थीम जोड़ें"
+
+#: gallery-rs.php:222
+msgid "Image"
+msgstr "छवि"
+
+#: gallery-rs.php:223
+msgid "Margin:"
+msgstr "मार्जिन:"
+
+#: gallery-rs.php:224
+msgid "Border:"
+msgstr "बॉर्डर:"
+
+#: gallery-rs.php:225
+msgid "Padding:"
+msgstr "गद्दी:"
+
+#: gallery-rs.php:226
+msgid "Border-radius:"
+msgstr "बॉर्डर-त्रिज्या:"
+
+#: gallery-rs.php:227
+msgid "Background color:"
+msgstr "पृष्ठभूमि का रंग:"
+
+#: gallery-rs.php:228
+msgid "Shadow:"
+msgstr "साया:"
+
+#: gallery-rs.php:229
+msgid "Hover effect:"
+msgstr "हॉवर प्रभाव:"
+
+#: gallery-rs.php:230
+msgid "Position:"
+msgstr "स्थान:"
+
+#: gallery-rs.php:232
+msgid "Font size:"
+msgstr "फ़ॉन्ट आकार:"
+
+#: gallery-rs.php:233
+msgid "Color:"
+msgstr "रंग:"
+
+#: gallery-rs.php:234
+msgid "Mask color:"
+msgstr "मुखौटा रंग:"
+
+#: gallery-rs.php:235
+msgid "Font Family:"
+msgstr "फ़ॉन्ट परिवार:"
+
+#: gallery-rs.php:236
+msgid "Font weight:"
+msgstr "फ़ॉन्ट वजन:"
+
+#: gallery-rs.php:237
+msgid "Font style:"
+msgstr "फ़ॉन्ट शैली:"
+
+#: gallery-rs.php:238
+msgid "Container"
+msgstr "कंटेनर"
+
+#: gallery-rs.php:239
+msgid "Upload images"
+msgstr "छवियों को अपलोड करें"
+
+#: gallery-rs.php:240
+msgid "Add images to gallery"
+msgstr "गैलरी में छवियां जोड़ें"
+
+#: gallery-rs.php:241
+msgid "Add folder"
+msgstr "फ़ोल्डर जोड़ें"
+
+#: gallery-rs.php:242 gallery-rs.php:425
+msgid "Back"
+msgstr "वापस"
+
+#: gallery-rs.php:243
+msgid "Rename"
+msgstr "का नाम बदलें"
+
+#: gallery-rs.php:244
+msgid "Navigation"
+msgstr "पथ प्रदर्शन"
+
+#: gallery-rs.php:245
+msgid "Buttons:"
+msgstr "बटन:"
+
+#: gallery-rs.php:247
+msgid "Size:"
+msgstr "आकार:"
+
+#: gallery-rs.php:250
+msgid "Hover color:"
+msgstr "होवर करें रंग:"
+
+#: gallery-rs.php:251
+msgid "Hover Background color:"
+msgstr "होवर करें पृष्ठभूमि का रंग:"
+
+#: gallery-rs.php:252
+msgid "Offset(Right,Left):"
+msgstr "ऑफसेट(ठीक है, बाएं):"
+
+#: gallery-rs.php:253
+msgid "Margin Top:"
+msgstr "मार्जिन शीर्ष:"
+
+#: gallery-rs.php:254
+msgid "Alignment:"
+msgstr "संरेखण:"
+
+#: gallery-rs.php:255
+msgid "Active background color:"
+msgstr "सक्रिय पृष्ठभूमि का रंग:"
+
+#: gallery-rs.php:256
+msgid "Back button"
+msgstr "पिछला बटन"
+
+#: gallery-rs.php:257
+msgid "Main"
+msgstr "मुख्य"
+
+#: gallery-rs.php:258
+msgid "Box background color"
+msgstr "बॉक्स पृष्ठभूमि रंग"
+
+#: gallery-rs.php:259
+msgid "Close button"
+msgstr "बंद करें बटन"
+
+#: gallery-rs.php:260
+msgid "Box size:"
+msgstr "बॉक्स आकार:"
+
+#: gallery-rs.php:261
+msgid "Box shadow:"
+msgstr "डब्बे की छाया:"
+
+#: gallery-rs.php:262
+msgid "Title and Description"
+msgstr "शीर्षक और विवरण"
+
+#: gallery-rs.php:264
+msgid "Background"
+msgstr "पृष्ठभूमि"
+
+#: gallery-rs.php:265
+msgid "Max-width:"
+msgstr "अधिकतम चौड़ाई:"
+
+#: gallery-rs.php:266
+msgid "Show:"
+msgstr "दिखाना:"
+
+#: gallery-rs.php:267
+msgid "Hover Shadow:"
+msgstr "होवर छाया:"
+
+#: gallery-rs.php:268
+msgid "Filmstrip"
+msgstr "फिल्मस्ट्रिप"
+
+#: gallery-rs.php:269
+msgid "Margin(Top,Bottom):"
+msgstr "मार्जिन(ऊपर, नीचे):"
+
+#: gallery-rs.php:270
+msgid "Thumb"
+msgstr "अंगूठा"
+
+#: gallery-rs.php:271
+msgid "Selected effect:"
+msgstr "चयनित प्रभाव:"
+
+#: gallery-rs.php:272
+msgid "Selected thumb Border:"
+msgstr "चयनित अंगूठे सीमा:"
+
+#: gallery-rs.php:273
+msgid "Control buttons"
+msgstr "नियंत्रण बटन"
+
+#: gallery-rs.php:274
+msgid "Image count"
+msgstr "छवि गिनती"
+
+#: gallery-rs.php:275
+msgid "Comments container"
+msgstr "टिप्पणियाँ कंटेनर"
+
+#: gallery-rs.php:276
+msgid "Margin(vertical):"
+msgstr "मार्जिन(ऊर्ध्वाधर):"
+
+#: gallery-rs.php:277
+msgid "Margin(horizontal):"
+msgstr "मार्जिन (क्षैतिज):"
+
+#: gallery-rs.php:278
+msgid "Labels"
+msgstr "लेबल"
+
+#: gallery-rs.php:279
+msgid "Inputs"
+msgstr "इनपुट"
+
+#: gallery-rs.php:280
+msgid "Active border color:"
+msgstr "सक्रिय बॉर्डर रंग:"
+
+#: gallery-rs.php:281
+msgid "Active shadow:"
+msgstr "सक्रिय छाया:"
+
+#: gallery-rs.php:282
+msgid "Position(Top,Left):"
+msgstr "स्थिति(ऊपर, बाएं):"
+
+#: gallery-rs.php:283
+msgid "Captcha button"
+msgstr "कैप्चा बटन"
+
+#: gallery-rs.php:284
+msgid "Author"
+msgstr "लेखक"
+
+#: gallery-rs.php:285
+msgid "Comment"
+msgstr "टिप्पणी"
+
+#: gallery-rs.php:288
+msgid "Order successfully saved"
+msgstr "ऑर्डर सफलतापूर्वक सहेजा गया"
+
+#: gallery-rs.php:289
+msgid "Items successfully saved"
+msgstr "आइटम सफलतापूर्वक सहेजे गए"
+
+#: gallery-rs.php:291
+msgid "Images successfully added"
+msgstr "छवियाँ सफलतापूर्वक जोड़ दिया गया"
+
+#: gallery-rs.php:292
+msgid "Add gallery preview image"
+msgstr "गैलरी पूर्वावलोकन छवि जोड़ें"
+
+#: gallery-rs.php:293
+msgid "Are you sure , you want to delete "
+msgstr "क्या आप पक्का इसे हटाना चाहते हैं "
+
+#: gallery-rs.php:294
+msgid " item ?"
+msgstr " आइटम ?"
+
+#: gallery-rs.php:295
+msgid "Are you sure , you want to delete selected items ?"
+msgstr "क्या आप निश्चित हैं, आप चयनित आइटम हटाना चाहते हैं?"
+
+#: gallery-rs.php:296
+msgid "Items successfully deleted"
+msgstr "आइटम सफलतापूर्वक नष्ट कर दिया"
+
+#: gallery-rs.php:297
+msgid "Item successfully saved"
+msgstr "आइटम सफलतापूर्वक सहेजा गया"
+
+#: gallery-rs.php:298
+msgid "Fill the url input"
+msgstr "यूआरएल इनपुट भरें"
+
+#: gallery-rs.php:299
+msgid "Unable to get themes data"
+msgstr "थीम डेटा प्राप्त करने में असमर्थ"
+
+#: gallery-rs.php:300
+msgid "Theme successfully saved"
+msgstr "थीम सफलतापूर्वक सहेजा गया"
+
+#: gallery-rs.php:301
+msgid "You can't delete default theme"
+msgstr "आप डिफ़ॉल्ट थीम को हटा नहीं सकते"
+
+#: gallery-rs.php:302
+msgid " theme ?"
+msgstr " थीम ?"
+
+#: gallery-rs.php:303
+msgid "Theme successfully deleted"
+msgstr "थीम को सफलतापूर्वक हटा दिया गया"
+
+#: gallery-rs.php:304
+msgid "Unable to get albums data"
+msgstr "एल्बम डेटा प्राप्त करने में असमर्थ"
+
+#: gallery-rs.php:305
+msgid "Album successfully saved"
+msgstr "एल्बम सफलतापूर्वक सहेजा गया"
+
+#: gallery-rs.php:306
+msgid " album ?"
+msgstr " एल्बम ?"
+
+#: gallery-rs.php:307
+msgid "Are you sure , you want to delete selected albums ?"
+msgstr "क्या आप वाकई चयनित एल्बम को हटाना चाहते हैं?"
+
+#: gallery-rs.php:308
+msgid "Albums successfully deleted"
+msgstr "एल्बम सफलतापूर्वक नष्ट कर दिया"
+
+#: gallery-rs.php:309
+msgid "successfully deleted"
+msgstr "सफलतापूर्वक हटाया गया"
+
+#: gallery-rs.php:310
+msgid "Add album preview image"
+msgstr "एल्बम पूर्वावलोकन छवि जोड़ें"
+
+#: gallery-rs.php:311
+msgid "Select album"
+msgstr "एल्बम का चयन करें"
+
+#: gallery-rs.php:312
+msgid "Unable to get settings data"
+msgstr "सेटिंग डेटा प्राप्त करने में असमर्थ"
+
+#: gallery-rs.php:313
+msgid "Settings successfully saved"
+msgstr "सेटिंग सफलतापूर्वक सहेजी गई"
+
+#: gallery-rs.php:314
+msgid "The following Database Tables will be deleted:"
+msgstr "निम्न डेटाबेस सारणी को हटा दिया जाएगा:"
+
+#: gallery-rs.php:315
+msgid "Are you sure , you want to uninstall this plugin ?"
+msgstr "क्या आप वाकई इस प्लगइन की स्थापना रद्द करना चाहते हैं?"
+
+#: gallery-rs.php:316 smart/GRSGallerySmart.php:45
+msgid "Plugin uninstalled"
+msgstr "प्लगइन अनइंस्टॉल किया गया"
+
+#: gallery-rs.php:317
+msgid "Unable to get uploader data"
+msgstr "अपलोडर डेटा प्राप्त करने में असमर्थ"
+
+#: gallery-rs.php:318
+msgid "Wait while image is being uploaded"
+msgstr "छवि अपलोड होने पर रुको"
+
+#: gallery-rs.php:319
+msgid "Folder successfully created"
+msgstr "फ़ोल्डर सफलतापूर्वक बनाया गया"
+
+#: gallery-rs.php:320
+msgid " folder ?"
+msgstr " फ़ोल्डर ?"
+
+#: gallery-rs.php:321
+msgid " image ?"
+msgstr " छवि ?"
+
+#: gallery-rs.php:322
+msgid "Select at list one item"
+msgstr "सूची में एक आइटम पर का चयन करें"
+
+#: gallery-rs.php:323
+msgid "Item successfully deleted"
+msgstr "आइटम को सफलतापूर्वक हटा दिया गया"
+
+#: gallery-rs.php:324
+msgid "A file name can't contain this (\") character"
+msgstr "फ़ाइल नाम में यह (\") वर्ण नहीं हो सकता"
+
+#: gallery-rs.php:325
+msgid "A file name can't be empty"
+msgstr "कोई फ़ाइल नाम रिक्त नहीं हो सकता"
+
+#: gallery-rs.php:326
+msgid "Item successfully renamed"
+msgstr "मद का नाम सफलतापूर्वक बदला"
+
+#: gallery-rs.php:327
+msgid "Select at list one image"
+msgstr "सूची में एक छवि चुनें"
+
+#: gallery-rs.php:328
+msgid "Select gallery or press \"Add images\" button from gallery cont"
+msgstr "गैलरी चुनें या गैलरी सामग्री से \"चित्र जोड़ें\" बटन दबाएं"
+
+#: gallery-rs.php:329
+msgid "Adding folder not allowed yet"
+msgstr "फ़ोल्डर जोड़ना अभी तक अनुमति नहीं है"
+
+#: gallery-rs.php:330
+msgid "Preview image updated"
+msgstr "पूर्वावलोकन छवि अपडेट की गई"
+
+#: gallery-rs.php:331
+msgid "Highlighted items upload failed, check your server post max size"
+msgstr "हाइलाइट किए गए आइटम अपलोड विफल हुए, अपने सर्वर पोस्ट अधिकतम आकार की जांच करें"
+
+#: gallery-rs.php:332
+msgid "Please be patient, try after current request ends"
+msgstr "कृपया धैर्य रखें, वर्तमान अनुरोध समाप्त होने के बाद प्रयास करें"
+
+#: gallery-rs.php:333
+msgid "Unable to get galleries data"
+msgstr "गैलरी डेटा प्राप्त करने में असमर्थ"
+
+#: gallery-rs.php:334
+msgid " gallery ?"
+msgstr " गेलरी ?"
+
+#: gallery-rs.php:335
+msgid "Please wait until loading ends."
+msgstr "लोडिंग समाप्त होने तक कृपया प्रतीक्षा करें"
+
+#: gallery-rs.php:336
+msgid "There is no gallery , create it from the button left."
+msgstr "कोई गैलरी नहीं है, बटन को बाएं से बनाएं"
+
+#: gallery-rs.php:337
+msgid "You need to install pro version containing themes feature."
+msgstr "आपको थीम फ़ीचर वाले प्रो संस्करण को इंस्टॉल करना होगा।"
+
+#: gallery-rs.php:338
+msgid "Show video's(Vimeo) title in lightbox:"
+msgstr "लाइटबॉक्स में वीडियो (Vimeo) शीर्षक दिखाएं:"
+
+#: gallery-rs.php:339
+msgid "Show video's(YouTube) title in lightbox:"
+msgstr "लाइटबॉक्स में वीडियो (YouTube) शीर्षक दिखाएं:"
+
+#: gallery-rs.php:421
+msgid "There is no images in this gallery"
+msgstr "इस गैलरी में कोई चित्र नहीं है"
+
+#: gallery-rs.php:422
+msgid "Album is empty"
+msgstr "एल्बम रिक्त है"
+
+#: gallery-rs.php:423
+msgid "There is no gallery matching your id or it was deleted"
+msgstr "आपके आईडी से मिलान करने वाला कोई गैलरी नहीं है या इसे हटा दिया गया है"
+
+#: gallery-rs.php:424
+msgid "There is no album matching your id or it was deleted"
+msgstr "आपके आईडी से मिलान करने वाला कोई गैलरी नहीं है या इसे हटा दिया गया है"
+
+#: gallery-rs.php:426
+msgid "Close comments"
+msgstr "टिप्पणियाँ बंद करें"
+
+#: gallery-rs.php:427
+msgid "Name"
+msgstr "नाम"
+
+#: gallery-rs.php:428
+msgid "Email"
+msgstr "ईमेल"
+
+#: gallery-rs.php:429
+msgid "Leave a comment"
+msgstr "एक टिप्पणी छोड़ें"
+
+#: gallery-rs.php:430
+msgid "Reload captcha"
+msgstr "कैप्चा पुनः लोड करें"
+
+#: gallery-rs.php:432
+msgid "Your browser does not support the video tag."
+msgstr "आपका ब्राउज़र में वीडियो टैग समर्थित नहीं है।"
+
+#: gallery-rs.php:433
+msgid "Share on Facebook"
+msgstr "Facebook पर साझा करें"
+
+#: gallery-rs.php:434
+msgid "Share on Twitter"
+msgstr "Twitter पर साझा करें"
+
+#: gallery-rs.php:435
+msgid "Share on Google+"
+msgstr "Google+ पर साझा करें"
+
+#: gallery-rs.php:436
+msgid "Share on Pinterest"
+msgstr "Pinterest पर साझा करें"
+
+#: gallery-rs.php:437
+msgid "Share on Tumblr"
+msgstr "Tumblr पर साझा करें"
+
+#: gallery-rs.php:438
+msgid "Share on Linkedin"
+msgstr "Linkedin पर साझा करें"
+
+#: gallery-rs.php:439
+msgid "Share on Reddit"
+msgstr "Reddit पर साझा करें"
+
+#: gallery-rs.php:440
+msgid "Play/Pause"
+msgstr "चलाएं/रोकें"
+
+#: gallery-rs.php:441
+msgid "Show/Hide info"
+msgstr "जानकारी दिखाएं/छिपाएं"
+
+#: gallery-rs.php:442
+msgid "Show comments"
+msgstr "टिप्पणियां दिखाएं"
+
+#: gallery-rs.php:444
+msgid " of "
+msgstr " का "
+
+#: smart/GRSGallerySmart.php:34 smart/GRSGallerySmart.php:82
+msgid "Problems with update"
+msgstr "अपडेट के साथ समस्याएं"
+
+#: smart/GRSGallerySmart.php:62
+msgid "Trying to update old version, Please uninstall current then install your version"
+msgstr "पुराने संस्करण को अपडेट करने की कोशिश कर रहा है, कृपया वर्तमान की स्थापना रद्द करें, तो अपने संस्करण को इंस्टॉल करें"
+
+#: smart/GRSGallerySmart.php:67
+msgid "Successfully activate"
+msgstr "सफलतापूर्वक सक्रिय करें"
+
+#: smart/GRSGallerySmart.php:70
+msgid "Some rows dropped and can't be inserted"
+msgstr "कुछ पंक्तियों को गिरा दिया और डाला नहीं जा सकता"
+
+#: smart/GRSGallerySmart.php:73
+msgid "Some tables dropped, or can't be created"
+msgstr "कुछ तालिकाओं को गिरा दिया, या बनाया नहीं जा सकता"
+
+#: smart/GRSGallerySmart.php:86
+msgid "Some tables not exists and can't created"
+msgstr "कुछ तालिकाओं मौजूद नहीं है और नहीं बनाया जा सकता है"
+
+#: smart/GRSGallerySmart.php:90
+msgid "Unknown version"
+msgstr "अज्ञात संस्करण"
+
+#: smart/GRSGallerySmart.php:98
+msgid "Plugin successfully activate"
+msgstr "प्लगइन सफलतापूर्वक सक्रिय"
+
+#: smart/GRSGallerySmart.php:101
+msgid "Data has not been inserted"
+msgstr "डाटा डाला नहीं किया गया है"
+
+#: smart/GRSGallerySmart.php:104
+msgid "Some tables have not been created"
+msgstr "कुछ तालिकाओं को नहीं बनाया गया है"
+
+#~ msgid "Depth:"
+#~ msgstr "गहराई:"

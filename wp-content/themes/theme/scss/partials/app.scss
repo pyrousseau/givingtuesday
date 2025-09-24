@@ -1,0 +1,61 @@
+@include fontFace('fa-brands', 700);
+@include fontFace('fa', 300);
+@include fontFace('fa', 400);
+@include fontFace('fa', 900);
+
+
+$width: 1240px;
+$outerWidth: 1440px;
+
+$tablet: 'all and (max-width: #{$width})';
+$mobile: 'all and (max-width: 767px)';
+
+.container {
+  width: 100%;
+  max-width: $outerWidth;
+  margin: 0 auto;
+  .inner {
+    width: 100%;
+    max-width: $width;
+    margin: 0 auto;
+  }
+}
+
+.align {
+  &--right {
+    text-align: right;
+  }
+  &--left {
+    text-align: left;
+  }
+  &--center{
+    text-align: center;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  height: auto;
+  width: auto;
+  max-width: 100%;
+}
+
+
+
+$col: 12;
+@for $i from 1 through $col {
+  .col-#{$i} {
+    width: 100%*$i/$col;
+    float: left;
+  }
+  .ml-#{$i} {
+    margin-left: 100%*$i/$col;
+  }
+  .mr-#{$i} {
+    margin-right: 100%*$i/$col;
+  }
+}

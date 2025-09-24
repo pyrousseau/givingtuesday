@@ -1,0 +1,1456 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Limb Gallery\n"
+"POT-Creation-Date: 2018-05-20 02:23+0400\n"
+"PO-Revision-Date: 2018-05-20 02:57+0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.4\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e;esc_html__\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: admin/controllers/Controller.php:32
+msgid "There is no view type like "
+msgstr "No hay tipo de vista como "
+
+#: admin/controllers/LimbGalleryMosaicWidgetController.php:96
+#: admin/controllers/LimbGalleryThumbnailWidgetController.php:97
+msgid "Title:"
+msgstr "Titulo:"
+
+#: admin/controllers/LimbGalleryMosaicWidgetController.php:102
+#: admin/controllers/LimbGalleryThumbnailWidgetController.php:103
+msgid "Select gallery:"
+msgstr "Seleccionar galería:"
+
+#: admin/controllers/LimbGalleryMosaicWidgetController.php:116
+#: admin/controllers/LimbGalleryThumbnailWidgetController.php:117
+msgid "Select theme:"
+msgstr "Seleccionar tema:"
+
+#: admin/controllers/LimbGalleryMosaicWidgetController.php:130
+#: admin/controllers/LimbGalleryThumbnailWidgetController.php:131
+msgid "Count"
+msgstr "Contar"
+
+#: admin/controllers/LimbGalleryMosaicWidgetController.php:136
+#: admin/controllers/LimbGalleryThumbnailWidgetController.php:137
+msgid "Thumbnail width:"
+msgstr "Ancho de thumbnail:"
+
+#: admin/controllers/LimbGalleryMosaicWidgetController.php:142
+#: admin/controllers/LimbGalleryThumbnailWidgetController.php:149
+#: admin/views/ViewShortcode.php:216 admin/views/ViewShortcode.php:326
+#: admin/views/ViewShortcode.php:462 admin/views/ViewShortcode.php:587
+#: admin/views/ViewShortcode.php:713 admin/views/ViewShortcode.php:824
+#: admin/views/ViewShortcode.php:898
+msgid "Order by:"
+msgstr "Ordenar por:"
+
+#: admin/controllers/LimbGalleryMosaicWidgetController.php:155
+#: admin/controllers/LimbGalleryThumbnailWidgetController.php:162
+#: admin/views/ViewShortcode.php:226 admin/views/ViewShortcode.php:336
+#: admin/views/ViewShortcode.php:472 admin/views/ViewShortcode.php:597
+#: admin/views/ViewShortcode.php:723 admin/views/ViewShortcode.php:834
+#: admin/views/ViewShortcode.php:908
+msgid "Ordering:"
+msgstr "Ordenar:"
+
+#: admin/controllers/LimbGalleryThumbnailWidgetController.php:143
+msgid "Thumbnail height:"
+msgstr "Altura de thumbnail:"
+
+#: admin/models/Model.php:55 gallery-rs.php:199
+msgid "Custom Order"
+msgstr "Orden personalizado"
+
+#: admin/models/Model.php:56 admin/models/Model.php:66 gallery-rs.php:286
+msgid "Date"
+msgstr "Fecha"
+
+#: admin/models/Model.php:57 admin/models/Model.php:67
+msgid "Id"
+msgstr "Id"
+
+#: admin/models/Model.php:58 admin/models/Model.php:68 gallery-rs.php:183
+msgid "Title"
+msgstr "Título"
+
+#: admin/models/Model.php:59 admin/models/Model.php:69 gallery-rs.php:184
+msgid "Description"
+msgstr "Descripción"
+
+#: admin/models/Model.php:60 admin/models/Model.php:70
+msgid "Type"
+msgstr "Tipo"
+
+#: admin/models/Model.php:76
+msgid "Open lightbox"
+msgstr "Abrir lightbox"
+
+#: admin/models/Model.php:77
+msgid "Open link"
+msgstr "Abrir el enlace"
+
+#: admin/models/Model.php:78
+msgid "Do nothing"
+msgstr "Hacer nada"
+
+#: admin/models/Model.php:84
+msgid "Same tab"
+msgstr "La misma pestaña"
+
+#: admin/models/Model.php:85
+msgid "New tab"
+msgstr "Nueva pestaña"
+
+#: admin/models/Model.php:86
+msgid "Same frame"
+msgstr "Mismo marco"
+
+#: admin/models/Model.php:87
+msgid "Parent frame"
+msgstr "Marco principal"
+
+#: admin/views/ViewGalleries.php:29 gallery-rs.php:287
+msgid "Add gallery"
+msgstr "Agregar galería"
+
+#: admin/views/ViewGalleries.php:54
+msgid "Galleries"
+msgstr "Galerías"
+
+#: admin/views/ViewGalleries.php:60
+msgid "Media"
+msgstr "Media"
+
+#: admin/views/ViewGalleries.php:66
+msgid "Settings"
+msgstr "Configuraciones"
+
+#: admin/views/ViewGalleries.php:72
+msgid "Themes"
+msgstr "Temas"
+
+#: admin/views/ViewGalleries.php:78
+msgid "Albums"
+msgstr "Álbumes"
+
+#: admin/views/ViewGalleries.php:85
+msgid "Pro features !"
+msgstr "Funciones profesionales !"
+
+#: admin/views/ViewGalleries.php:105
+msgid "Save"
+msgstr "Salvar"
+
+#: admin/views/ViewGalleries.php:122
+msgid "Yes"
+msgstr "Sí"
+
+#: admin/views/ViewGalleries.php:123 admin/views/ViewShortcode.php:175
+#: admin/views/ViewShortcode.php:300 admin/views/ViewShortcode.php:454
+#: admin/views/ViewShortcode.php:561 admin/views/ViewShortcode.php:687
+#: admin/views/ViewShortcode.php:816 admin/views/ViewShortcode.php:890
+#: admin/views/ViewShortcode.php:1042
+msgid "No"
+msgstr "No"
+
+#: admin/views/ViewShortcode.php:62
+msgid "Select Gallery"
+msgstr "Seleccionar Galería"
+
+#: admin/views/ViewShortcode.php:81
+msgid "Select Album"
+msgstr "Seleccionar Álbum"
+
+#: admin/views/ViewShortcode.php:100
+msgid "Select view"
+msgstr "Seleccionar vista"
+
+#: admin/views/ViewShortcode.php:120
+msgid "Select theme"
+msgstr "Seleccionar tema"
+
+#: admin/views/ViewShortcode.php:143
+msgid "Thumbnail view"
+msgstr "Vista de Thumbnail"
+
+#: admin/views/ViewShortcode.php:151 admin/views/ViewShortcode.php:276
+#: admin/views/ViewShortcode.php:386 admin/views/ViewShortcode.php:537
+#: admin/views/ViewShortcode.php:662 admin/views/ViewShortcode.php:792
+#: admin/views/ViewShortcode.php:866 admin/views/ViewShortcode.php:994
+#: gallery-rs.php:248
+msgid "Width:"
+msgstr "Ancho:"
+
+#: admin/views/ViewShortcode.php:157 admin/views/ViewShortcode.php:282
+#: admin/views/ViewShortcode.php:392 admin/views/ViewShortcode.php:543
+#: admin/views/ViewShortcode.php:668 admin/views/ViewShortcode.php:798
+#: admin/views/ViewShortcode.php:872 admin/views/ViewShortcode.php:1000
+#: gallery-rs.php:249
+msgid "Height:"
+msgstr "Altura:"
+
+#: admin/views/ViewShortcode.php:165 admin/views/ViewShortcode.php:290
+#: admin/views/ViewShortcode.php:400 admin/views/ViewShortcode.php:549
+#: admin/views/ViewShortcode.php:675
+msgid "Container Width:"
+msgstr "Ancho del contenedor:"
+
+#: admin/views/ViewShortcode.php:171 admin/views/ViewShortcode.php:296
+#: admin/views/ViewShortcode.php:450 admin/views/ViewShortcode.php:557
+#: admin/views/ViewShortcode.php:683 admin/views/ViewShortcode.php:812
+#: admin/views/ViewShortcode.php:886
+msgid "Show title:"
+msgstr "Mostrar título:"
+
+#: admin/views/ViewShortcode.php:176 admin/views/ViewShortcode.php:301
+#: admin/views/ViewShortcode.php:455 admin/views/ViewShortcode.php:562
+#: admin/views/ViewShortcode.php:688 admin/views/ViewShortcode.php:817
+#: admin/views/ViewShortcode.php:891
+msgid "On hover"
+msgstr "En cernerse"
+
+#: admin/views/ViewShortcode.php:177 admin/views/ViewShortcode.php:302
+#: admin/views/ViewShortcode.php:456 admin/views/ViewShortcode.php:563
+#: admin/views/ViewShortcode.php:689 admin/views/ViewShortcode.php:818
+#: admin/views/ViewShortcode.php:892
+msgid "Always"
+msgstr "Siempre"
+
+#: admin/views/ViewShortcode.php:183
+msgid "Polaroid:"
+msgstr "Polaroid:"
+
+#: admin/views/ViewShortcode.php:186 admin/views/ViewShortcode.php:981
+#: admin/views/ViewShortcode.php:1011 admin/views/ViewShortcode.php:1020
+#: admin/views/ViewShortcode.php:1031 admin/views/ViewShortcode.php:1090
+#: admin/views/ViewShortcode.php:1099 admin/views/ViewShortcode.php:1110
+#: admin/views/ViewShortcode.php:1119 admin/views/ViewShortcode.php:1130
+#: admin/views/ViewShortcode.php:1139 admin/views/ViewShortcode.php:1150
+#: admin/views/ViewShortcode.php:1159 admin/views/ViewShortcode.php:1170
+#: admin/views/ViewShortcode.php:1179 admin/views/ViewShortcode.php:1202
+#: admin/views/ViewShortcode.php:1211 gallery-rs.php:211
+msgid "Yes:"
+msgstr "Sí:"
+
+#: admin/views/ViewShortcode.php:188 admin/views/ViewShortcode.php:983
+#: admin/views/ViewShortcode.php:1013 admin/views/ViewShortcode.php:1022
+#: admin/views/ViewShortcode.php:1033 admin/views/ViewShortcode.php:1092
+#: admin/views/ViewShortcode.php:1101 admin/views/ViewShortcode.php:1112
+#: admin/views/ViewShortcode.php:1121 admin/views/ViewShortcode.php:1132
+#: admin/views/ViewShortcode.php:1141 admin/views/ViewShortcode.php:1152
+#: admin/views/ViewShortcode.php:1161 admin/views/ViewShortcode.php:1172
+#: admin/views/ViewShortcode.php:1181 admin/views/ViewShortcode.php:1204
+#: admin/views/ViewShortcode.php:1213 gallery-rs.php:206
+msgid "No:"
+msgstr "No:"
+
+#: admin/views/ViewShortcode.php:198 admin/views/ViewShortcode.php:308
+#: admin/views/ViewShortcode.php:436 admin/views/ViewShortcode.php:569
+#: admin/views/ViewShortcode.php:695 admin/views/ViewShortcode.php:929
+msgid "Items Perpage:"
+msgstr "Artículos por página:"
+
+#: admin/views/ViewShortcode.php:204 admin/views/ViewShortcode.php:575
+#: admin/views/ViewShortcode.php:701 admin/views/ViewShortcode.php:919
+msgid "Pagination:"
+msgstr "Paginación:"
+
+#: admin/views/ViewShortcode.php:208 admin/views/ViewShortcode.php:579
+#: admin/views/ViewShortcode.php:705 admin/views/ViewShortcode.php:923
+msgid "Numbers"
+msgstr "Números"
+
+#: admin/views/ViewShortcode.php:209 admin/views/ViewShortcode.php:580
+#: admin/views/ViewShortcode.php:706 admin/views/ViewShortcode.php:924
+#: gallery-rs.php:431
+msgid "Load more"
+msgstr "Carga más"
+
+#: admin/views/ViewShortcode.php:210 admin/views/ViewShortcode.php:319
+#: admin/views/ViewShortcode.php:581 admin/views/ViewShortcode.php:707
+#: admin/views/ViewShortcode.php:925
+msgid "Scrolling"
+msgstr "Desplazamiento"
+
+#: admin/views/ViewShortcode.php:230 admin/views/ViewShortcode.php:340
+#: admin/views/ViewShortcode.php:476 admin/views/ViewShortcode.php:601
+#: admin/views/ViewShortcode.php:727 admin/views/ViewShortcode.php:838
+#: admin/views/ViewShortcode.php:912
+msgid "ASC"
+msgstr "ASC"
+
+#: admin/views/ViewShortcode.php:231 admin/views/ViewShortcode.php:341
+#: admin/views/ViewShortcode.php:477 admin/views/ViewShortcode.php:602
+#: admin/views/ViewShortcode.php:728 admin/views/ViewShortcode.php:839
+#: admin/views/ViewShortcode.php:913
+msgid "DESC"
+msgstr "DESC"
+
+#: admin/views/ViewShortcode.php:237 admin/views/ViewShortcode.php:347
+#: admin/views/ViewShortcode.php:483 admin/views/ViewShortcode.php:608
+#: admin/views/ViewShortcode.php:734 admin/views/ViewShortcode.php:937
+msgid "Click action:"
+msgstr "Haga clic en acción:"
+
+#: admin/views/ViewShortcode.php:247 admin/views/ViewShortcode.php:357
+#: admin/views/ViewShortcode.php:493 admin/views/ViewShortcode.php:618
+#: admin/views/ViewShortcode.php:744 admin/views/ViewShortcode.php:947
+msgid "Link target:"
+msgstr "Objetivo del enlace:"
+
+#: admin/views/ViewShortcode.php:266
+msgid "Carousel view"
+msgstr "Vista de Carousel"
+
+#: admin/views/ViewShortcode.php:314
+msgid "Navigation:"
+msgstr "Navegación:"
+
+#: admin/views/ViewShortcode.php:318 gallery-rs.php:246
+msgid "Buttons"
+msgstr "Botones"
+
+#: admin/views/ViewShortcode.php:320
+msgid "Buttons and scrolling"
+msgstr "Botones y desplazamiento"
+
+#: admin/views/ViewShortcode.php:376
+msgid "3D Carousel view"
+msgstr "Vista de 3D Carousel"
+
+#: admin/views/ViewShortcode.php:408
+msgid "Left Side Depth:"
+msgstr "Profundidad del lado izquierdo:"
+
+#: admin/views/ViewShortcode.php:414
+msgid "Right Side Depth:"
+msgstr "Profundidad del lado derecho:"
+
+#: admin/views/ViewShortcode.php:422
+msgid "Image Maximum Scale:"
+msgstr "Escala máxima de imagen:"
+
+#: admin/views/ViewShortcode.php:428
+msgid "Image Minimum Scale:"
+msgstr "Escala mínima de la imagen:"
+
+#: admin/views/ViewShortcode.php:442
+msgid "View Images Count:"
+msgstr "Ver el recuento de imágenes:"
+
+#: admin/views/ViewShortcode.php:512
+msgid "Masonry view"
+msgstr "Vista de Masonry"
+
+#: admin/views/ViewShortcode.php:522 admin/views/ViewShortcode.php:647
+#: admin/views/ViewShortcode.php:781 admin/views/ViewShortcode.php:855
+msgid "Type:"
+msgstr "Tipo:"
+
+#: admin/views/ViewShortcode.php:525 admin/views/ViewShortcode.php:650
+#: admin/views/ViewShortcode.php:784 admin/views/ViewShortcode.php:858
+msgid "Vertical:"
+msgstr "Vertical:"
+
+#: admin/views/ViewShortcode.php:527 admin/views/ViewShortcode.php:652
+#: admin/views/ViewShortcode.php:786 admin/views/ViewShortcode.php:860
+msgid "Horizontal:"
+msgstr "Horizontal:"
+
+#: admin/views/ViewShortcode.php:637
+msgid "Mosaic view"
+msgstr "Vista de Mosaic"
+
+#: admin/views/ViewShortcode.php:763
+msgid "Album view"
+msgstr "Vista de Álbum"
+
+#: admin/views/ViewShortcode.php:771
+msgid "Main view type:"
+msgstr "Tipo de vista principal:"
+
+#: admin/views/ViewShortcode.php:775 admin/views/ViewShortcode.php:849
+msgid "Thumbnail"
+msgstr "Thumbnail"
+
+#: admin/views/ViewShortcode.php:776 admin/views/ViewShortcode.php:850
+msgid "Masonry"
+msgstr "Masonry"
+
+#: admin/views/ViewShortcode.php:777 admin/views/ViewShortcode.php:851
+msgid "Mosaic"
+msgstr "Mosaic"
+
+#: admin/views/ViewShortcode.php:806
+msgid "Main container Width:"
+msgstr "Ancho del contenedor principal:"
+
+#: admin/views/ViewShortcode.php:845
+msgid "Gallery view type:"
+msgstr "Tipo de vista de galería:"
+
+#: admin/views/ViewShortcode.php:880
+msgid "Gallery container Width:"
+msgstr "Ancho del contenedor de la galería:"
+
+#: admin/views/ViewShortcode.php:968
+msgid "Lightbox"
+msgstr "Lightbox"
+
+#: admin/views/ViewShortcode.php:977 gallery-rs.php:263
+msgid "Full width:"
+msgstr "Ancho completo:"
+
+#: admin/views/ViewShortcode.php:1008
+msgid "Filmstrip:"
+msgstr "Tira de película:"
+
+#: admin/views/ViewShortcode.php:1017
+msgid "Comments:"
+msgstr "Comentarios:"
+
+#: admin/views/ViewShortcode.php:1028
+msgid "Control buttons:"
+msgstr "Botones de control:"
+
+#: admin/views/ViewShortcode.php:1037 gallery-rs.php:231
+msgid "Effect:"
+msgstr "Efecto:"
+
+#: admin/views/ViewShortcode.php:1041
+msgid "No effect"
+msgstr "Sin efecto"
+
+#: admin/views/ViewShortcode.php:1044
+msgid "No cutting"
+msgstr "Sin cortar"
+
+#: admin/views/ViewShortcode.php:1045
+msgid "Fade"
+msgstr "Desteñirse"
+
+#: admin/views/ViewShortcode.php:1046
+msgid "Slide In left"
+msgstr "Deslizar a la izquierda"
+
+#: admin/views/ViewShortcode.php:1047
+msgid "Slide In Down"
+msgstr "Deslizar hacia abajo"
+
+#: admin/views/ViewShortcode.php:1048
+msgid "Flip & Zoom"
+msgstr "Voltear y Zoom"
+
+#: admin/views/ViewShortcode.php:1049
+msgid "Zoom In"
+msgstr "Acercarse"
+
+#: admin/views/ViewShortcode.php:1050
+msgid "Zoom In Left"
+msgstr "Acercar a la izquierda"
+
+#: admin/views/ViewShortcode.php:1051
+msgid "Zoom In Down"
+msgstr "Acercar hacia abajo"
+
+#: admin/views/ViewShortcode.php:1053
+msgid "Cutting vertical"
+msgstr "Corte vertical"
+
+#: admin/views/ViewShortcode.php:1054 admin/views/ViewShortcode.php:1060
+#: admin/views/ViewShortcode.php:1068 admin/views/ViewShortcode.php:1075
+msgid "Zoom"
+msgstr "Zoom"
+
+#: admin/views/ViewShortcode.php:1055 admin/views/ViewShortcode.php:1061
+msgid "Flip"
+msgstr "Voltear"
+
+#: admin/views/ViewShortcode.php:1056 admin/views/ViewShortcode.php:1062
+#: admin/views/ViewShortcode.php:1069
+msgid "Rotate"
+msgstr "Rotar"
+
+#: admin/views/ViewShortcode.php:1057
+msgid "Fade out up"
+msgstr "Desaparecer a la arriba"
+
+#: admin/views/ViewShortcode.php:1059
+msgid "Cutting horizontal"
+msgstr "Corte horizontal"
+
+#: admin/views/ViewShortcode.php:1063
+msgid "Fade out right"
+msgstr "Desaparecer a la derecha"
+
+#: admin/views/ViewShortcode.php:1065
+msgid "Mix cutting out"
+msgstr "Mezcla de corte"
+
+#: admin/views/ViewShortcode.php:1066 admin/views/ViewShortcode.php:1077
+msgid "Fade (Fun)"
+msgstr "Fundido (Diversión)"
+
+#: admin/views/ViewShortcode.php:1067
+msgid "Roll"
+msgstr "Rodar"
+
+#: admin/views/ViewShortcode.php:1070
+msgid "Zoom out Left"
+msgstr "Alejar hacia la izquierda"
+
+#: admin/views/ViewShortcode.php:1071
+msgid "Zoom (Fun)"
+msgstr "Zoom (Diversión)"
+
+#: admin/views/ViewShortcode.php:1072
+msgid "Zoom Down (Fun)"
+msgstr "Zoom hacia abajo (Diversión)"
+
+#: admin/views/ViewShortcode.php:1074
+msgid "Mix cutting in"
+msgstr "Mezclar cortar en"
+
+#: admin/views/ViewShortcode.php:1076
+msgid "Zoom Up"
+msgstr "Zoom arriba"
+
+#: admin/views/ViewShortcode.php:1079 admin/views/ViewShortcode.php:1080
+msgid "Random"
+msgstr "Aleatorio"
+
+#: admin/views/ViewShortcode.php:1087
+msgid "Facebook:"
+msgstr "Facebook:"
+
+#: admin/views/ViewShortcode.php:1096
+msgid "Google+:"
+msgstr "Google+:"
+
+#: admin/views/ViewShortcode.php:1107
+msgid "Twitter:"
+msgstr "Twitter:"
+
+#: admin/views/ViewShortcode.php:1116
+msgid "Pinterest:"
+msgstr "Pinterest:"
+
+#: admin/views/ViewShortcode.php:1127
+msgid "Tumblr:"
+msgstr "Tumblr:"
+
+#: admin/views/ViewShortcode.php:1136
+msgid "LinkedIn:"
+msgstr "LinkedIn:"
+
+#: admin/views/ViewShortcode.php:1147
+msgid "Reddit:"
+msgstr "Reddit:"
+
+#: admin/views/ViewShortcode.php:1156
+msgid "Fullscreen:"
+msgstr "Pantalla completa:"
+
+#: admin/views/ViewShortcode.php:1167
+msgid "Autoplay:"
+msgstr "Autojuego:"
+
+#: admin/views/ViewShortcode.php:1176
+msgid "Image Info:"
+msgstr "Información de la imagen:"
+
+#: admin/views/ViewShortcode.php:1187
+msgid "Autoplay interval:"
+msgstr "Intervalo de autojuego:"
+
+#: admin/views/ViewShortcode.php:1190
+msgid "sec"
+msgstr "sec"
+
+#: admin/views/ViewShortcode.php:1199
+msgid "Image counting"
+msgstr "Conteo de imágenes"
+
+#: admin/views/ViewShortcode.php:1208
+msgid "Swipe:"
+msgstr "Apandar:"
+
+#: admin/views/ViewShortcode.php:1224
+msgid "Update"
+msgstr "Actualizar"
+
+#: admin/views/ViewShortcode.php:1224
+msgid "Insert"
+msgstr "Insertar"
+
+#: ajax/GRSAdminActions.php:118
+msgid "Something went wrong"
+msgstr "Algo salió mal"
+
+#: ajax/GRSAdminActions.php:393
+msgid "There is no items selected or"
+msgstr "No hay elementos seleccionados o"
+
+#: ajax/GRSAdminActions.php:398
+msgid "Problem with Order saving"
+msgstr "Problema con el ahorro de pedidos"
+
+#: ajax/GRSAdminActions.php:435
+msgid "Problem with gallery save"
+msgstr "Problema con la galería de guardar"
+
+#: ajax/GRSAdminActions.php:488
+msgid "Problem with image or gallery update"
+msgstr "Problema con la actualización de la imagen o galería"
+
+#: ajax/GRSAdminActions.php:557 ajax/GRSAdminActions.php:618
+#: ajax/GRSAdminActions.php:655 ajax/GRSAdminActions.php:792
+#: ajax/GRSAdminActions.php:860 ajax/GRSAdminActions.php:883
+#: ajax/GRSAdminActions.php:991 ajax/GRSAdminActions.php:995
+#: ajax/GRSAdminActions.php:1071 ajax/GRSAdminActions.php:1110
+#: ajax/GRSAdminActions.php:1167 ajax/GRSComment.php:79
+#: embed/GRSGalleryEmbed.php:233
+msgid "Problem with save"
+msgstr "Problema con guardar"
+
+#: ajax/GRSAdminActions.php:579 ajax/GRSAdminActions.php:634
+msgid "Function not found: getimagesize. Please connect to plugin support."
+msgstr ""
+"Función no encontrada: getimagesize. Por favor, conéctese al soporte de "
+"complementos."
+
+#: ajax/GRSAdminActions.php:677 ajax/GRSAdminActions.php:691
+#: ajax/GRSAdminActions.php:705 ajax/GRSAdminActions.php:926
+msgid "Problem with delete"
+msgstr "Problema con borrar"
+
+#: ajax/GRSAdminActions.php:708
+msgid "Invalid comment id"
+msgstr "ID de comentario inválido"
+
+#: ajax/GRSAdminActions.php:771
+msgid "You are trying to duplicate content or there is some other problem."
+msgstr "Está intentando duplicar contenido o hay algún otro problema."
+
+#: ajax/GRSAdminActions.php:790 ajax/GRSAdminActions.php:881
+#: ajax/GRSAdminActions.php:1165
+msgid "Successfully delete"
+msgstr "Eliminar con éxito"
+
+#: ajax/GRSAdminActions.php:796 ajax/GRSAdminActions.php:999
+#: ajax/GRSAdminActions.php:1171
+msgid "Oh there is a problem"
+msgstr "Oh, hay un problema"
+
+#: ajax/GRSAdminActions.php:887 gallery-rs.php:290
+msgid "Error something went wrong"
+msgstr "Error, algo salió mal"
+
+#: ajax/GRSAdminActions.php:960
+msgid "Problem with uninstall"
+msgstr "Problema con la desinstalación"
+
+#: ajax/GRSAdminActions.php:989 smart/GRSGallerySmart.php:30
+#: smart/GRSGallerySmart.php:79
+msgid "Successfully update"
+msgstr "Actualización exitosa"
+
+#: ajax/GRSAdminActions.php:1068 ajax/GRSAdminActions.php:1108
+msgid "Unable to create css file."
+msgstr "No se puede crear el archivo css."
+
+#: ajax/GRSCaptcha.php:104
+msgid "Required GD library is missing"
+msgstr "La biblioteca requerida de GD falta"
+
+#: ajax/GRSComment.php:25
+msgid "Invalid name"
+msgstr "Nombre inválido"
+
+#: ajax/GRSComment.php:29
+msgid "Invalid email address"
+msgstr "Dirección de correo electrónico no válida"
+
+#: ajax/GRSComment.php:33
+msgid "Invalid comment"
+msgstr "Comentario inválido"
+
+#: ajax/GRSComment.php:37
+msgid "Invalid image"
+msgstr "Imagen inválida"
+
+#: ajax/GRSComment.php:41
+msgid "Invalid gallery"
+msgstr "Galería inválida"
+
+#: ajax/GRSComment.php:85
+msgid "Incorrect captcha code"
+msgstr "Código de captcha incorrecto"
+
+#: ajax/GRSComment.php:107
+msgid "Invalid image id"
+msgstr "ID de imagen no válido"
+
+#: ajax/GRSGalleryAjax.php:62
+msgid "It isn't grs action"
+msgstr "No es acción de grs"
+
+#: ajax/GRSGalleryAjax.php:71
+msgid "Unknown action."
+msgstr "Acción desconocida."
+
+#: ajax/GRSGalleryAjax.php:76
+msgid "Your nonce is not verified"
+msgstr "Tu nonce no está verificado"
+
+#: ajax/GRSGalleryAjax.php:88
+msgid "try to reactivate plugin."
+msgstr "tratar de reactivar el plugin."
+
+#: embed/GRSGalleryEmbed.php:77
+msgid "Unknown provider"
+msgstr "Proveedor desconocido"
+
+#: embed/GRSGalleryEmbed.php:104
+msgid "Invalid scheme "
+msgstr "Esquema inválido "
+
+#: embed/GRSGalleryEmbed.php:106
+msgid "Invalid host "
+msgstr "Host no válido "
+
+#: embed/GRSGalleryEmbed.php:106
+msgid " for "
+msgstr " para "
+
+#: embed/GRSGalleryEmbed.php:106
+msgid " provider"
+msgstr " proveedor"
+
+#: embed/GRSGalleryEmbed.php:130
+msgid "Only image urls allowed for flickr provider"
+msgstr "Solo las URL de imagen permitidas para el proveedor de flickr"
+
+#: gallery-rs.php:182
+msgid "Add Album"
+msgstr "Agregar álbum"
+
+#: gallery-rs.php:185
+msgid "Update Preview Image"
+msgstr "Actualizar imagen de vista previa"
+
+#: gallery-rs.php:186
+msgid "Url Examples"
+msgstr "Ejemplos de Url"
+
+#: gallery-rs.php:187
+msgid "Add"
+msgstr "Añadir"
+
+#: gallery-rs.php:188 gallery-rs.php:443
+msgid "Close"
+msgstr "Cerca"
+
+#: gallery-rs.php:189
+msgid "Add youtube embed"
+msgstr "Añadir youtube embed"
+
+#: gallery-rs.php:190
+msgid "Add instagram photo/video"
+msgstr "Añadir foto/video de instagram"
+
+#: gallery-rs.php:191
+msgid "Add vimeo embed"
+msgstr "Añadir vimeo embed"
+
+#: gallery-rs.php:192
+msgid "Add flickr photo"
+msgstr "Añadir foto de flickr"
+
+#: gallery-rs.php:193
+msgid "Add images from Limb library"
+msgstr "Agregar imágenes de la biblioteca Limb"
+
+#: gallery-rs.php:194
+msgid "Add images from WP library"
+msgstr "Agregar imágenes de la biblioteca de WP"
+
+#: gallery-rs.php:195
+msgid "Delete"
+msgstr "Borrar"
+
+#: gallery-rs.php:196
+msgid "Select all"
+msgstr "Seleccionar todo"
+
+#: gallery-rs.php:197
+msgid "Order By:"
+msgstr "Ordenar por:"
+
+#: gallery-rs.php:198
+msgid "ID"
+msgstr "ID"
+
+#: gallery-rs.php:200
+msgid "Items per page"
+msgstr "Artículos por página"
+
+#: gallery-rs.php:201
+msgid "Edit"
+msgstr "Editar"
+
+#: gallery-rs.php:202
+msgid "Link"
+msgstr "Enlace"
+
+#: gallery-rs.php:203
+msgid "Remove"
+msgstr "Retirar"
+
+#: gallery-rs.php:204
+msgid "Timezone:"
+msgstr "Zona horaria:"
+
+#: gallery-rs.php:205
+msgid "Collapse navigation clicks while animation in progress:"
+msgstr "Contraer clics de navegación mientras la animación está en progreso:"
+
+#: gallery-rs.php:207
+msgid "Timeformat:"
+msgstr "Formato de hora:"
+
+#: gallery-rs.php:208
+msgid "Clicks count:"
+msgstr "Recuento de clics:"
+
+#: gallery-rs.php:209
+msgid "Show Comments immediately after Lightbox opens:"
+msgstr "Mostrar comentarios inmediatamente después de que se abra Lightbox:"
+
+#: gallery-rs.php:210
+msgid "if Comments is enabled in shortcode"
+msgstr "si Comentarios está habilitado en shortcode"
+
+#: gallery-rs.php:212
+msgid "Show Info immediately after Lightbox opens:"
+msgstr "Mostrar información inmediatamente después de que se abra Lightbox:"
+
+#: gallery-rs.php:213
+msgid "if Info is enabled in shortcode"
+msgstr "si la información está habilitada en shortcode"
+
+#: gallery-rs.php:214
+msgid "Lightbox filmstrip image move count:"
+msgstr "Recuento de movimientos de la imagen de la tira de película Lightbox:"
+
+#: gallery-rs.php:215
+msgid "Hide navigation button while reaching to the end(start):"
+msgstr "Ocultar el botón de navegación mientras se llega al final (inicio):"
+
+#: gallery-rs.php:216
+msgid "Carousel image move count:"
+msgstr "Cuenta de movimiento de la imagen del carrusel:"
+
+#: gallery-rs.php:217
+msgid "Close lightbox by click on side:"
+msgstr "Cierre lightbox haciendo clic en el costado:"
+
+#: gallery-rs.php:218
+msgid "Uninstall plugin:"
+msgstr "Desinstalar plugin:"
+
+#: gallery-rs.php:219
+msgid "Uninstall"
+msgstr "Desinstalar"
+
+#: gallery-rs.php:220
+msgid "Set default"
+msgstr "Establecer predeterminado"
+
+#: gallery-rs.php:221
+msgid "Add theme"
+msgstr "Agregar tema"
+
+#: gallery-rs.php:222
+msgid "Image"
+msgstr "Imagen"
+
+#: gallery-rs.php:223
+msgid "Margin:"
+msgstr "Margen:"
+
+#: gallery-rs.php:224
+msgid "Border:"
+msgstr "Frontera:"
+
+#: gallery-rs.php:225
+msgid "Padding:"
+msgstr "Acolchado:"
+
+#: gallery-rs.php:226
+msgid "Border-radius:"
+msgstr "Radio de la frontera:"
+
+#: gallery-rs.php:227
+msgid "Background color:"
+msgstr "Color de fondo:"
+
+#: gallery-rs.php:228
+msgid "Shadow:"
+msgstr "Sombra:"
+
+#: gallery-rs.php:229
+msgid "Hover effect:"
+msgstr "Efecto de cernerse:"
+
+#: gallery-rs.php:230
+msgid "Position:"
+msgstr "Posición:"
+
+#: gallery-rs.php:232
+msgid "Font size:"
+msgstr "Tamaño de fuente:"
+
+#: gallery-rs.php:233
+msgid "Color:"
+msgstr "Color:"
+
+#: gallery-rs.php:234
+msgid "Mask color:"
+msgstr "Color de la máscara:"
+
+#: gallery-rs.php:235
+msgid "Font Family:"
+msgstr "Familia de fuentes:"
+
+#: gallery-rs.php:236
+msgid "Font weight:"
+msgstr "Peso de la fuente:"
+
+#: gallery-rs.php:237
+msgid "Font style:"
+msgstr "Estilo de fuente:"
+
+#: gallery-rs.php:238
+msgid "Container"
+msgstr "Contenedor"
+
+#: gallery-rs.php:239
+msgid "Upload images"
+msgstr "Subir imágenes"
+
+#: gallery-rs.php:240
+msgid "Add images to gallery"
+msgstr "Agregar imágenes a la galería"
+
+#: gallery-rs.php:241
+msgid "Add folder"
+msgstr "Agregar carpeta"
+
+#: gallery-rs.php:242 gallery-rs.php:425
+msgid "Back"
+msgstr "Espalda"
+
+#: gallery-rs.php:243
+msgid "Rename"
+msgstr "Rebautizar"
+
+#: gallery-rs.php:244
+msgid "Navigation"
+msgstr "Navegación"
+
+#: gallery-rs.php:245
+msgid "Buttons:"
+msgstr "Botones:"
+
+#: gallery-rs.php:247
+msgid "Size:"
+msgstr "Tamaño:"
+
+#: gallery-rs.php:250
+msgid "Hover color:"
+msgstr "Color de cernerse:"
+
+#: gallery-rs.php:251
+msgid "Hover Background color:"
+msgstr "Color de fondo de cernerse:"
+
+#: gallery-rs.php:252
+msgid "Offset(Right,Left):"
+msgstr "Compensación(Derecha,Izquierda):"
+
+#: gallery-rs.php:253
+msgid "Margin Top:"
+msgstr "Margen superior:"
+
+#: gallery-rs.php:254
+msgid "Alignment:"
+msgstr "Alineación:"
+
+#: gallery-rs.php:255
+msgid "Active background color:"
+msgstr "Color de fondo activo:"
+
+#: gallery-rs.php:256
+msgid "Back button"
+msgstr "Botón de retroceso"
+
+#: gallery-rs.php:257
+msgid "Main"
+msgstr "Principal"
+
+#: gallery-rs.php:258
+msgid "Box background color"
+msgstr "Color de fondo de la caja"
+
+#: gallery-rs.php:259
+msgid "Close button"
+msgstr "Botón Cerrar"
+
+#: gallery-rs.php:260
+msgid "Box size:"
+msgstr "Tamaño de la caja:"
+
+#: gallery-rs.php:261
+msgid "Box shadow:"
+msgstr "Sombra de la caja:"
+
+#: gallery-rs.php:262
+msgid "Title and Description"
+msgstr "Título y Descripción"
+
+#: gallery-rs.php:264
+msgid "Background"
+msgstr "Fondo"
+
+#: gallery-rs.php:265
+msgid "Max-width:"
+msgstr "Max-anchura:"
+
+#: gallery-rs.php:266
+msgid "Show:"
+msgstr "Espectáculo:"
+
+#: gallery-rs.php:267
+msgid "Hover Shadow:"
+msgstr "Sombra de colocar:"
+
+#: gallery-rs.php:268
+msgid "Filmstrip"
+msgstr "Tira de película"
+
+#: gallery-rs.php:269
+msgid "Margin(Top,Bottom):"
+msgstr "Margen(Arriba,Abajo):"
+
+#: gallery-rs.php:270
+msgid "Thumb"
+msgstr "Thumb"
+
+#: gallery-rs.php:271
+msgid "Selected effect:"
+msgstr "Efecto seleccionado:"
+
+#: gallery-rs.php:272
+msgid "Selected thumb Border:"
+msgstr "Borde thumb seleccionado:"
+
+#: gallery-rs.php:273
+msgid "Control buttons"
+msgstr "Botones de control"
+
+#: gallery-rs.php:274
+msgid "Image count"
+msgstr "Recuento de imágenes"
+
+#: gallery-rs.php:275
+msgid "Comments container"
+msgstr "Contenedor de comentarios"
+
+#: gallery-rs.php:276
+msgid "Margin(vertical):"
+msgstr "Margen(vertical):"
+
+#: gallery-rs.php:277
+msgid "Margin(horizontal):"
+msgstr "Margen(horizontal):"
+
+#: gallery-rs.php:278
+msgid "Labels"
+msgstr "Etiquetas"
+
+#: gallery-rs.php:279
+msgid "Inputs"
+msgstr "Entradas"
+
+#: gallery-rs.php:280
+msgid "Active border color:"
+msgstr "Color de borde activo:"
+
+#: gallery-rs.php:281
+msgid "Active shadow:"
+msgstr "Sombra activa:"
+
+#: gallery-rs.php:282
+msgid "Position(Top,Left):"
+msgstr "Posición(Arriba,Izquierda):"
+
+#: gallery-rs.php:283
+msgid "Captcha button"
+msgstr "Botón Captcha"
+
+#: gallery-rs.php:284
+msgid "Author"
+msgstr "Autor"
+
+#: gallery-rs.php:285
+msgid "Comment"
+msgstr "Comentario"
+
+#: gallery-rs.php:288
+msgid "Order successfully saved"
+msgstr "Pedido guardado con éxito"
+
+#: gallery-rs.php:289
+msgid "Items successfully saved"
+msgstr "Artículos exitosamente guardados"
+
+#: gallery-rs.php:291
+msgid "Images successfully added"
+msgstr "Imágenes agregadas con éxito"
+
+#: gallery-rs.php:292
+msgid "Add gallery preview image"
+msgstr "Agregar imagen de vista previa de la galería"
+
+#: gallery-rs.php:293
+msgid "Are you sure , you want to delete "
+msgstr "Estas seguro que quieres borrarlo "
+
+#: gallery-rs.php:294
+msgid " item ?"
+msgstr " ít ?"
+
+#: gallery-rs.php:295
+msgid "Are you sure , you want to delete selected items ?"
+msgstr "¿Estás seguro de que deseas eliminar elementos seleccionados?"
+
+#: gallery-rs.php:296
+msgid "Items successfully deleted"
+msgstr "Artículos borrados con éxito"
+
+#: gallery-rs.php:297
+msgid "Item successfully saved"
+msgstr "Artículo exitosamente guardado"
+
+#: gallery-rs.php:298
+msgid "Fill the url input"
+msgstr "Complete la entrada de url"
+
+#: gallery-rs.php:299
+msgid "Unable to get themes data"
+msgstr "No se pueden obtener datos de temas"
+
+#: gallery-rs.php:300
+msgid "Theme successfully saved"
+msgstr "Tema salvado con éxito"
+
+#: gallery-rs.php:301
+msgid "You can't delete default theme"
+msgstr "No puedes eliminar el tema predeterminado"
+
+#: gallery-rs.php:302
+msgid " theme ?"
+msgstr " tema ?"
+
+#: gallery-rs.php:303
+msgid "Theme successfully deleted"
+msgstr "Tema eliminado con éxito"
+
+#: gallery-rs.php:304
+msgid "Unable to get albums data"
+msgstr "No se pudieron obtener datos de álbumes"
+
+#: gallery-rs.php:305
+msgid "Album successfully saved"
+msgstr "Álbum exitosamente guardado"
+
+#: gallery-rs.php:306
+msgid " album ?"
+msgstr " álbum ?"
+
+#: gallery-rs.php:307
+msgid "Are you sure , you want to delete selected albums ?"
+msgstr "¿Estás seguro de que deseas eliminar álbumes seleccionados?"
+
+#: gallery-rs.php:308
+msgid "Albums successfully deleted"
+msgstr "Álbumes borrados con éxito"
+
+#: gallery-rs.php:309
+msgid "successfully deleted"
+msgstr "eliminado con éxito"
+
+#: gallery-rs.php:310
+msgid "Add album preview image"
+msgstr "Agregar imagen de vista previa del álbum"
+
+#: gallery-rs.php:311
+msgid "Select album"
+msgstr "Seleccionar álbum"
+
+#: gallery-rs.php:312
+msgid "Unable to get settings data"
+msgstr "No se pueden obtener datos de configuración"
+
+#: gallery-rs.php:313
+msgid "Settings successfully saved"
+msgstr "Configuraciones guardadas con éxito"
+
+#: gallery-rs.php:314
+msgid "The following Database Tables will be deleted:"
+msgstr "Las siguientes tablas de base de datos se eliminarán:"
+
+#: gallery-rs.php:315
+msgid "Are you sure , you want to uninstall this plugin ?"
+msgstr "¿Estás seguro de que quieres desinstalar este complemento?"
+
+#: gallery-rs.php:316 smart/GRSGallerySmart.php:45
+msgid "Plugin uninstalled"
+msgstr "Plugin eliminado"
+
+#: gallery-rs.php:317
+msgid "Unable to get uploader data"
+msgstr "No se puede obtener información sobre la descarga"
+
+#: gallery-rs.php:318
+msgid "Wait while image is being uploaded"
+msgstr "Espere mientras se carga la imagen"
+
+#: gallery-rs.php:319
+msgid "Folder successfully created"
+msgstr "Carpeta creada con éxito"
+
+#: gallery-rs.php:320
+msgid " folder ?"
+msgstr " carpeta ?"
+
+#: gallery-rs.php:321
+msgid " image ?"
+msgstr " imagen ?"
+
+#: gallery-rs.php:322
+msgid "Select at list one item"
+msgstr "Seleccione un artículo de la lista"
+
+#: gallery-rs.php:323
+msgid "Item successfully deleted"
+msgstr "Artículo eliminado con éxito"
+
+#: gallery-rs.php:324
+msgid "A file name can't contain this (\") character"
+msgstr "Un nombre de archivo no puede contener este (\") carácter"
+
+#: gallery-rs.php:325
+msgid "A file name can't be empty"
+msgstr "Un nombre de archivo no puede estar vacío"
+
+#: gallery-rs.php:326
+msgid "Item successfully renamed"
+msgstr "Artículo renombrado con éxito"
+
+#: gallery-rs.php:327
+msgid "Select at list one image"
+msgstr "Seleccione una imagen de la lista"
+
+#: gallery-rs.php:328
+msgid "Select gallery or press \"Add images\" button from gallery cont"
+msgstr ""
+"Seleccione la galería o presione el botón \"Agregar imágenes\" desde la "
+"galería cont"
+
+#: gallery-rs.php:329
+msgid "Adding folder not allowed yet"
+msgstr "Añadir carpeta aún no permitida"
+
+#: gallery-rs.php:330
+msgid "Preview image updated"
+msgstr "Vista previa de la imagen actualizada"
+
+#: gallery-rs.php:331
+msgid "Highlighted items upload failed, check your server post max size"
+msgstr ""
+"Descargar elementos seleccionados fallado, compruebe el tamaño máximo del "
+"servidor"
+
+#: gallery-rs.php:332
+msgid "Please be patient, try after current request ends"
+msgstr "Por favor, sea paciente, tratar después de que termine petición actual"
+
+#: gallery-rs.php:333
+msgid "Unable to get galleries data"
+msgstr "No se pudieron obtener datos de galerías"
+
+#: gallery-rs.php:334
+msgid " gallery ?"
+msgstr " galería ?"
+
+#: gallery-rs.php:335
+msgid "Please wait until loading ends."
+msgstr "Por favor, espere hasta que termine la carga."
+
+#: gallery-rs.php:336
+msgid "There is no gallery , create it from the button left."
+msgstr "No hay galería, créala desde el botón izquierdo."
+
+#: gallery-rs.php:337
+msgid "You need to install pro version containing themes feature."
+msgstr "Necesita instalar la versión pro que contiene la función de temas."
+
+#: gallery-rs.php:338
+msgid "Show video's(Vimeo) title in lightbox:"
+msgstr "Muestra el título del video (Vimeo) en lightbox:"
+
+#: gallery-rs.php:339
+msgid "Show video's(YouTube) title in lightbox:"
+msgstr "Muestra el título del video (YouTube) en lightbox:"
+
+#: gallery-rs.php:421
+msgid "There is no images in this gallery"
+msgstr "No hay imágenes en esta galería"
+
+#: gallery-rs.php:422
+msgid "Album is empty"
+msgstr "Álbum está vacío"
+
+#: gallery-rs.php:423
+msgid "There is no gallery matching your id or it was deleted"
+msgstr "No hay una galería que coincida con su ID o se eliminó"
+
+#: gallery-rs.php:424
+msgid "There is no album matching your id or it was deleted"
+msgstr "No hay ningún álbum que coincida con tu ID o se eliminó"
+
+#: gallery-rs.php:426
+msgid "Close comments"
+msgstr "Cerrar comentarios"
+
+#: gallery-rs.php:427
+msgid "Name"
+msgstr "Nombre"
+
+#: gallery-rs.php:428
+msgid "Email"
+msgstr "Email"
+
+#: gallery-rs.php:429
+msgid "Leave a comment"
+msgstr "Deja un comentario"
+
+#: gallery-rs.php:430
+msgid "Reload captcha"
+msgstr "Recargar captcha"
+
+#: gallery-rs.php:432
+msgid "Your browser does not support the video tag."
+msgstr "Your browser does not support the video tag."
+
+#: gallery-rs.php:433
+msgid "Share on Facebook"
+msgstr "Compartir en Facebook"
+
+#: gallery-rs.php:434
+msgid "Share on Twitter"
+msgstr "Compartir en Twitter"
+
+#: gallery-rs.php:435
+msgid "Share on Google+"
+msgstr "Compartir en Google+"
+
+#: gallery-rs.php:436
+msgid "Share on Pinterest"
+msgstr "Compartir en Pinterest"
+
+#: gallery-rs.php:437
+msgid "Share on Tumblr"
+msgstr "Compartir en Tumblr"
+
+#: gallery-rs.php:438
+msgid "Share on Linkedin"
+msgstr "Compartir en Linkedin"
+
+#: gallery-rs.php:439
+msgid "Share on Reddit"
+msgstr "Compartir en Reddit"
+
+#: gallery-rs.php:440
+msgid "Play/Pause"
+msgstr "Reproducir/Pausa"
+
+#: gallery-rs.php:441
+msgid "Show/Hide info"
+msgstr "Mostrar/Ocultar información"
+
+#: gallery-rs.php:442
+msgid "Show comments"
+msgstr "Mostrar comentarios"
+
+#: gallery-rs.php:444
+msgid " of "
+msgstr " de "
+
+#: smart/GRSGallerySmart.php:34 smart/GRSGallerySmart.php:82
+msgid "Problems with update"
+msgstr "Problemas con la actualización"
+
+#: smart/GRSGallerySmart.php:62
+msgid ""
+"Trying to update old version, Please uninstall current then install your "
+"version"
+msgstr ""
+"Tratando de actualizar la versión anterior, desinstala la versión actual y "
+"luego instala tu versión"
+
+#: smart/GRSGallerySmart.php:67
+msgid "Successfully activate"
+msgstr "Activar con éxito"
+
+#: smart/GRSGallerySmart.php:70
+msgid "Some rows dropped and can't be inserted"
+msgstr "Algunas filas cayeron y no se pueden insertar"
+
+#: smart/GRSGallerySmart.php:73
+msgid "Some tables dropped, or can't be created"
+msgstr "Algunas tablas cayeron, o no se pueden crear"
+
+#: smart/GRSGallerySmart.php:86
+msgid "Some tables not exists and can't created"
+msgstr "Algunas tablas no existen y no pueden crearse"
+
+#: smart/GRSGallerySmart.php:90
+msgid "Unknown version"
+msgstr "Versión desconocida"
+
+#: smart/GRSGallerySmart.php:98
+msgid "Plugin successfully activate"
+msgstr "El complemento se activa con éxito"
+
+#: smart/GRSGallerySmart.php:101
+msgid "Data has not been inserted"
+msgstr "Los datos no han sido insertados"
+
+#: smart/GRSGallerySmart.php:104
+msgid "Some tables have not been created"
+msgstr "Algunas tablas no han sido creadas"
+
+#~ msgid "Depth:"
+#~ msgstr "Profundidad:"

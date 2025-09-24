@@ -1,0 +1,155 @@
+<div class="grsGallCoSettC"
+     ng-class="{'grsAnDur grsSlideInLeft' : showContPart == 'Sett', 'grsDisplayNone' : showContPart != 'Sett'}">
+    <div class="grsSettT">
+        <div class="grsTableRow">
+            <div class="grsCell">
+                <label for="timezone">{{getTrans('Timezone:')}}</label>
+            </div>
+            <div class="grsCell">
+                <select ng-disabled="!checkTDis()" name="timezone" id="timezone" ng-model="data.settings.timezone"
+                        ng-options="value as value for (key , value) in data.timezones" class="grsSelect">
+                </select>
+                <p ng-if="!checkTDis()">
+                   <a  ng-href="{{upgradeUrl}}" target="_blank">Upgrade &#8594;</a>
+                </p>
+            </div>
+            <div class="grsCell">
+                <label for="collapseNavClicks_1">{{getTrans('text_009')}}</label>
+            </div>
+            <div class="grsCell">
+                <label for="collapseNavClicks_1">{{getTrans('Yes:')}}</label>
+                <input type="radio" ng-model="data.settings.collapseNavClicks" value="1"
+                       name="collapseNavClicks" id="collapseNavClicks_1">
+                <label for="collapseNavClicks_0">{{getTrans('No:')}}</label>
+                <input type="radio" ng-model="data.settings.collapseNavClicks" value="0"
+                       name="collapseNavClicks" id="collapseNavClicks_0">
+            </div>
+        </div>
+        <div class="grsTableRow">
+            <div class="grsCell">
+                <label for="timeformat">{{getTrans('Timeformat:')}}</label>
+            </div>
+            <div class="grsCell">
+                <select ng-disabled="!checkTDis()" name="timeformat" id="timeformat" ng-model="data.settings.timeformat"
+                        ng-options="key as value for (key , value) in data.timeformats" class="grsSelect">
+                </select>
+                <p ng-if="!checkTDis()">
+                    <a  ng-href="{{upgradeUrl}}" target="_blank">Upgrade &#8594;</a>
+                </p>
+            </div>
+            <div class="grsCell" ng-if="data.settings.collapseNavClicks == 1">
+                <label for="clicksCount">{{getTrans('Clicks count:')}}</label>
+            </div>
+            <div class="grsCell" ng-if="data.settings.collapseNavClicks == 1">
+                <input type="number" to-int ng-model="data.settings.clicksCount"
+                       name="clicksCount" id="clicksCount" class="grsElementSize grsInput">
+            </div>
+        </div>
+        <div class="grsTableRow">
+            <div class="grsCell">
+                <label for="openCommTrig_1">{{getTrans('text_013')}} <br> ({{getTrans('text_016')}})</label>
+            </div>
+            <div class="grsCell">
+                <label for="openCommTrig_1">{{getTrans('Yes:')}}</label>
+                <input ng-disabled="!checkTDis()" type="radio" ng-model="data.settings.openCommTrig" value="1"
+                       name="openCommTrig" id="openCommTrig_1">
+                <label for="openCommTrig_0">{{getTrans('No:')}}</label>
+                <input ng-disabled="!checkTDis()" type="radio" ng-model="data.settings.openCommTrig" value="0"
+                       name="openCommTrig" id="openCommTrig_0">
+                <p ng-if="!checkTDis()">
+                    <a  ng-href="{{upgradeUrl}}" target="_blank">Upgrade &#8594;</a>
+                </p>
+            </div>
+            <div class="grsCell">
+                <label for="showTitleDescTrig_1">{{getTrans('text_014')}} <br> ({{getTrans('text_026')}})</label>
+            </div>
+            <div class="grsCell">
+                <label for="showTitleDescTrig_1">{{getTrans('Yes:')}}</label>
+                <input type="radio" ng-model="data.settings.showTitleDescTrig" value="1" name="showTitleDescTrig"
+                       id="showTitleDescTrig_1">
+                <label for="showTitleDescTrig_0">{{getTrans('No:')}}</label>
+                <input type="radio" ng-model="data.settings.showTitleDescTrig" value="0" name="showTitleDescTrig"
+                       id="showTitleDescTrig_0">
+            </div>
+        </div>
+        <div class="grsTableRow">
+            <div class="grsCell">
+                <label for="fmImMoveCount">{{getTrans('text_017')}}</label>
+            </div>
+            <div class="grsCell">
+                <input ng-disabled="!checkFilmDis()" type="number" to-int ng-model="data.settings.fmImMoveCount"
+                       name="fmImMoveCount" id="fmImMoveCount" class="grsElementSize grsInput">
+                <p ng-if="!checkFilmDis()">
+                    <a  ng-href="{{upgradeUrl}}" target="_blank">Upgrade &#8594;</a>
+                </p>
+            </div>
+            <div class="grsCell">
+                <label for="hideNavButton_1">{{getTrans('text_008')}}</label>
+            </div>
+            <div class="grsCell">
+                <label for="hideNavButton_1">{{getTrans('Yes:')}}</label>
+                <input type="radio" ng-model="data.settings.hideNavButton" value="1" name="hideNavButton"
+                       id="hideNavButton_1">
+                <label for="hideNavButton_0">{{getTrans('No:')}}</label>
+                <input type="radio" ng-model="data.settings.hideNavButton" value="0" name="hideNavButton"
+                       id="hideNavButton_0">
+            </div>
+        </div>
+        <div class="grsTableRow">
+            <div class="grsCell">
+                <label for="filmImMoveCount">{{getTrans('text_027')}}</label>
+            </div>
+            <div class="grsCell">
+                <input type="number" to-int ng-model="data.settings.filmImMoveCount" name="filmImMoveCount"
+                       id="filmImMoveCount" class="grsElementSize grsInput">
+            </div>
+            <div class="grsCell">
+                <label for="closeLbOnSide_1">{{getTrans('text_028')}}</label>
+            </div>
+            <div class="grsCell">
+                <label for="closeLbOnSide_1">{{getTrans('Yes:')}}</label>
+                <input type="radio" ng-model="data.settings.closeLbOnSide" value="1" name="closeLbOnSide"
+                       id="closeLbOnSide_1">
+                <label for="closeLbOnSide_0">{{getTrans('No:')}}</label>
+                <input type="radio" ng-model="data.settings.closeLbOnSide" value="0" name="closeLbOnSide"
+                       id="closeLbOnSide_0">
+            </div>
+        </div>
+        <div class="grsTableRow">
+            <div class="grsCell">
+                <label for="showVmTitle_1">{{getTrans('text_077')}}</label>
+            </div>
+            <div class="grsCell">
+                <label for="showVmTitle_1">{{getTrans('Yes:')}}</label>
+                <input type="radio" ng-model="data.settings.showVmTitle" value="1" name="showVmTitle"
+                       id="showVmTitle_1">
+                <label for="showVmTitle_0">{{getTrans('No:')}}</label>
+                <input type="radio" ng-model="data.settings.showVmTitle" value="0" name="showVmTitle"
+                       id="showVmTitle_0">
+            </div>
+            <div class="grsCell">
+                <label for="showYtTitle_1">{{getTrans('text_078')}}</label>
+            </div>
+            <div class="grsCell">
+                <label for="showYtTitle_1">{{getTrans('Yes:')}}</label>
+                <input type="radio" ng-model="data.settings.showYtTitle" value="1" name="showYtTitle"
+                       id="showYtTitle_1">
+                <label for="showYtTitle_0">{{getTrans('No:')}}</label>
+                <input type="radio" ng-model="data.settings.showYtTitle" value="0" name="showYtTitle"
+                       id="showYtTitle_0">
+            </div>
+        </div>
+        <div class="grsTableRow">
+            <div class="grsCell">
+                <label for="uninstall">{{getTrans('Uninstall plugin:')}}</label>
+            </div>
+            <div class="grsCell">
+                <button class="grsUninstallButt" id="uninstall" ng-click="uninstallPr($event)">{{getTrans('Uninstall')}}</button>
+            </div>
+            <div class="grsCell">
+            </div>
+            <div class="grsCell">
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,1453 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Limb Gallery\n"
+"POT-Creation-Date: 2018-05-20 02:24+0400\n"
+"PO-Revision-Date: 2018-05-20 03:12+0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.4\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: admin/controllers/Controller.php:32
+msgid "There is no view type like "
+msgstr "Ni vrste ogleda, kot je "
+
+#: admin/controllers/LimbGalleryMosaicWidgetController.php:96
+#: admin/controllers/LimbGalleryThumbnailWidgetController.php:97
+msgid "Title:"
+msgstr "Naslov:"
+
+#: admin/controllers/LimbGalleryMosaicWidgetController.php:102
+#: admin/controllers/LimbGalleryThumbnailWidgetController.php:103
+msgid "Select gallery:"
+msgstr "Izberite galerijo:"
+
+#: admin/controllers/LimbGalleryMosaicWidgetController.php:116
+#: admin/controllers/LimbGalleryThumbnailWidgetController.php:117
+msgid "Select theme:"
+msgstr "Izberite temo:"
+
+#: admin/controllers/LimbGalleryMosaicWidgetController.php:130
+#: admin/controllers/LimbGalleryThumbnailWidgetController.php:131
+msgid "Count"
+msgstr "Šteti"
+
+#: admin/controllers/LimbGalleryMosaicWidgetController.php:136
+#: admin/controllers/LimbGalleryThumbnailWidgetController.php:137
+msgid "Thumbnail width:"
+msgstr "Thumbnail širina:"
+
+#: admin/controllers/LimbGalleryMosaicWidgetController.php:142
+#: admin/controllers/LimbGalleryThumbnailWidgetController.php:149
+#: admin/views/ViewShortcode.php:216 admin/views/ViewShortcode.php:326
+#: admin/views/ViewShortcode.php:462 admin/views/ViewShortcode.php:587
+#: admin/views/ViewShortcode.php:713 admin/views/ViewShortcode.php:824
+#: admin/views/ViewShortcode.php:898
+msgid "Order by:"
+msgstr "Naročil:"
+
+#: admin/controllers/LimbGalleryMosaicWidgetController.php:155
+#: admin/controllers/LimbGalleryThumbnailWidgetController.php:162
+#: admin/views/ViewShortcode.php:226 admin/views/ViewShortcode.php:336
+#: admin/views/ViewShortcode.php:472 admin/views/ViewShortcode.php:597
+#: admin/views/ViewShortcode.php:723 admin/views/ViewShortcode.php:834
+#: admin/views/ViewShortcode.php:908
+msgid "Ordering:"
+msgstr "Naročanje:"
+
+#: admin/controllers/LimbGalleryThumbnailWidgetController.php:143
+msgid "Thumbnail height:"
+msgstr "Thumbnail višina:"
+
+#: admin/models/Model.php:55 gallery-rs.php:199
+msgid "Custom Order"
+msgstr "Meri Naročilo"
+
+#: admin/models/Model.php:56 admin/models/Model.php:66 gallery-rs.php:286
+msgid "Date"
+msgstr "Datum"
+
+#: admin/models/Model.php:57 admin/models/Model.php:67
+msgid "Id"
+msgstr "Id"
+
+#: admin/models/Model.php:58 admin/models/Model.php:68 gallery-rs.php:183
+msgid "Title"
+msgstr "Naslov"
+
+#: admin/models/Model.php:59 admin/models/Model.php:69 gallery-rs.php:184
+msgid "Description"
+msgstr "Opis"
+
+#: admin/models/Model.php:60 admin/models/Model.php:70
+msgid "Type"
+msgstr "Tip"
+
+#: admin/models/Model.php:76
+msgid "Open lightbox"
+msgstr "Odpri lightbox"
+
+#: admin/models/Model.php:77
+msgid "Open link"
+msgstr "Odpri povezavo"
+
+#: admin/models/Model.php:78
+msgid "Do nothing"
+msgstr "Delati nič"
+
+#: admin/models/Model.php:84
+msgid "Same tab"
+msgstr "Isti zavihek"
+
+#: admin/models/Model.php:85
+msgid "New tab"
+msgstr "Nov zavihek"
+
+#: admin/models/Model.php:86
+msgid "Same frame"
+msgstr "Enak okvir"
+
+#: admin/models/Model.php:87
+msgid "Parent frame"
+msgstr "Nadrejeni okvir"
+
+#: admin/views/ViewGalleries.php:29 gallery-rs.php:287
+msgid "Add gallery"
+msgstr "Dodaj galerijo"
+
+#: admin/views/ViewGalleries.php:54
+msgid "Galleries"
+msgstr "Galerije"
+
+#: admin/views/ViewGalleries.php:60
+msgid "Media"
+msgstr "Mediji"
+
+#: admin/views/ViewGalleries.php:66
+msgid "Settings"
+msgstr "Nastavitve"
+
+#: admin/views/ViewGalleries.php:72
+msgid "Themes"
+msgstr "Teme"
+
+#: admin/views/ViewGalleries.php:78
+msgid "Albums"
+msgstr "Albumi"
+
+#: admin/views/ViewGalleries.php:85
+msgid "Pro features !"
+msgstr "Pro funkcije!"
+
+#: admin/views/ViewGalleries.php:105
+msgid "Save"
+msgstr "Shrani"
+
+#: admin/views/ViewGalleries.php:122
+msgid "Yes"
+msgstr "Da"
+
+#: admin/views/ViewGalleries.php:123 admin/views/ViewShortcode.php:175
+#: admin/views/ViewShortcode.php:300 admin/views/ViewShortcode.php:454
+#: admin/views/ViewShortcode.php:561 admin/views/ViewShortcode.php:687
+#: admin/views/ViewShortcode.php:816 admin/views/ViewShortcode.php:890
+#: admin/views/ViewShortcode.php:1042
+msgid "No"
+msgstr "Ne"
+
+#: admin/views/ViewShortcode.php:62
+msgid "Select Gallery"
+msgstr "Izberite Galerijo"
+
+#: admin/views/ViewShortcode.php:81
+msgid "Select Album"
+msgstr "Izberite Album"
+
+#: admin/views/ViewShortcode.php:100
+msgid "Select view"
+msgstr "Izberite pogled"
+
+#: admin/views/ViewShortcode.php:120
+msgid "Select theme"
+msgstr "Izberite temo"
+
+#: admin/views/ViewShortcode.php:143
+msgid "Thumbnail view"
+msgstr "Thumbnail pogled"
+
+#: admin/views/ViewShortcode.php:151 admin/views/ViewShortcode.php:276
+#: admin/views/ViewShortcode.php:386 admin/views/ViewShortcode.php:537
+#: admin/views/ViewShortcode.php:662 admin/views/ViewShortcode.php:792
+#: admin/views/ViewShortcode.php:866 admin/views/ViewShortcode.php:994
+#: gallery-rs.php:248
+msgid "Width:"
+msgstr "Širina:"
+
+#: admin/views/ViewShortcode.php:157 admin/views/ViewShortcode.php:282
+#: admin/views/ViewShortcode.php:392 admin/views/ViewShortcode.php:543
+#: admin/views/ViewShortcode.php:668 admin/views/ViewShortcode.php:798
+#: admin/views/ViewShortcode.php:872 admin/views/ViewShortcode.php:1000
+#: gallery-rs.php:249
+msgid "Height:"
+msgstr "Višina:"
+
+#: admin/views/ViewShortcode.php:165 admin/views/ViewShortcode.php:290
+#: admin/views/ViewShortcode.php:400 admin/views/ViewShortcode.php:549
+#: admin/views/ViewShortcode.php:675
+msgid "Container Width:"
+msgstr "Širina zabojnika:"
+
+#: admin/views/ViewShortcode.php:171 admin/views/ViewShortcode.php:296
+#: admin/views/ViewShortcode.php:450 admin/views/ViewShortcode.php:557
+#: admin/views/ViewShortcode.php:683 admin/views/ViewShortcode.php:812
+#: admin/views/ViewShortcode.php:886
+msgid "Show title:"
+msgstr "Pokaži naslov:"
+
+#: admin/views/ViewShortcode.php:176 admin/views/ViewShortcode.php:301
+#: admin/views/ViewShortcode.php:455 admin/views/ViewShortcode.php:562
+#: admin/views/ViewShortcode.php:688 admin/views/ViewShortcode.php:817
+#: admin/views/ViewShortcode.php:891
+msgid "On hover"
+msgstr "Na lebdenje"
+
+#: admin/views/ViewShortcode.php:177 admin/views/ViewShortcode.php:302
+#: admin/views/ViewShortcode.php:456 admin/views/ViewShortcode.php:563
+#: admin/views/ViewShortcode.php:689 admin/views/ViewShortcode.php:818
+#: admin/views/ViewShortcode.php:892
+msgid "Always"
+msgstr "Nenehno"
+
+#: admin/views/ViewShortcode.php:183
+msgid "Polaroid:"
+msgstr "Polaroid:"
+
+#: admin/views/ViewShortcode.php:186 admin/views/ViewShortcode.php:981
+#: admin/views/ViewShortcode.php:1011 admin/views/ViewShortcode.php:1020
+#: admin/views/ViewShortcode.php:1031 admin/views/ViewShortcode.php:1090
+#: admin/views/ViewShortcode.php:1099 admin/views/ViewShortcode.php:1110
+#: admin/views/ViewShortcode.php:1119 admin/views/ViewShortcode.php:1130
+#: admin/views/ViewShortcode.php:1139 admin/views/ViewShortcode.php:1150
+#: admin/views/ViewShortcode.php:1159 admin/views/ViewShortcode.php:1170
+#: admin/views/ViewShortcode.php:1179 admin/views/ViewShortcode.php:1202
+#: admin/views/ViewShortcode.php:1211 gallery-rs.php:211
+msgid "Yes:"
+msgstr "Da:"
+
+#: admin/views/ViewShortcode.php:188 admin/views/ViewShortcode.php:983
+#: admin/views/ViewShortcode.php:1013 admin/views/ViewShortcode.php:1022
+#: admin/views/ViewShortcode.php:1033 admin/views/ViewShortcode.php:1092
+#: admin/views/ViewShortcode.php:1101 admin/views/ViewShortcode.php:1112
+#: admin/views/ViewShortcode.php:1121 admin/views/ViewShortcode.php:1132
+#: admin/views/ViewShortcode.php:1141 admin/views/ViewShortcode.php:1152
+#: admin/views/ViewShortcode.php:1161 admin/views/ViewShortcode.php:1172
+#: admin/views/ViewShortcode.php:1181 admin/views/ViewShortcode.php:1204
+#: admin/views/ViewShortcode.php:1213 gallery-rs.php:206
+msgid "No:"
+msgstr "Ne:"
+
+#: admin/views/ViewShortcode.php:198 admin/views/ViewShortcode.php:308
+#: admin/views/ViewShortcode.php:436 admin/views/ViewShortcode.php:569
+#: admin/views/ViewShortcode.php:695 admin/views/ViewShortcode.php:929
+msgid "Items Perpage:"
+msgstr "Elementi na stran:"
+
+#: admin/views/ViewShortcode.php:204 admin/views/ViewShortcode.php:575
+#: admin/views/ViewShortcode.php:701 admin/views/ViewShortcode.php:919
+msgid "Pagination:"
+msgstr "Pagination:"
+
+#: admin/views/ViewShortcode.php:208 admin/views/ViewShortcode.php:579
+#: admin/views/ViewShortcode.php:705 admin/views/ViewShortcode.php:923
+msgid "Numbers"
+msgstr "Številke"
+
+#: admin/views/ViewShortcode.php:209 admin/views/ViewShortcode.php:580
+#: admin/views/ViewShortcode.php:706 admin/views/ViewShortcode.php:924
+#: gallery-rs.php:431
+msgid "Load more"
+msgstr "Naloži več"
+
+#: admin/views/ViewShortcode.php:210 admin/views/ViewShortcode.php:319
+#: admin/views/ViewShortcode.php:581 admin/views/ViewShortcode.php:707
+#: admin/views/ViewShortcode.php:925
+msgid "Scrolling"
+msgstr "Pomikanje"
+
+#: admin/views/ViewShortcode.php:230 admin/views/ViewShortcode.php:340
+#: admin/views/ViewShortcode.php:476 admin/views/ViewShortcode.php:601
+#: admin/views/ViewShortcode.php:727 admin/views/ViewShortcode.php:838
+#: admin/views/ViewShortcode.php:912
+msgid "ASC"
+msgstr "ASC"
+
+#: admin/views/ViewShortcode.php:231 admin/views/ViewShortcode.php:341
+#: admin/views/ViewShortcode.php:477 admin/views/ViewShortcode.php:602
+#: admin/views/ViewShortcode.php:728 admin/views/ViewShortcode.php:839
+#: admin/views/ViewShortcode.php:913
+msgid "DESC"
+msgstr "DESC"
+
+#: admin/views/ViewShortcode.php:237 admin/views/ViewShortcode.php:347
+#: admin/views/ViewShortcode.php:483 admin/views/ViewShortcode.php:608
+#: admin/views/ViewShortcode.php:734 admin/views/ViewShortcode.php:937
+msgid "Click action:"
+msgstr "Akcijske klikov:"
+
+#: admin/views/ViewShortcode.php:247 admin/views/ViewShortcode.php:357
+#: admin/views/ViewShortcode.php:493 admin/views/ViewShortcode.php:618
+#: admin/views/ViewShortcode.php:744 admin/views/ViewShortcode.php:947
+msgid "Link target:"
+msgstr "Cilj povezave:"
+
+#: admin/views/ViewShortcode.php:266
+msgid "Carousel view"
+msgstr "Carousel pogled"
+
+#: admin/views/ViewShortcode.php:314
+msgid "Navigation:"
+msgstr "Navigacija:"
+
+#: admin/views/ViewShortcode.php:318 gallery-rs.php:246
+msgid "Buttons"
+msgstr "Gumbi"
+
+#: admin/views/ViewShortcode.php:320
+msgid "Buttons and scrolling"
+msgstr "Gumbi in pomikanje"
+
+#: admin/views/ViewShortcode.php:376
+msgid "3D Carousel view"
+msgstr "3D Carousel pogled"
+
+#: admin/views/ViewShortcode.php:408
+msgid "Left Side Depth:"
+msgstr "Globina leve strani:"
+
+#: admin/views/ViewShortcode.php:414
+msgid "Right Side Depth:"
+msgstr "Globina desne strani:"
+
+#: admin/views/ViewShortcode.php:422
+msgid "Image Maximum Scale:"
+msgstr "Največja skala slike:"
+
+#: admin/views/ViewShortcode.php:428
+msgid "Image Minimum Scale:"
+msgstr "Najmanjša lestvica slik:"
+
+#: admin/views/ViewShortcode.php:442
+msgid "View Images Count:"
+msgstr "Število ogledov slik:"
+
+#: admin/views/ViewShortcode.php:512
+msgid "Masonry view"
+msgstr "Masonry pogled"
+
+#: admin/views/ViewShortcode.php:522 admin/views/ViewShortcode.php:647
+#: admin/views/ViewShortcode.php:781 admin/views/ViewShortcode.php:855
+msgid "Type:"
+msgstr "Tip:"
+
+#: admin/views/ViewShortcode.php:525 admin/views/ViewShortcode.php:650
+#: admin/views/ViewShortcode.php:784 admin/views/ViewShortcode.php:858
+msgid "Vertical:"
+msgstr "Navpično:"
+
+#: admin/views/ViewShortcode.php:527 admin/views/ViewShortcode.php:652
+#: admin/views/ViewShortcode.php:786 admin/views/ViewShortcode.php:860
+msgid "Horizontal:"
+msgstr "Vodoravno:"
+
+#: admin/views/ViewShortcode.php:637
+msgid "Mosaic view"
+msgstr "Mosaic pogled"
+
+#: admin/views/ViewShortcode.php:763
+msgid "Album view"
+msgstr "Album pogled"
+
+#: admin/views/ViewShortcode.php:771
+msgid "Main view type:"
+msgstr "Vrsta glavnega pogleda:"
+
+#: admin/views/ViewShortcode.php:775 admin/views/ViewShortcode.php:849
+msgid "Thumbnail"
+msgstr "Thumbnail"
+
+#: admin/views/ViewShortcode.php:776 admin/views/ViewShortcode.php:850
+msgid "Masonry"
+msgstr "Masonry"
+
+#: admin/views/ViewShortcode.php:777 admin/views/ViewShortcode.php:851
+msgid "Mosaic"
+msgstr "Mosaic"
+
+#: admin/views/ViewShortcode.php:806
+msgid "Main container Width:"
+msgstr "Glavni zabojnik širina:"
+
+#: admin/views/ViewShortcode.php:845
+msgid "Gallery view type:"
+msgstr "Galerija vrsto prikaza:"
+
+#: admin/views/ViewShortcode.php:880
+msgid "Gallery container Width:"
+msgstr "Galerija širina vsebnika:"
+
+#: admin/views/ViewShortcode.php:968
+msgid "Lightbox"
+msgstr "Lightbox"
+
+#: admin/views/ViewShortcode.php:977 gallery-rs.php:263
+msgid "Full width:"
+msgstr "Polna širina:"
+
+#: admin/views/ViewShortcode.php:1008
+msgid "Filmstrip:"
+msgstr "Filmstrip:"
+
+#: admin/views/ViewShortcode.php:1017
+msgid "Comments:"
+msgstr "Komentarji:"
+
+#: admin/views/ViewShortcode.php:1028
+msgid "Control buttons:"
+msgstr "Kontrolni gumbi:"
+
+#: admin/views/ViewShortcode.php:1037 gallery-rs.php:231
+msgid "Effect:"
+msgstr "Učinek:"
+
+#: admin/views/ViewShortcode.php:1041
+msgid "No effect"
+msgstr "Brez učinka"
+
+#: admin/views/ViewShortcode.php:1044
+msgid "No cutting"
+msgstr "Brez rezanja"
+
+#: admin/views/ViewShortcode.php:1045
+msgid "Fade"
+msgstr "Izginotje"
+
+#: admin/views/ViewShortcode.php:1046
+msgid "Slide In left"
+msgstr "Pomaknite se levo"
+
+#: admin/views/ViewShortcode.php:1047
+msgid "Slide In Down"
+msgstr "Pomaknite se navzdol"
+
+#: admin/views/ViewShortcode.php:1048
+msgid "Flip & Zoom"
+msgstr "Flip & Zoom"
+
+#: admin/views/ViewShortcode.php:1049
+msgid "Zoom In"
+msgstr "Povečava"
+
+#: admin/views/ViewShortcode.php:1050
+msgid "Zoom In Left"
+msgstr "Povečaj levo"
+
+#: admin/views/ViewShortcode.php:1051
+msgid "Zoom In Down"
+msgstr "Povečaj dol"
+
+#: admin/views/ViewShortcode.php:1053
+msgid "Cutting vertical"
+msgstr "Rezanje navpično"
+
+#: admin/views/ViewShortcode.php:1054 admin/views/ViewShortcode.php:1060
+#: admin/views/ViewShortcode.php:1068 admin/views/ViewShortcode.php:1075
+msgid "Zoom"
+msgstr "Zoom"
+
+#: admin/views/ViewShortcode.php:1055 admin/views/ViewShortcode.php:1061
+msgid "Flip"
+msgstr "Flip"
+
+#: admin/views/ViewShortcode.php:1056 admin/views/ViewShortcode.php:1062
+#: admin/views/ViewShortcode.php:1069
+msgid "Rotate"
+msgstr "Zavrti"
+
+#: admin/views/ViewShortcode.php:1057
+msgid "Fade out up"
+msgstr "Izginotje od zgoraj"
+
+#: admin/views/ViewShortcode.php:1059
+msgid "Cutting horizontal"
+msgstr "Rezanje horizontalno"
+
+#: admin/views/ViewShortcode.php:1063
+msgid "Fade out right"
+msgstr "Izginotje na desni"
+
+#: admin/views/ViewShortcode.php:1065
+msgid "Mix cutting out"
+msgstr "Zmešajte rezanje"
+
+#: admin/views/ViewShortcode.php:1066 admin/views/ViewShortcode.php:1077
+msgid "Fade (Fun)"
+msgstr "Izginotje (Zabava)"
+
+#: admin/views/ViewShortcode.php:1067
+msgid "Roll"
+msgstr "Roll"
+
+#: admin/views/ViewShortcode.php:1070
+msgid "Zoom out Left"
+msgstr "Pomanjšavo v levo"
+
+#: admin/views/ViewShortcode.php:1071
+msgid "Zoom (Fun)"
+msgstr "Zoom (Zabava)"
+
+#: admin/views/ViewShortcode.php:1072
+msgid "Zoom Down (Fun)"
+msgstr "Zoom dol (Zabava)"
+
+#: admin/views/ViewShortcode.php:1074
+msgid "Mix cutting in"
+msgstr "Zmešajte rezanje"
+
+#: admin/views/ViewShortcode.php:1076
+msgid "Zoom Up"
+msgstr "Zoom na vrh"
+
+#: admin/views/ViewShortcode.php:1079 admin/views/ViewShortcode.php:1080
+msgid "Random"
+msgstr "Naključen"
+
+#: admin/views/ViewShortcode.php:1087
+msgid "Facebook:"
+msgstr "Facebook:"
+
+#: admin/views/ViewShortcode.php:1096
+msgid "Google+:"
+msgstr "Google+:"
+
+#: admin/views/ViewShortcode.php:1107
+msgid "Twitter:"
+msgstr "Twitter:"
+
+#: admin/views/ViewShortcode.php:1116
+msgid "Pinterest:"
+msgstr "Pinterest:"
+
+#: admin/views/ViewShortcode.php:1127
+msgid "Tumblr:"
+msgstr "Tumblr:"
+
+#: admin/views/ViewShortcode.php:1136
+msgid "LinkedIn:"
+msgstr "LinkedIn:"
+
+#: admin/views/ViewShortcode.php:1147
+msgid "Reddit:"
+msgstr "Reddit:"
+
+#: admin/views/ViewShortcode.php:1156
+msgid "Fullscreen:"
+msgstr "Celoten ekran:"
+
+#: admin/views/ViewShortcode.php:1167
+msgid "Autoplay:"
+msgstr "Samodejno predvajanje:"
+
+#: admin/views/ViewShortcode.php:1176
+msgid "Image Info:"
+msgstr "Podatki o sliki:"
+
+#: admin/views/ViewShortcode.php:1187
+msgid "Autoplay interval:"
+msgstr "Interval samodejnega predvajanja:"
+
+#: admin/views/ViewShortcode.php:1190
+msgid "sec"
+msgstr "sek"
+
+#: admin/views/ViewShortcode.php:1199
+msgid "Image counting"
+msgstr "Štetje slik"
+
+#: admin/views/ViewShortcode.php:1208
+msgid "Swipe:"
+msgstr "Potegnite:"
+
+#: admin/views/ViewShortcode.php:1224
+msgid "Update"
+msgstr "Nadgradnja"
+
+#: admin/views/ViewShortcode.php:1224
+msgid "Insert"
+msgstr "Vstavi"
+
+#: ajax/GRSAdminActions.php:118
+msgid "Something went wrong"
+msgstr "Nekaj je šlo narobe"
+
+#: ajax/GRSAdminActions.php:393
+msgid "There is no items selected or"
+msgstr "Nobenega izbranih elementov ali"
+
+#: ajax/GRSAdminActions.php:398
+msgid "Problem with Order saving"
+msgstr "Problem z varčevanjem naročila"
+
+#: ajax/GRSAdminActions.php:435
+msgid "Problem with gallery save"
+msgstr "Težava pri shranjevanju galerije"
+
+#: ajax/GRSAdminActions.php:488
+msgid "Problem with image or gallery update"
+msgstr "Težava pri posodabljanju slike ali galerije"
+
+#: ajax/GRSAdminActions.php:557 ajax/GRSAdminActions.php:618
+#: ajax/GRSAdminActions.php:655 ajax/GRSAdminActions.php:792
+#: ajax/GRSAdminActions.php:860 ajax/GRSAdminActions.php:883
+#: ajax/GRSAdminActions.php:991 ajax/GRSAdminActions.php:995
+#: ajax/GRSAdminActions.php:1071 ajax/GRSAdminActions.php:1110
+#: ajax/GRSAdminActions.php:1167 ajax/GRSComment.php:79
+#: embed/GRSGalleryEmbed.php:233
+msgid "Problem with save"
+msgstr "Težava z prihranite"
+
+#: ajax/GRSAdminActions.php:579 ajax/GRSAdminActions.php:634
+msgid "Function not found: getimagesize. Please connect to plugin support."
+msgstr ""
+"Funkcija ni bila najdena: getimagesize. Prosimo povezati plugin podporo."
+
+#: ajax/GRSAdminActions.php:677 ajax/GRSAdminActions.php:691
+#: ajax/GRSAdminActions.php:705 ajax/GRSAdminActions.php:926
+msgid "Problem with delete"
+msgstr "Težava z brisanjem"
+
+#: ajax/GRSAdminActions.php:708
+msgid "Invalid comment id"
+msgstr "Neveljaven id komentarja"
+
+#: ajax/GRSAdminActions.php:771
+msgid "You are trying to duplicate content or there is some other problem."
+msgstr "Poskušate podvajati vsebino ali pa obstaja kakšen drug problem."
+
+#: ajax/GRSAdminActions.php:790 ajax/GRSAdminActions.php:881
+#: ajax/GRSAdminActions.php:1165
+msgid "Successfully delete"
+msgstr "Uspešno izbrišite"
+
+#: ajax/GRSAdminActions.php:796 ajax/GRSAdminActions.php:999
+#: ajax/GRSAdminActions.php:1171
+msgid "Oh there is a problem"
+msgstr "Oh, tukaj je problem"
+
+#: ajax/GRSAdminActions.php:887 gallery-rs.php:290
+msgid "Error something went wrong"
+msgstr "Napaka, nekaj je šlo narobe"
+
+#: ajax/GRSAdminActions.php:960
+msgid "Problem with uninstall"
+msgstr "Težava z odstranjevanjem"
+
+#: ajax/GRSAdminActions.php:989 smart/GRSGallerySmart.php:30
+#: smart/GRSGallerySmart.php:79
+msgid "Successfully update"
+msgstr "Uspešno posodobiti"
+
+#: ajax/GRSAdminActions.php:1068 ajax/GRSAdminActions.php:1108
+msgid "Unable to create css file."
+msgstr "Datoteke css ni bilo mogoče ustvariti."
+
+#: ajax/GRSCaptcha.php:104
+msgid "Required GD library is missing"
+msgstr "Zahtevani GD knjižnica manjka"
+
+#: ajax/GRSComment.php:25
+msgid "Invalid name"
+msgstr "Neveljavno ime"
+
+#: ajax/GRSComment.php:29
+msgid "Invalid email address"
+msgstr "Nepravilen e-naslov"
+
+#: ajax/GRSComment.php:33
+msgid "Invalid comment"
+msgstr "Neveljaven komentar"
+
+#: ajax/GRSComment.php:37
+msgid "Invalid image"
+msgstr "Neveljavna slika"
+
+#: ajax/GRSComment.php:41
+msgid "Invalid gallery"
+msgstr "Neveljavna galerija"
+
+#: ajax/GRSComment.php:85
+msgid "Incorrect captcha code"
+msgstr "Napačna koda za captcha"
+
+#: ajax/GRSComment.php:107
+msgid "Invalid image id"
+msgstr "Neveljaven id slike"
+
+#: ajax/GRSGalleryAjax.php:62
+msgid "It isn't grs action"
+msgstr "Ni dejanje GRS"
+
+#: ajax/GRSGalleryAjax.php:71
+msgid "Unknown action."
+msgstr "Neznano dejanje."
+
+#: ajax/GRSGalleryAjax.php:76
+msgid "Your nonce is not verified"
+msgstr "Vaša nonce ni preverjena"
+
+#: ajax/GRSGalleryAjax.php:88
+msgid "try to reactivate plugin."
+msgstr "poskusite ponovno aktivirati plugin."
+
+#: embed/GRSGalleryEmbed.php:77
+msgid "Unknown provider"
+msgstr "Neznan ponudnik"
+
+#: embed/GRSGalleryEmbed.php:104
+msgid "Invalid scheme "
+msgstr "Neveljavna shema "
+
+#: embed/GRSGalleryEmbed.php:106
+msgid "Invalid host "
+msgstr "Neveljaven gostitelj "
+
+#: embed/GRSGalleryEmbed.php:106
+msgid " for "
+msgstr " za "
+
+#: embed/GRSGalleryEmbed.php:106
+msgid " provider"
+msgstr " ponudnik"
+
+#: embed/GRSGalleryEmbed.php:130
+msgid "Only image urls allowed for flickr provider"
+msgstr "Samo slike url dovoljene za ponudnika flickr"
+
+#: gallery-rs.php:182
+msgid "Add Album"
+msgstr "Dodaj album"
+
+#: gallery-rs.php:185
+msgid "Update Preview Image"
+msgstr "Posodobi predogled slike"
+
+#: gallery-rs.php:186
+msgid "Url Examples"
+msgstr "Primeri URL"
+
+#: gallery-rs.php:187
+msgid "Add"
+msgstr "Dodaj"
+
+#: gallery-rs.php:188 gallery-rs.php:443
+msgid "Close"
+msgstr "Zapri"
+
+#: gallery-rs.php:189
+msgid "Add youtube embed"
+msgstr "Dodajte embed YouTube"
+
+#: gallery-rs.php:190
+msgid "Add instagram photo/video"
+msgstr "Dodaj Instagram foto/video"
+
+#: gallery-rs.php:191
+msgid "Add vimeo embed"
+msgstr "Dodaj embed Vimeo"
+
+#: gallery-rs.php:192
+msgid "Add flickr photo"
+msgstr "Dodaj Flickr fotografijo"
+
+#: gallery-rs.php:193
+msgid "Add images from Limb library"
+msgstr "Dodajte slike iz knjižnice Limb"
+
+#: gallery-rs.php:194
+msgid "Add images from WP library"
+msgstr "Dodajte slike iz knjižnice WP"
+
+#: gallery-rs.php:195
+msgid "Delete"
+msgstr "Izbriši"
+
+#: gallery-rs.php:196
+msgid "Select all"
+msgstr "Izberi vse"
+
+#: gallery-rs.php:197
+msgid "Order By:"
+msgstr "Naročilo:"
+
+#: gallery-rs.php:198
+msgid "ID"
+msgstr "ID"
+
+#: gallery-rs.php:200
+msgid "Items per page"
+msgstr "Elementi na stran"
+
+#: gallery-rs.php:201
+msgid "Edit"
+msgstr "Uredi"
+
+#: gallery-rs.php:202
+msgid "Link"
+msgstr "Povezava"
+
+#: gallery-rs.php:203
+msgid "Remove"
+msgstr "Odstraniti"
+
+#: gallery-rs.php:204
+msgid "Timezone:"
+msgstr "Časovni pas:"
+
+#: gallery-rs.php:205
+msgid "Collapse navigation clicks while animation in progress:"
+msgstr "Strni navigacijske tipke med animacijo v teku:"
+
+#: gallery-rs.php:207
+msgid "Timeformat:"
+msgstr "Oblika časa:"
+
+#: gallery-rs.php:208
+msgid "Clicks count:"
+msgstr "Število klikov:"
+
+#: gallery-rs.php:209
+msgid "Show Comments immediately after Lightbox opens:"
+msgstr "Prikaži komentarje takoj odpre Lightbox:"
+
+#: gallery-rs.php:210
+msgid "if Comments is enabled in shortcode"
+msgstr "če je omogočen komentar v shortcode"
+
+#: gallery-rs.php:212
+msgid "Show Info immediately after Lightbox opens:"
+msgstr "Prikaži informacije takoj, ko se odpre Lightbox:"
+
+#: gallery-rs.php:213
+msgid "if Info is enabled in shortcode"
+msgstr "če informacije omogočen v shortcode"
+
+#: gallery-rs.php:214
+msgid "Lightbox filmstrip image move count:"
+msgstr "Lightbox filmstrip slika premika count:"
+
+#: gallery-rs.php:215
+msgid "Hide navigation button while reaching to the end(start):"
+msgstr "Skrij navigacijski gumb ob dosegu do konca(začetek):"
+
+#: gallery-rs.php:216
+msgid "Carousel image move count:"
+msgstr "Število premikov slike v vrtiljak:"
+
+#: gallery-rs.php:217
+msgid "Close lightbox by click on side:"
+msgstr "Zapri lightbox s klikom na stran:"
+
+#: gallery-rs.php:218
+msgid "Uninstall plugin:"
+msgstr "Odstrani plugin:"
+
+#: gallery-rs.php:219
+msgid "Uninstall"
+msgstr "Odstrani"
+
+#: gallery-rs.php:220
+msgid "Set default"
+msgstr "Nastavi privzeto"
+
+#: gallery-rs.php:221
+msgid "Add theme"
+msgstr "Dodaj temo"
+
+#: gallery-rs.php:222
+msgid "Image"
+msgstr "Slika"
+
+#: gallery-rs.php:223
+msgid "Margin:"
+msgstr "Marža:"
+
+#: gallery-rs.php:224
+msgid "Border:"
+msgstr "Meja:"
+
+#: gallery-rs.php:225
+msgid "Padding:"
+msgstr "Padding:"
+
+#: gallery-rs.php:226
+msgid "Border-radius:"
+msgstr "Mejni polmer:"
+
+#: gallery-rs.php:227
+msgid "Background color:"
+msgstr "Barva ozadja:"
+
+#: gallery-rs.php:228
+msgid "Shadow:"
+msgstr "Senca:"
+
+#: gallery-rs.php:229
+msgid "Hover effect:"
+msgstr "Učinek na lebdenje:"
+
+#: gallery-rs.php:230
+msgid "Position:"
+msgstr "Položaj:"
+
+#: gallery-rs.php:232
+msgid "Font size:"
+msgstr "Velikost pisave:"
+
+#: gallery-rs.php:233
+msgid "Color:"
+msgstr "Barva:"
+
+#: gallery-rs.php:234
+msgid "Mask color:"
+msgstr "Barva mask:"
+
+#: gallery-rs.php:235
+msgid "Font Family:"
+msgstr "Družina pisav:"
+
+#: gallery-rs.php:236
+msgid "Font weight:"
+msgstr "Teža pisave:"
+
+#: gallery-rs.php:237
+msgid "Font style:"
+msgstr "Slog pisave:"
+
+#: gallery-rs.php:238
+msgid "Container"
+msgstr "Zabojnik"
+
+#: gallery-rs.php:239
+msgid "Upload images"
+msgstr "Naložite slike"
+
+#: gallery-rs.php:240
+msgid "Add images to gallery"
+msgstr "Dodajanje slik v galerijo"
+
+#: gallery-rs.php:241
+msgid "Add folder"
+msgstr "Dodaj mapo"
+
+#: gallery-rs.php:242 gallery-rs.php:425
+msgid "Back"
+msgstr "Nazaj"
+
+#: gallery-rs.php:243
+msgid "Rename"
+msgstr "Preimenuj"
+
+#: gallery-rs.php:244
+msgid "Navigation"
+msgstr "Navigacija"
+
+#: gallery-rs.php:245
+msgid "Buttons:"
+msgstr "Gumbi:"
+
+#: gallery-rs.php:247
+msgid "Size:"
+msgstr "Velikost:"
+
+#: gallery-rs.php:250
+msgid "Hover color:"
+msgstr "Barva hover:"
+
+#: gallery-rs.php:251
+msgid "Hover Background color:"
+msgstr "Hover barva ozadja:"
+
+#: gallery-rs.php:252
+msgid "Offset(Right,Left):"
+msgstr "Offset(Desno,Levo):"
+
+#: gallery-rs.php:253
+msgid "Margin Top:"
+msgstr "Marža pri vrhu:"
+
+#: gallery-rs.php:254
+msgid "Alignment:"
+msgstr "Poravnava:"
+
+#: gallery-rs.php:255
+msgid "Active background color:"
+msgstr "Aktivna barva ozadja:"
+
+#: gallery-rs.php:256
+msgid "Back button"
+msgstr "Gumb nazaj"
+
+#: gallery-rs.php:257
+msgid "Main"
+msgstr "Glavni"
+
+#: gallery-rs.php:258
+msgid "Box background color"
+msgstr "Barva ozadja škatle"
+
+#: gallery-rs.php:259
+msgid "Close button"
+msgstr "Gumb zapri"
+
+#: gallery-rs.php:260
+msgid "Box size:"
+msgstr "Velikost škatle:"
+
+#: gallery-rs.php:261
+msgid "Box shadow:"
+msgstr "Senca škatle:"
+
+#: gallery-rs.php:262
+msgid "Title and Description"
+msgstr "Naslov in opis"
+
+#: gallery-rs.php:264
+msgid "Background"
+msgstr "Ozadje"
+
+#: gallery-rs.php:265
+msgid "Max-width:"
+msgstr "Največja širina:"
+
+#: gallery-rs.php:266
+msgid "Show:"
+msgstr "Pokaži:"
+
+#: gallery-rs.php:267
+msgid "Hover Shadow:"
+msgstr "Senca hover:"
+
+#: gallery-rs.php:268
+msgid "Filmstrip"
+msgstr "Filmstrip"
+
+#: gallery-rs.php:269
+msgid "Margin(Top,Bottom):"
+msgstr "Marža(Zgoraj,Spodaj):"
+
+#: gallery-rs.php:270
+msgid "Thumb"
+msgstr "Thumb"
+
+#: gallery-rs.php:271
+msgid "Selected effect:"
+msgstr "Izbrani učinek:"
+
+#: gallery-rs.php:272
+msgid "Selected thumb Border:"
+msgstr "Izbrana meja thumb:"
+
+#: gallery-rs.php:273
+msgid "Control buttons"
+msgstr "Krmilne gumbe"
+
+#: gallery-rs.php:274
+msgid "Image count"
+msgstr "Image count"
+
+#: gallery-rs.php:275
+msgid "Comments container"
+msgstr "Zabojnik za komentarje"
+
+#: gallery-rs.php:276
+msgid "Margin(vertical):"
+msgstr "Marža(navpična):"
+
+#: gallery-rs.php:277
+msgid "Margin(horizontal):"
+msgstr "Marža(vodoravna):"
+
+#: gallery-rs.php:278
+msgid "Labels"
+msgstr "Etikety"
+
+#: gallery-rs.php:279
+msgid "Inputs"
+msgstr "Vložki"
+
+#: gallery-rs.php:280
+msgid "Active border color:"
+msgstr "Aktivna barva meje:"
+
+#: gallery-rs.php:281
+msgid "Active shadow:"
+msgstr "Aktivna senca:"
+
+#: gallery-rs.php:282
+msgid "Position(Top,Left):"
+msgstr "Položaj(Zgoraj,Levo):"
+
+#: gallery-rs.php:283
+msgid "Captcha button"
+msgstr "Gumb Captcha"
+
+#: gallery-rs.php:284
+msgid "Author"
+msgstr "Avtor"
+
+#: gallery-rs.php:285
+msgid "Comment"
+msgstr "Komentar"
+
+#: gallery-rs.php:288
+msgid "Order successfully saved"
+msgstr "Naročilo je bilo uspešno shranjeno"
+
+#: gallery-rs.php:289
+msgid "Items successfully saved"
+msgstr "Elementi so bili uspešno shranjeni"
+
+#: gallery-rs.php:291
+msgid "Images successfully added"
+msgstr "Slike so bile uspešno dodane"
+
+#: gallery-rs.php:292
+msgid "Add gallery preview image"
+msgstr "Dodaj sliko za predogled galerije"
+
+#: gallery-rs.php:293
+msgid "Are you sure , you want to delete "
+msgstr "Ali ste prepričani, želite izbrisati "
+
+#: gallery-rs.php:294
+msgid " item ?"
+msgstr " predmet?"
+
+#: gallery-rs.php:295
+msgid "Are you sure , you want to delete selected items ?"
+msgstr "Ali ste prepričani, želite izbrisati izbrane elemente?"
+
+#: gallery-rs.php:296
+msgid "Items successfully deleted"
+msgstr "Elementi so bili uspešno izbrisani"
+
+#: gallery-rs.php:297
+msgid "Item successfully saved"
+msgstr "Element je uspešno shranjen"
+
+#: gallery-rs.php:298
+msgid "Fill the url input"
+msgstr "Izpolnite URL"
+
+#: gallery-rs.php:299
+msgid "Unable to get themes data"
+msgstr "Ne morem dobiti podatkov o temah"
+
+#: gallery-rs.php:300
+msgid "Theme successfully saved"
+msgstr "Tema je bila uspešno shranjena"
+
+#: gallery-rs.php:301
+msgid "You can't delete default theme"
+msgstr "Ne, ne moreš izbrisati privzeto temo"
+
+#: gallery-rs.php:302
+msgid " theme ?"
+msgstr " tema?"
+
+#: gallery-rs.php:303
+msgid "Theme successfully deleted"
+msgstr "Tema je bila izbrisana"
+
+#: gallery-rs.php:304
+msgid "Unable to get albums data"
+msgstr "Podatkov o albumih ni mogoče dobiti"
+
+#: gallery-rs.php:305
+msgid "Album successfully saved"
+msgstr "Album je uspešno shranjen"
+
+#: gallery-rs.php:306
+msgid " album ?"
+msgstr " album?"
+
+#: gallery-rs.php:307
+msgid "Are you sure , you want to delete selected albums ?"
+msgstr "Ali ste prepričani, želite izbrisati izbrane albume?"
+
+#: gallery-rs.php:308
+msgid "Albums successfully deleted"
+msgstr "Albumi so bile uspešno izbrisane"
+
+#: gallery-rs.php:309
+msgid "successfully deleted"
+msgstr "uspešno izbrisano"
+
+#: gallery-rs.php:310
+msgid "Add album preview image"
+msgstr "Dodaj sliko za predogled albuma"
+
+#: gallery-rs.php:311
+msgid "Select album"
+msgstr "Izberite album"
+
+#: gallery-rs.php:312
+msgid "Unable to get settings data"
+msgstr "Podatkov o nastavitvah ni mogoče dobiti"
+
+#: gallery-rs.php:313
+msgid "Settings successfully saved"
+msgstr "Nastavitve so bile uspešno shranjene"
+
+#: gallery-rs.php:314
+msgid "The following Database Tables will be deleted:"
+msgstr "Naslednje tabele baze podatkov bodo izbrisane:"
+
+#: gallery-rs.php:315
+msgid "Are you sure , you want to uninstall this plugin ?"
+msgstr "Ali ste prepričani, želite odstraniti ta plugin?"
+
+#: gallery-rs.php:316 smart/GRSGallerySmart.php:45
+msgid "Plugin uninstalled"
+msgstr "Plugin je odstranjen"
+
+#: gallery-rs.php:317
+msgid "Unable to get uploader data"
+msgstr "Podatkov o nalaganju ni mogoče"
+
+#: gallery-rs.php:318
+msgid "Wait while image is being uploaded"
+msgstr "Počakajte, da se slika, ki se je prenesel"
+
+#: gallery-rs.php:319
+msgid "Folder successfully created"
+msgstr "Mapa je uspešno ustvarjena"
+
+#: gallery-rs.php:320
+msgid " folder ?"
+msgstr " mapo?"
+
+#: gallery-rs.php:321
+msgid " image ?"
+msgstr " sliko?"
+
+#: gallery-rs.php:322
+msgid "Select at list one item"
+msgstr "Na seznamu izberite enega elementa"
+
+#: gallery-rs.php:323
+msgid "Item successfully deleted"
+msgstr "Element je uspešno izbrisan"
+
+#: gallery-rs.php:324
+msgid "A file name can't contain this (\") character"
+msgstr "Ime datoteke ne sme vsebovati tega (\") znaka"
+
+#: gallery-rs.php:325
+msgid "A file name can't be empty"
+msgstr "Ime datoteke ne sme biti prazno"
+
+#: gallery-rs.php:326
+msgid "Item successfully renamed"
+msgstr "Element je uspešno preimenovan"
+
+#: gallery-rs.php:327
+msgid "Select at list one image"
+msgstr "Na seznamu izberite eno sliko"
+
+#: gallery-rs.php:328
+msgid "Select gallery or press \"Add images\" button from gallery cont"
+msgstr "Select gallery or press \"Add images\" button from gallery cont"
+
+#: gallery-rs.php:329
+msgid "Adding folder not allowed yet"
+msgstr "Dodajanje mape še ni dovoljeno"
+
+#: gallery-rs.php:330
+msgid "Preview image updated"
+msgstr "Predogled slike je posodobljen"
+
+#: gallery-rs.php:331
+msgid "Highlighted items upload failed, check your server post max size"
+msgstr ""
+"Prenos izbranih elementov ni uspel, preverite največjo velikost strežnika"
+
+#: gallery-rs.php:332
+msgid "Please be patient, try after current request ends"
+msgstr "Bodite potrpežljivi, poskusite po zaključku trenutne zahteve"
+
+#: gallery-rs.php:333
+msgid "Unable to get galleries data"
+msgstr "Podatkov galerij ni bilo mogoče pridobiti"
+
+#: gallery-rs.php:334
+msgid " gallery ?"
+msgstr " galerija?"
+
+#: gallery-rs.php:335
+msgid "Please wait until loading ends."
+msgstr "Počakajte, da se nalagajo konca."
+
+#: gallery-rs.php:336
+msgid "There is no gallery , create it from the button left."
+msgstr "Galerije ni, ustvarite ga od levega gumba."
+
+#: gallery-rs.php:337
+msgid "You need to install pro version containing themes feature."
+msgstr "Morate namestiti pro različico, ki vsebuje teme."
+
+#: gallery-rs.php:338
+msgid "Show video's(Vimeo) title in lightbox:"
+msgstr "Prikaži naslov videoposnetka (Vimeo) v okvirju s svetlobo:"
+
+#: gallery-rs.php:339
+msgid "Show video's(YouTube) title in lightbox:"
+msgstr "Prikaži naslov videoposnetka (YouTube) v okvirju s svetlobo:"
+
+#: gallery-rs.php:421
+msgid "There is no images in this gallery"
+msgstr "V tej galeriji ni slik"
+
+#: gallery-rs.php:422
+msgid "Album is empty"
+msgstr "Album je prazen"
+
+#: gallery-rs.php:423
+msgid "There is no gallery matching your id or it was deleted"
+msgstr "Ni galerija, ki ustrezajo vaši id ali pa je bila izbrisana"
+
+#: gallery-rs.php:424
+msgid "There is no album matching your id or it was deleted"
+msgstr "Ni album, ki ustrezajo vaši id ali pa je bila izbrisana"
+
+#: gallery-rs.php:426
+msgid "Close comments"
+msgstr "Zapri komentarje"
+
+#: gallery-rs.php:427
+msgid "Name"
+msgstr "Ime"
+
+#: gallery-rs.php:428
+msgid "Email"
+msgstr "E-naslov"
+
+#: gallery-rs.php:429
+msgid "Leave a comment"
+msgstr "Pustite komentar"
+
+#: gallery-rs.php:430
+msgid "Reload captcha"
+msgstr "Ponovno naloži captcha"
+
+#: gallery-rs.php:432
+msgid "Your browser does not support the video tag."
+msgstr "Vaš spletni brskalnik ne podpira video oznake."
+
+#: gallery-rs.php:433
+msgid "Share on Facebook"
+msgstr "Delite na Facebooku"
+
+#: gallery-rs.php:434
+msgid "Share on Twitter"
+msgstr "Delite na Twitterju"
+
+#: gallery-rs.php:435
+msgid "Share on Google+"
+msgstr "Delite na Google+"
+
+#: gallery-rs.php:436
+msgid "Share on Pinterest"
+msgstr "Delite na Pinterest"
+
+#: gallery-rs.php:437
+msgid "Share on Tumblr"
+msgstr "Delite na Tumblr"
+
+#: gallery-rs.php:438
+msgid "Share on Linkedin"
+msgstr "Delite na LinkedIn"
+
+#: gallery-rs.php:439
+msgid "Share on Reddit"
+msgstr "Delite na Reddit"
+
+#: gallery-rs.php:440
+msgid "Play/Pause"
+msgstr "Predvajaj/Zaustavi"
+
+#: gallery-rs.php:441
+msgid "Show/Hide info"
+msgstr "Prikaži/Skrij informacije"
+
+#: gallery-rs.php:442
+msgid "Show comments"
+msgstr "Prikaži komentarje"
+
+#: gallery-rs.php:444
+msgid " of "
+msgstr " za "
+
+#: smart/GRSGallerySmart.php:34 smart/GRSGallerySmart.php:82
+msgid "Problems with update"
+msgstr "Težave s posodobitvijo"
+
+#: smart/GRSGallerySmart.php:62
+msgid ""
+"Trying to update old version, Please uninstall current then install your "
+"version"
+msgstr ""
+"Poskusite posodobiti staro različico,prosimo, odstranite trenutni in "
+"namestite svojo različico"
+
+#: smart/GRSGallerySmart.php:67
+msgid "Successfully activate"
+msgstr "Uspešno aktivirajte"
+
+#: smart/GRSGallerySmart.php:70
+msgid "Some rows dropped and can't be inserted"
+msgstr "Nekatere vrstice so padle in jih ni mogoče vstaviti"
+
+#: smart/GRSGallerySmart.php:73
+msgid "Some tables dropped, or can't be created"
+msgstr "Nekatere tabele so padle ali jih ni mogoče ustvariti"
+
+#: smart/GRSGallerySmart.php:86
+msgid "Some tables not exists and can't created"
+msgstr "Nekatere tabele ne obstajajo in jih ni mogoče ustvariti"
+
+#: smart/GRSGallerySmart.php:90
+msgid "Unknown version"
+msgstr "Neznana različica"
+
+#: smart/GRSGallerySmart.php:98
+msgid "Plugin successfully activate"
+msgstr "Plugin uspešno aktivira"
+
+#: smart/GRSGallerySmart.php:101
+msgid "Data has not been inserted"
+msgstr "Podatki niso bili vstavljeni"
+
+#: smart/GRSGallerySmart.php:104
+msgid "Some tables have not been created"
+msgstr "Nekatere tabele niso bile ustvarjene"
+
+#~ msgid "Depth:"
+#~ msgstr "Globina:"

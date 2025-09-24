@@ -1,0 +1,11 @@
+{
+  "name": "js",
+  "version": "0.0.1",
+  "dependencies": {
+    "gulp": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-ng-annotate": "^2.1.0",
+    "gulp-strip-debug": "^1.1.0",
+    "gulp-uglify": "^3.0.2"
+  }
+}
