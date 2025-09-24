@@ -1,26 +1,29 @@
-name: Deploy wp-content (theme/plugins) via FTP
+name: Deploy wp-content (DEV & PROD via FTP)
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "dev", "main" ]   # dev => webdevserver.fr, main => prod
   workflow_dispatch:
 
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Create artifact zip (wp-content only)
+      # Crée un ZIP artefact utile si tu veux publier manuellement
+      - name: Pack wp-content
         run: |
           mkdir -p out
           if [ -d "wp-content" ]; then
             zip -r out/wp-content.zip wp-content
           else
-            echo "::warning::No wp-content directory found. Add your theme/plugins before deploying."
-            mkdir -p out && echo "empty" > out/README.txt
+            echo "::warning::No wp-content directory."
+            mkdir -p out && echo "empty" > out/empty.txt
           fi
 
       - name: Upload artifact
@@ -29,15 +32,43 @@ jobs:
           name: wp-content
           path: out/wp-content.zip
 
-      - name: FTP Deploy (optional)
-        if: ${{ secrets.FTP_SERVER && secrets.FTP_USERNAME && secrets.FTP_PASSWORD && secrets.SERVER_DIR }}
+  deploy-dev:
+    if: github.ref == 'refs/heads/dev'
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v4
+      - name: FTP Deploy to DEV
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.FTP_SERVER }}
+          server:   ${{ secrets.DEV_FTP_SERVER }}
+          username: ${{ secrets.DEV_FTP_USERNAME }}
+          password: ${{ secrets.DEV_FTP_PASSWORD }}
+          # protocol: 'ftps'   # ou 'ftp' / 'ftps' / 'sftp' si besoin
+          local-dir: wp-content/
+          server-dir: ${{ secrets.DEV_SERVER_DIR }}  # ex: /htdocs/wp-content/
+          exclude: |
+            **/.git*
+            **/.DS_Store
+            **/node_modules/**
+            **/vendor/**
+            **/*.map
+
+  deploy-prod:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v4
+      - name: FTP Deploy to PROD
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server:   ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          # protocol: 'ftps'   # ou 'sftp' selon l’hébergeur
           local-dir: wp-content/
-          server-dir: ${{ secrets.SERVER_DIR }}
+          server-dir: ${{ secrets.SERVER_DIR }}       # ex: /htdocs/wp-content/
           exclude: |
             **/.git*
             **/.DS_Store
