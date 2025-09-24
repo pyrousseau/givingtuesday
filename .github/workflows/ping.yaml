@@ -1,0 +1,71 @@
+name: Deploy wp-content (DEV & PROD via FTP)
+
+on:
+  push:
+    branches: [ "dev", "main" ]        # dev => webdevserver, main => prod
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pack wp-content
+        run: |
+          mkdir -p out
+          zip -r out/wp-content.zip wp-content || echo "no wp-content"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wp-content
+          path: out/wp-content.zip
+
+  deploy-dev:
+    if: github.ref == 'refs/heads/dev'
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v4
+      - name: FTP Deploy to DEV
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server:   ${{ secrets.DEV_FTP_SERVER }}   # ex: ssh.webxxx.gpaas.net (sans sftp://)
+          username: ${{ secrets.DEV_FTP_USERNAME }}
+          password: ${{ secrets.DEV_FTP_PASSWORD }}
+          protocol: sftp                            # DEV en SFTP
+          port: 22
+          local-dir: wp-content/
+          server-dir: ${{ secrets.DEV_SERVER_DIR }} # /htdocs/wp-content
+          log-level: verbose
+          exclude: |
+            **/.git*
+            **/.DS_Store
+            **/node_modules/**
+            **/vendor/**
+            **/*.map
+
+  deploy-prod:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v4
+      - name: FTP Deploy to PROD
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server:   ${{ secrets.FTP_SERVER }}       # prod host
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps                            # Prod en FTPS (mets sftp si besoin)
+          local-dir: wp-content/
+          server-dir: ${{ secrets.SERVER_DIR }}     # /www/wp-content
+          log-level: verbose
+          exclude: |
+            **/.git*
+            **/.DS_Store
+            **/node_modules/**
+            **/vendor/**
+            **/*.map
