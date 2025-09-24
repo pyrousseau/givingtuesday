@@ -1,4 +1,4 @@
-name: Deploy wp-content (DEV via SFTP, PROD via FTP/FTPS)
+name: Deploy wp-content (DEV via SFTP, PROD via FTPS)
 
 on:
   push:
@@ -15,7 +15,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Créer l’artefact wp-content.zip (facultatif)
+      # Artefact optionnel pour téléchargement manuel
+      - name: Pack wp-content
         run: |
           mkdir -p out
           zip -r out/wp-content.zip wp-content || echo "no wp-content"
@@ -24,42 +25,43 @@ jobs:
           name: wp-content
           path: out/wp-content.zip
 
-  # === DEPLOY DEV (branche dev → webdevserver.fr) ===
-deploy-dev:
-  if: github.ref == 'refs/heads/dev'
-  runs-on: ubuntu-latest
-  needs: build
-  steps:
-    - uses: actions/checkout@v4
-    - name: Déploiement DEV via SFTP
-      uses: appleboy/sftp-action@v0.6.0
-      with:
-        host: ${{ secrets.DEV_FTP_SERVER }}
-        username: ${{ secrets.DEV_FTP_USERNAME }}
-        password: ${{ secrets.DEV_FTP_PASSWORD }}
-        port: 22
-        source: "wp-content/*"
-        target: ${{ secrets.DEV_SERVER_DIR }}
-        strip_components: 1
-        overwrite: true
+  # -------- DEV (branche dev → webdevserver.fr) --------
+  deploy-dev:
+    if: github.ref == 'refs/heads/dev'
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy to DEV via SFTP
+        uses: appleboy/sftp-action@v0.6.0
+        with:
+          host: ${{ secrets.DEV_FTP_SERVER }}          # ex: ssh.webxxx.gpaas.net (sans sftp://)
+          username: ${{ secrets.DEV_FTP_USERNAME }}
+          password: ${{ secrets.DEV_FTP_PASSWORD }}
+          port: 22
+          source: "wp-content/*"                        # envoie le contenu de wp-content
+          target: ${{ secrets.DEV_SERVER_DIR }}         # ex: /lamp0/web/vhosts/webdevserver.fr/htdocs/wp-content/
+          strip_components: 1                           # supprime le préfixe "wp-content/"
+          overwrite: true
+          # timeout: 300s
+          # use_insecure_cipher: true
 
-
-  # === DEPLOY PROD (branche main → prod officielle) ===
+  # -------- PROD (branche main → site officiel) --------
   deploy-prod:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     needs: build
     steps:
       - uses: actions/checkout@v4
-      - name: Déploiement PROD via FTPS
+      - name: Deploy to PROD via FTPS
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server:   ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps                          # ou ftp / ftps-legacy selon l'hébergeur
+          protocol: ftps                              # change en 'ftp' ou 'ftps-legacy' si besoin
           local-dir: wp-content/
-          server-dir: ${{ secrets.SERVER_DIR }}
+          server-dir: ${{ secrets.SERVER_DIR }}       # ex: /www/wp-content/
           exclude: |
             **/.git*
             **/.DS_Store
