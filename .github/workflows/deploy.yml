@@ -1,4 +1,4 @@
-name: Deploy wp-content (DEV via SFTP, PROD via FTPS)
+name: Deploy wp-content (DEV via SCP, PROD via FTPS)
 
 on:
   push:
@@ -15,7 +15,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Artefact optionnel pour téléchargement manuel
       - name: Pack wp-content
         run: |
           mkdir -p out
@@ -25,28 +24,23 @@ jobs:
           name: wp-content
           path: out/wp-content.zip
 
-  # -------- DEV (branche dev → webdevserver.fr) --------
   deploy-dev:
     if: github.ref == 'refs/heads/dev'
     runs-on: ubuntu-latest
     needs: build
     steps:
       - uses: actions/checkout@v4
-      - name: Deploy to DEV via SFTP
-        uses: appleboy/sftp-action@v0.6.0
+      - name: Deploy to DEV via SCP (SFTP-compatible)
+        uses: appleboy/scp-action@v0.1.4
         with:
-          host: ${{ secrets.DEV_FTP_SERVER }}          # ex: ssh.webxxx.gpaas.net (sans sftp://)
+          host: ${{ secrets.DEV_FTP_SERVER }}
           username: ${{ secrets.DEV_FTP_USERNAME }}
           password: ${{ secrets.DEV_FTP_PASSWORD }}
           port: 22
-          source: "wp-content/*"                        # envoie le contenu de wp-content
-          target: ${{ secrets.DEV_SERVER_DIR }}         # ex: /lamp0/web/vhosts/webdevserver.fr/htdocs/wp-content/
-          strip_components: 1                           # supprime le préfixe "wp-content/"
-          overwrite: true
-          # timeout: 300s
-          # use_insecure_cipher: true
+          source: "wp-content/*"
+          target: ${{ secrets.DEV_SERVER_DIR }}
+          strip_components: 1
 
-  # -------- PROD (branche main → site officiel) --------
   deploy-prod:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
@@ -59,9 +53,9 @@ jobs:
           server:   ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps                              # change en 'ftp' ou 'ftps-legacy' si besoin
+          protocol: ftps
           local-dir: wp-content/
-          server-dir: ${{ secrets.SERVER_DIR }}       # ex: /www/wp-content/
+          server-dir: ${{ secrets.SERVER_DIR }}
           exclude: |
             **/.git*
             **/.DS_Store
