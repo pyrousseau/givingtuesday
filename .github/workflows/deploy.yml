@@ -14,8 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      # Artefact optionnel (pour download manuel si besoin)
-      - name: Pack wp-content
+      - name: Pack wp-content (artefact optionnel)
         run: |
           mkdir -p out
           zip -r out/wp-content.zip wp-content || echo "no wp-content"
@@ -24,7 +23,7 @@ jobs:
           name: wp-content
           path: out/wp-content.zip
 
-  # ========= DEV =========
+  # ===== DEV =====
   deploy-dev:
     if: github.ref == 'refs/heads/dev'
     runs-on: ubuntu-latest
@@ -34,16 +33,16 @@ jobs:
       - name: Deploy DEV via SFTP (tout wp-content)
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
-          server:   ${{ secrets.DEV_SFTP_SERVER }}      # ex: ssh.webxxx.gpaas.net
+          server:   ${{ secrets.DEV_SFTP_SERVER }}
           username: ${{ secrets.DEV_SFTP_USERNAME }}
           password: ${{ secrets.DEV_SFTP_PASSWORD }}
           port: 22
           sftp_only: true
-          local_path:  './wp-content'                    # pas de * ni de / final
+          local_path:  './wp-content'   # pas de * ni de / final
           remote_path: '/lamp0/web/vhosts/webdevserver.fr/htdocs/wp-content'
-          delete_remote_files: false                     # sécurité
+          delete_remote_files: false
 
-  # ========= PROD =========
+  # ===== PROD =====
   deploy-prod:
     if: github.ref == 'refs/heads/prod'
     runs-on: ubuntu-latest
@@ -51,8 +50,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # THEMES (code uniquement)
-      - name: PROD - Deploy themes via SFTP
+      # Thème unique "theme"  → on push le dossier local .../themes/theme
+      # vers le PARENT /www/wp-content/themes pour éviter themes/theme/theme
+      - name: PROD - Deploy theme (themes/theme)
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
           server:   ${{ secrets.PROD_SFTP_SERVER }}
@@ -60,12 +60,12 @@ jobs:
           password: ${{ secrets.PROD_SFTP_PASSWORD }}
           port: 22
           sftp_only: true
-          local_path:  './wp-content/themes'
-          remote_path: '/www/wp-content/themes'
+          local_path:  './wp-content/themes/theme'
+          remote_path: '/www/wp-content/themes'   # <- parent de "theme"
           delete_remote_files: false
 
-      # MU-PLUGINS (code uniquement)
-      - name: PROD - Deploy mu-plugins via SFTP
+      # MU-plugins (si tu en as)
+      - name: PROD - Deploy mu-plugins
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
           server:   ${{ secrets.PROD_SFTP_SERVER }}
@@ -74,19 +74,5 @@ jobs:
           port: 22
           sftp_only: true
           local_path:  './wp-content/mu-plugins'
-          remote_path: '/www/wp-content/mu-plugins'
+          remote_path: '/www/wp-content'          # <- parent de "mu-plugins"
           delete_remote_files: false
-
-      # --- (OPTIONNEL) plugins CUSTOM un par un ---
-      # Duplique ce bloc pour chaque plugin custom à livrer.
-      # - name: PROD - Deploy plugin my-custom-plugin
-      #   uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-      #   with:
-      #     server:   ${{ secrets.PROD_SFTP_SERVER }}
-      #     username: ${{ secrets.PROD_SFTP_USERNAME }}
-      #     password: ${{ secrets.PROD_SFTP_PASSWORD }}
-      #     port: 22
-      #     sftp_only: true
-      #     local_path:  './wp-content/plugins/my-custom-plugin'
-      #     remote_path: '/www/wp-content/plugins/my-custom-plugin'
-      #     delete_remote_files: false
