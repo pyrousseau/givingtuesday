@@ -1,41 +1,37 @@
-name: Deploy wp-content (theme/plugins) via FTP
+name: Deploy wp-content (DEV & PROD)
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "dev", "prod" ]
   workflow_dispatch:
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Create artifact zip (wp-content only)
+      - uses: actions/checkout@v4
+      - name: Pack wp-content
         run: |
           mkdir -p out
-          if [ -d "wp-content" ]; then
-            zip -r out/wp-content.zip wp-content
-          else
-            echo "::warning::No wp-content directory found. Add your theme/plugins before deploying."
-            mkdir -p out && echo "empty" > out/README.txt
-          fi
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
+          zip -r out/wp-content.zip wp-content || echo "no wp-content"
+      - uses: actions/upload-artifact@v4
         with:
           name: wp-content
           path: out/wp-content.zip
 
-      - name: FTP Deploy (optional)
-        if: ${{ secrets.FTP_SERVER && secrets.FTP_USERNAME && secrets.FTP_PASSWORD && secrets.SERVER_DIR }}
+  deploy-prod:
+    if: github.ref == 'refs/heads/prod'
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v4
+      - name: FTP Deploy to PROD
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps                 # ou ftp / ftps-legacy selon ton hébergeur
           local-dir: wp-content/
           server-dir: ${{ secrets.SERVER_DIR }}
           exclude: |
