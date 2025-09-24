@@ -25,18 +25,13 @@ jobs:
     needs: build
     steps:
       - uses: actions/checkout@v4
-      - name: FTP Deploy to PROD
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: Deploy to PROD via SFTP
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps                 # ou ftp / ftps-legacy selon ton hébergeur
-          local-dir: wp-content/
-          server-dir: ${{ secrets.SERVER_DIR }}
-          exclude: |
-            **/.git*
-            **/.DS_Store
-            **/node_modules/**
-            **/vendor/**
-            **/*.map
+          server: ${{ secrets.PROD_SFTP_SERVER }}
+          username: ${{ secrets.PROD_SFTP_USERNAME }}
+          password: ${{ secrets.PROD_SFTP_PASSWORD }}
+          port: 22
+          local_path: "wp-content/*"
+          remote_path: "/www/wp-content/"
+          sftp_only: true
