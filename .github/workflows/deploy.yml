@@ -39,6 +39,7 @@ jobs:
           port: 22
           source: "wp-content/*"
           target: ${{ secrets.DEV_SERVER_DIR }}/
+          strip_components: 1
 
   deploy-prod:
     if: github.ref == 'refs/heads/main'
