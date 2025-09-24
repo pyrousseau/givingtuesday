@@ -1,4 +1,4 @@
-name: Deploy wp-content (DEV via SCP, PROD via FTPS)
+name: Deploy wp-content (DEV via SFTP, PROD via FTPS)
 
 on:
   push:
@@ -30,8 +30,8 @@ jobs:
     needs: build
     steps:
       - uses: actions/checkout@v4
-      - name: Deploy to DEV via SCP (SFTP-compatible)
-        uses: appleboy/scp-action@v0.1.4
+      - name: Deploy to DEV via SFTP
+        uses: appleboy/sftp-action@v0.1.3
         with:
           host: ${{ secrets.DEV_FTP_SERVER }}
           username: ${{ secrets.DEV_FTP_USERNAME }}
@@ -40,6 +40,7 @@ jobs:
           source: "wp-content/*"
           target: ${{ secrets.DEV_SERVER_DIR }}
           strip_components: 1
+          overwrite: true
 
   deploy-prod:
     if: github.ref == 'refs/heads/main'
