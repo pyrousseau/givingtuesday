@@ -2,7 +2,7 @@ name: Deploy wp-content (DEV & PROD via FTP)
 
 on:
   push:
-    branches: [ "dev", "main" ]        # dev => webdevserver, main => prod
+    branches: [ "dev", "main" ]
   workflow_dispatch:
 
 concurrency:
@@ -14,7 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Pack wp-content
+
+      - name: Pack wp-content (artifact facultatif)
         run: |
           mkdir -p out
           zip -r out/wp-content.zip wp-content || echo "no wp-content"
@@ -23,30 +24,27 @@ jobs:
           name: wp-content
           path: out/wp-content.zip
 
+  # ---- DEV = SFTP (webdevserver.fr) ----
   deploy-dev:
     if: github.ref == 'refs/heads/dev'
     runs-on: ubuntu-latest
     needs: build
     steps:
       - uses: actions/checkout@v4
-      - name: FTP Deploy to DEV
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: SFTP Deploy to DEV
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
-          server:   ${{ secrets.DEV_FTP_SERVER }}   # ex: ssh.webxxx.gpaas.net (sans sftp://)
+          server: ${{ secrets.DEV_FTP_SERVER }}   # ex: ssh.webxxx.gpaas.net (sans sftp://)
           username: ${{ secrets.DEV_FTP_USERNAME }}
           password: ${{ secrets.DEV_FTP_PASSWORD }}
-          protocol: sftp                            # DEV en SFTP
           port: 22
-          local-dir: wp-content/
-          server-dir: ${{ secrets.DEV_SERVER_DIR }} # /htdocs/wp-content
-          log-level: verbose
-          exclude: |
-            **/.git*
-            **/.DS_Store
-            **/node_modules/**
-            **/vendor/**
-            **/*.map
+          local_path: 'wp-content/*'
+          remote_path: ${{ secrets.DEV_SERVER_DIR }}   # ex: /htdocs/wp-content/
+          sftp_only: true
+          # delete_remote_files: false   # laisse à false par sécurité
+          # exclude: '.git,.github,node_modules,vendor,*.map'
 
+  # ---- PROD = FTPS/FTP selon ton hébergeur ----
   deploy-prod:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
@@ -56,13 +54,13 @@ jobs:
       - name: FTP Deploy to PROD
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server:   ${{ secrets.FTP_SERVER }}       # prod host
+          server:   ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps                            # Prod en FTPS (mets sftp si besoin)
+          # Choisis 1 seul protocole selon ton hébergeur PROD :
+          protocol: ftps        # ou 'ftp' / 'ftps-legacy'
           local-dir: wp-content/
-          server-dir: ${{ secrets.SERVER_DIR }}     # /www/wp-content
-          log-level: verbose
+          server-dir: ${{ secrets.SERVER_DIR }}   # ex: /www/wp-content/
           exclude: |
             **/.git*
             **/.DS_Store
