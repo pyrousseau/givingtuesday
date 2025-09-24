@@ -25,13 +25,14 @@ jobs:
     needs: build
     steps:
       - uses: actions/checkout@v4
-      - name: Deploy to PROD via SFTP
+      - name: Déploiement PROD via SFTP (wlixcc)
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
           server: ${{ secrets.PROD_SFTP_SERVER }}
           username: ${{ secrets.PROD_SFTP_USERNAME }}
           password: ${{ secrets.PROD_SFTP_PASSWORD }}
           port: 22
-          local_path: "wp-content/*"
-          remote_path: "/www/wp-content/"
+          local_path: 'wp-content/'
+          remote_path: '/www/wp-content/'
           sftp_only: true
+
