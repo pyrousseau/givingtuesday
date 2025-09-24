@@ -2,7 +2,7 @@ name: Deploy wp-content (DEV & PROD via FTP)
 
 on:
   push:
-    branches: [ "dev", "main" ]   # dev => webdevserver.fr, main => prod
+    branches: [ "dev", "main" ]        # dev => webdevserver, main => prod
   workflow_dispatch:
 
 concurrency:
@@ -14,20 +14,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      # Crée un ZIP artefact utile si tu veux publier manuellement
       - name: Pack wp-content
         run: |
           mkdir -p out
-          if [ -d "wp-content" ]; then
-            zip -r out/wp-content.zip wp-content
-          else
-            echo "::warning::No wp-content directory."
-            mkdir -p out && echo "empty" > out/empty.txt
-          fi
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
+          zip -r out/wp-content.zip wp-content || echo "no wp-content"
+      - uses: actions/upload-artifact@v4
         with:
           name: wp-content
           path: out/wp-content.zip
@@ -41,12 +32,14 @@ jobs:
       - name: FTP Deploy to DEV
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server:   ${{ secrets.DEV_FTP_SERVER }}
+          server:   ${{ secrets.DEV_FTP_SERVER }}   # ex: ssh.webxxx.gpaas.net (sans sftp://)
           username: ${{ secrets.DEV_FTP_USERNAME }}
           password: ${{ secrets.DEV_FTP_PASSWORD }}
-          # protocol: 'ftps'   # ou 'ftp' / 'ftps' / 'sftp' si besoin
+          protocol: sftp                            # DEV en SFTP
+          port: 22
           local-dir: wp-content/
-          server-dir: ${{ secrets.DEV_SERVER_DIR }}  # ex: /htdocs/wp-content/
+          server-dir: ${{ secrets.DEV_SERVER_DIR }} # /htdocs/wp-content
+          log-level: verbose
           exclude: |
             **/.git*
             **/.DS_Store
@@ -63,12 +56,13 @@ jobs:
       - name: FTP Deploy to PROD
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server:   ${{ secrets.FTP_SERVER }}
+          server:   ${{ secrets.FTP_SERVER }}       # prod host
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          # protocol: 'ftps'   # ou 'sftp' selon l’hébergeur
+          protocol: ftps                            # Prod en FTPS (mets sftp si besoin)
           local-dir: wp-content/
-          server-dir: ${{ secrets.SERVER_DIR }}       # ex: /htdocs/wp-content/
+          server-dir: ${{ secrets.SERVER_DIR }}     # /www/wp-content
+          log-level: verbose
           exclude: |
             **/.git*
             **/.DS_Store
