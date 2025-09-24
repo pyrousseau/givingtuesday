@@ -36,3 +36,4 @@ jobs:
           remote_path: '/www/wp-content/'
           sftp_only: true
 
+
