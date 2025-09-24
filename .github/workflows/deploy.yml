@@ -19,21 +19,22 @@ jobs:
           name: wp-content
           path: out/wp-content.zip
 
-  deploy-prod:
-    if: github.ref == 'refs/heads/prod'
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - uses: actions/checkout@v4
-      - name: Déploiement PROD via SFTP (wlixcc)
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-        with:
-          server: ${{ secrets.PROD_SFTP_SERVER }}
-          username: ${{ secrets.PROD_SFTP_USERNAME }}
-          password: ${{ secrets.PROD_SFTP_PASSWORD }}
-          port: 22
-          local_path: 'wp-content/'
-          remote_path: '/www/wp-content/'
-          sftp_only: true
+deploy-prod:
+  if: github.ref == 'refs/heads/prod'
+  runs-on: ubuntu-latest
+  needs: build
+  steps:
+    - uses: actions/checkout@v4
+    - name: Déploiement PROD via SFTP
+      uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+      with:
+        server: ${{ secrets.PROD_SFTP_SERVER }}
+        username: ${{ secrets.PROD_SFTP_USERNAME }}
+        password: ${{ secrets.PROD_SFTP_PASSWORD }}
+        port: 22
+        local_path: './wp-content'
+        remote_path: '/www/wp-content'
+        sftp_only: true
+
 
 
