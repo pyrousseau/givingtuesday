@@ -1009,19 +1009,6 @@ add_filter('wp_lazy_loading_enabled', function($default, $tag, $context){
   return $default;
 }, 10, 3);
 
-// Register routes
-add_action('rest_api_init', function () {
-  register_rest_route('gt/v1', '/fragment/home-news', [
-    'methods' => 'GET',
-    'callback' => 'gt_fragment_home_news',
-    'permission_callback' => '__return_true'
-  ]);
-  register_rest_route('gt/v1', '/fragment/partners', [
-    'methods' => 'GET',
-    'callback' => 'gt_fragment_partners',
-    'permission_callback' => '__return_true'
-  ]);
-});
 
 // Helpers
 function gt_cached($key, $ttl, $cb){
@@ -1178,4 +1165,592 @@ add_action('acf/init', function () {
 add_action('after_setup_theme', function () {
   load_theme_textdomain('theme', get_template_directory() . '/languages');
 });
+
+
+/* ===== Fragments HTML + Lazy-IO (stable) ===== */
+
+
+// 2) Petit cache transients
+if (!function_exists('gt_cached_html')) {
+  function gt_cached_html($key, $ttl, $cb) {
+    $html = get_transient($key);
+    if ($html === false) {
+      $html = (string) call_user_func($cb);
+      $html = trim(preg_replace('/>\s+</', '><', $html));
+      set_transient($key, $html, $ttl);
+    }
+    return $html;
+  }
+}
+
+// 3) Callback: liste d’actus (HTML prêt)
+if (!function_exists('gt_fragment_news')) {
+  function gt_fragment_news($req) {
+    $count = max(1, (int) ($req->get_param('count') ?: 6));
+    $html = gt_cached_html('frag_news_' . $count, 300, function () use ($count) {
+      $q = new WP_Query(array(
+        'post_type' => 'post',
+        'posts_per_page' => $count,
+        'no_found_rows' => true,
+        'ignore_sticky_posts' => true,
+        'fields' => 'ids'
+      ));
+      ob_start(); ?>
+      <ul class="cards cards--news">
+        <?php foreach ($q->posts as $pid): ?>
+          <li class="card">
+            <a href="<?php echo esc_url(get_permalink($pid)); ?>">
+              <?php
+                echo wp_get_attachment_image(
+                  get_post_thumbnail_id($pid),
+                  'medium_large',
+                  false,
+                  array('loading' => 'lazy', 'decoding' => 'async', 'class' => 'card__img')
+                );
+              ?>
+              <h3 class="card__title"><?php echo esc_html(get_the_title($pid)); ?></h3>
+            </a>
+          </li>
+        <?php endforeach; ?>
+      </ul>
+      <?php return ob_get_clean();
+    });
+    return new WP_REST_Response($html, 200, array(
+      'Content-Type' => 'text/html; charset=UTF-8',
+      'Cache-Control' => 'public, max-age=120'
+    ));
+  }
+}
+
+// 4) Loader JS (lazy-io)
+add_action('wp_enqueue_scripts', function () {
+  wp_register_script('lazy-io', false, array(), null, true);
+  $js = <<<'JS'
+(function(){
+  var KEY='__io1';
+  var frags=document.querySelectorAll('.ssr-fragment[data-fragment]');
+  if(!frags.length) return;
+
+  function load(el){
+    if(el[KEY]) return; el[KEY]=1;
+    var url=el.getAttribute('data-fragment');
+    var ctrl=('AbortController' in window)? new AbortController(): null;
+    var to=setTimeout(function(){ if(ctrl) ctrl.abort(); }, +(el.dataset.timeout||8000));
+    fetch(url, { credentials:'same-origin', signal: ctrl? ctrl.signal: undefined })
+      .then(function(r){ if(!r.ok) throw new Error(r.status); return r.text(); })
+      .then(function(html){ el.innerHTML=html; el.removeAttribute('aria-busy'); })
+      .catch(function(e){ el.innerHTML='<p class="frag-error">⚠️ Contenu indisponible.</p>'; el.removeAttribute('aria-busy'); console.error('[lazy-io]', url, e); })
+      .finally(function(){ clearTimeout(to); });
+  }
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ io.unobserve(e.target); load(e.target); } });
+    }, { rootMargin:'600px 0px' });
+    frags.forEach(function(el){ io.observe(el); });
+  } else {
+    frags.forEach(load);
+  }
+})();
+JS;
+  wp_add_inline_script('lazy-io', $js, 'after');
+  wp_enqueue_script('lazy-io');
+}, 20);
+
+
+// ===== Fragment INTRO (propre, avec sources ACF -> front page -> fallback) =====
+
+
+if (!function_exists('gt_fragment_intro')) {
+  function gt_fragment_intro($req) {
+    // -- CACHE court et clé unique pour éviter collisions --
+    $cache_key = 'frag_intro_v1';
+    $html = get_transient($cache_key);
+    if ($html !== false && !isset($_GET['nocache'])) {
+$resp = new WP_REST_Response($html, 200);
+$resp->header('Content-Type', 'text/html; charset=utf-8');
+return $resp;
+
+    }
+
+    // -- 1) Source ACF (options) --
+    $title = $text = $cta_url = $cta_title = '';
+    if (function_exists('get_field')) {
+      $title     = (string) get_field('intro_title', 'option');
+      $text      = (string) get_field('intro_text',  'option');
+      $cta       = get_field('intro_cta', 'option'); // group: ['url','title']
+      $cta_url   = is_array($cta) && !empty($cta['url'])   ? $cta['url']   : '';
+      $cta_title = is_array($cta) && !empty($cta['title']) ? $cta['title'] : '';
+    }
+
+    // -- 2) Source front-page si ACF vide --
+    if ($title === '' && $text === '') {
+      $front_id = (int) get_option('page_on_front');
+      if ($front_id) {
+        $title = get_the_title($front_id) ?: '';
+        $raw   = get_post_field('post_excerpt', $front_id);
+        if (!$raw) $raw = wp_strip_all_tags(apply_filters('the_content', get_post_field('post_content', $front_id)));
+        $text = wp_trim_words(wp_strip_all_tags($raw), 40, '…');
+        $cta_url   = get_permalink($front_id);
+        $cta_title = $cta_title ?: __('En savoir plus', 'theme');
+      }
+    }
+
+    // -- 3) Fallback final si tout est vide --
+    if ($title === '' && $text === '') {
+      $title = 'Giving Tuesday France';
+      $text  = 'Mobilisons‑nous pour faire rayonner la générosité.';
+      $cta_url   = home_url('/');
+      $cta_title = $cta_title ?: __('Je participe', 'theme');
+    }
+
+    // -- Rendu HTML compact --
+    ob_start(); ?>
+    <div class="intro__inner container">
+      <h2 class="intro__title"><?php echo esc_html($title); ?></h2>
+      <?php if ($text !== ''): ?>
+        <p class="intro__text"><?php echo esc_html($text); ?></p>
+      <?php endif; ?>
+      <?php if ($cta_url !== ''): ?>
+        <p class="intro__actions">
+          <a class="btn" href="<?php echo esc_url($cta_url); ?>">
+            <?php echo esc_html($cta_title ?: __('Découvrir', 'theme')); ?>
+          </a>
+        </p>
+      <?php endif; ?>
+    </div>
+    <?php
+    $html = trim(preg_replace('/>\s+</', '><', ob_get_clean()));
+    set_transient($cache_key, $html, 120);
+
+$resp = new WP_REST_Response($html, 200);
+$resp->header('Content-Type', 'text/html; charset=utf-8');
+return $resp;
+
+  }
+}
+
+add_action('wp_enqueue_scripts', function () {
+  // Adapte selon ton modèle exact (ex: page-thematique.php)
+  if ( is_page_template('page-thematique.php') || is_page(array('la-sante','la-culture','la-planete')) ) {
+    // Handles déjà enregistrés ? sinon registre-les avant.
+    wp_enqueue_style('slick-css', get_stylesheet_directory_uri().'/assets/vendor/slick/slick.css', [], null);
+    wp_enqueue_style('slick-theme', get_stylesheet_directory_uri().'/assets/vendor/slick/slick-theme.css', ['slick-css'], null);
+    wp_enqueue_script('slick-js', get_stylesheet_directory_uri().'/assets/vendor/slick/slick.min.js', ['jquery'], null, true);
+
+    // Ton init (voir 3) :
+    wp_enqueue_script('gt-partners-init', get_stylesheet_directory_uri().'/assets/js/gt-partners-init.js', ['jquery','slick-js'], null, true);
+  }
+});
+
+add_action('wp_enqueue_scripts', function () {
+  // Charge Slick UNIQUEMENT sur les pages thématiques (adapte selon ton site)
+  if ( is_page(array('la-sante','la-planete','la-culture')) || is_page_template('page-thematique.php') ) {
+    wp_enqueue_script('jquery'); // jQuery WP, pas de CDN
+
+    // Chemins à adapter à ton thème
+    $base = get_stylesheet_directory_uri();
+    wp_enqueue_style('slick', $base.'/assets/vendor/slick/slick.css', [], null);
+    wp_enqueue_style('slick-theme', $base.'/assets/vendor/slick/slick-theme.css', ['slick'], null);
+    wp_enqueue_script('slick', $base.'/assets/vendor/slick/slick.min.js', ['jquery'], null, true);
+
+    // Petit init robuste
+    $init = <<<JS
+    (function($){
+      function tryInit(){
+        var \$list = $('.js-gt-partners');
+        if (!\$list.length) return false;
+        // On attend qu'il y ait au moins 2 logos (sinon slider inutile)
+        if (\$list.find('img').length < 2) return false;
+        // Déjà initialisé ?
+        if (\$list.hasClass('slick-initialized')) return true;
+
+        // Init slick
+        \$list.slick({
+          slidesToShow: 5,
+          slidesToScroll: 1,
+          arrows: true,
+          dots: false,
+          autoplay: true,
+          autoplaySpeed: 3000,
+          responsive: [
+            { breakpoint: 1200, settings: { slidesToShow: 4 } },
+            { breakpoint: 992,  settings: { slidesToShow: 3 } },
+            { breakpoint: 768,  settings: { slidesToShow: 2 } },
+            { breakpoint: 480,  settings: { slidesToShow: 1 } }
+          ]
+        });
+        return true;
+      }
+
+      // 1) au DOM ready
+      $(function(){
+        // boucle de retry ultra légère (max 20 essais sur 10s)
+        var tries = 0, max = 20;
+        (function tick(){
+          if (tryInit() || ++tries >= max) return;
+          setTimeout(tick, 500);
+        })();
+      });
+
+      // 2) si ton contenu est injecté plus tard via Ajax, tu peux déclencher :
+      // document.dispatchEvent(new CustomEvent('gt:partners:ready'));
+      document.addEventListener('gt:partners:ready', function(){ tryInit(); });
+    })(jQuery);
+    JS;
+
+    wp_add_inline_script('slick', $init, 'after');
+  }
+});
+
+// functions.php
+add_filter('the_content', function ($html) {
+  if ( is_admin() || stripos($html, '<ul') === false ) return $html;
+
+  // très simple : ajoute la classe sur UL qui ne l'a pas déjà
+  // et qui contient au moins 3 <img> (vérif approximative par regex)
+  $html = preg_replace_callback(
+    '#<ul([^>]*)>(.*?)</ul>#is',
+    function ($m) {
+      $attrs = $m[1];
+      $inner = $m[2];
+
+      // déjà slické / déjà classé ?
+      if (preg_match('#class=["\'][^"\']*js-gt-partners[^"\']*["\']#i', $attrs)) return $m[0];
+
+      // au moins 3 <img> ?
+      if (substr_count(strtolower($inner), '<img') < 3) return $m[0];
+
+      // ajoute la classe
+      if (preg_match('#class=["\']([^"\']*)["\']#i', $attrs, $c)) {
+        $new = preg_replace('#class=["\']([^"\']*)["\']#i', 'class="$1 js-gt-partners"', $attrs);
+      } else {
+        $new = $attrs.' class="js-gt-partners"';
+      }
+      return '<ul'.$new.'>'.$inner.'</ul>';
+    },
+    $html
+  );
+
+  return $html;
+}, 12);
+
+// --- Detect & tag partner lists in post content ---
+add_filter('the_content', function ($html) {
+  if (is_admin() || empty($html)) return $html;
+
+  // Quick path: skip if there is no <img> at all
+  if (stripos($html, '<img') === false) return $html;
+
+  $modified = false;
+
+  // Add class js-gt-partners to any UL/OL that has >=3 <img>
+  $html = preg_replace_callback('#<(ul|ol)(\s[^>]*)?>(.*?)</\1>#is', function ($m) use (&$modified) {
+    $tag   = $m[1];
+    $attrs = $m[2] ?? '';
+    $inner = $m[3] ?? '';
+
+    // Only treat lists that look like logo lists (>=3 images)
+    if (substr_count(strtolower($inner), '<img') < 3) return $m[0];
+
+    // Already has the class?
+    if (preg_match('#class=["\'][^"\']*js-gt-partners[^"\']*["\']#i', $attrs)) {
+      $modified = true;
+      return $m[0];
+    }
+
+    // Inject class
+    if (preg_match('#class=["\']([^"\']*)["\']#i', $attrs, $c)) {
+      $newAttrs = preg_replace('#class=["\']([^"\']*)["\']#i', 'class="$1 js-gt-partners"', $attrs);
+    } else {
+      $newAttrs = ($attrs ?: '') . ' class="js-gt-partners"';
+    }
+
+    $modified = true;
+    return "<{$tag}{$newAttrs}>{$inner}</{$tag}>";
+  }, $html);
+
+  if ($modified) {
+    // Set a flag for this request to enqueue assets + init only when needed
+    global $gt_partners_on_page;
+    $gt_partners_on_page = true;
+  }
+
+  return $html;
+}, 12);
+
+// --- Conditional enqueue & init when partners are present ---
+add_action('wp_enqueue_scripts', function () {
+  global $gt_partners_on_page;
+  if (empty($gt_partners_on_page)) return;
+
+  wp_enqueue_script('jquery');
+
+  $base = get_stylesheet_directory_uri();
+  wp_enqueue_style('slick',       $base.'/assets/vendor/slick/slick.css', [], null);
+  wp_enqueue_style('slick-theme', $base.'/assets/vendor/slick/slick-theme.css', ['slick'], null);
+  wp_enqueue_script('slick',      $base.'/assets/vendor/slick/slick.min.js', ['jquery'], null, true);
+
+  // Minimal CSS so the list looks fine even before init
+  $css = "
+  .js-gt-partners{display:flex;gap:16px;align-items:center;flex-wrap:wrap;list-style:none;padding:0;margin:1rem 0}
+  .js-gt-partners li{list-style:none}
+  .js-gt-partners img{max-height:60px;height:auto;width:auto;display:block}
+  ";
+  wp_add_inline_style('slick', $css);
+
+  // Init with retry (up to 6s), guard double-init, and optional manual event
+  $init = <<<JS
+  (function($){
+    function tryInit(){
+      var $lists = $('.js-gt-partners').filter(function(){
+        return !$(this).hasClass('slick-initialized') && $(this).find('img').length >= 2;
+      });
+      if (!$lists.length) return false;
+
+      $lists.each(function(){
+        var $el = $(this);
+        if ($el.hasClass('slick-initialized')) return;
+        $el.slick({
+          slidesToShow:5, slidesToScroll:1, arrows:true, dots:false, autoplay:true, autoplaySpeed:3000,
+          responsive:[
+            {breakpoint:1200,settings:{slidesToShow:4}},
+            {breakpoint:992, settings:{slidesToShow:3}},
+            {breakpoint:768, settings:{slidesToShow:2}},
+            {breakpoint:480, settings:{slidesToShow:1}}
+          ]
+        });
+      });
+      return true;
+    }
+
+    $(function(){
+      var tries = 0, max = 12; // 12 * 500ms = 6s
+      (function tick(){ if (tryInit() || ++tries >= max) return; setTimeout(tick, 500); })();
+    });
+
+    // If you inject content via JS, you can trigger:
+    // document.dispatchEvent(new CustomEvent('gt:partners:ready'));
+    document.addEventListener('gt:partners:ready', function(){ tryInit(); });
+  })(jQuery);
+  JS;
+
+  wp_add_inline_script('slick', $init, 'after');
+});
+
+
+
+// ===== [GT] REST: intro-test, fragment/intro, routes dump =====
+
+/**
+ * Rend un fragment HTML et le retourne en text/html
+ */
+if (!function_exists('gt_rest_render_fragment')) {
+  function gt_rest_render_fragment($rel_path) {
+    $child  = trailingslashit(get_stylesheet_directory()) . ltrim($rel_path, '/');
+    $parent = trailingslashit(get_template_directory())   . ltrim($rel_path, '/');
+    $path   = file_exists($child) ? $child : (file_exists($parent) ? $parent : '');
+
+    if (!$path) {
+      $res = new WP_REST_Response('<!-- GT: fragment not found -->', 404);
+      $res->header('Content-Type','text/html; charset=utf-8');
+      return $res;
+    }
+
+    // Empêche les warnings PHP de polluer l’HTML
+    ob_start();
+    $prev = ini_get('display_errors');
+    @ini_set('display_errors','0');
+
+    include $path; // <<< le fragment imprime du HTML pur
+
+    $html = trim(ob_get_clean());
+    @ini_set('display_errors',$prev);
+
+    if ($html === '') { $html = '<!-- GT: empty -->'; }
+
+    // Sécurité: un fragment ne doit pas renvoyer un document complet
+    if (stripos($html,'<body') !== false || stripos($html,'</html>') !== false) {
+      $res = new WP_REST_Response('<!-- GT: invalid full document -->', 500);
+      $res->header('Content-Type','text/html; charset=utf-8');
+      return $res;
+    }
+
+    $res = new WP_REST_Response($html, 200);
+    $res->header('Content-Type','text/html; charset=utf-8');
+    $res->header('Cache-Control','no-store, no-cache, must-revalidate, max-age=0');
+    $res->header('Pragma','no-cache');
+    $res->header('Expires','0');
+    $res->header('X-GT-Path',$path);
+    return $res;
+  }
+}
+
+add_action('rest_api_init', function () {
+
+  // 0) Ping simple HTML
+  register_rest_route('gt/v1','/intro-test', [
+    'methods'=>'GET','permission_callback'=>'__return_true',
+    'callback'=>function(){
+      return new WP_REST_Response('<div>INTRO TEST 42 ✅</div>',200,[
+        'Content-Type'=>'text/html; charset=utf-8'
+      ]);
+    }
+  ]);
+
+  // 1) Fragment INTRO
+  register_rest_route('gt/v1','/fragment/intro', [
+    'methods'=>'GET','permission_callback'=>'__return_true',
+    'callback'=>function(WP_REST_Request $r){
+      // Optionnel : compteur dispo dans le template via $GLOBALS
+      $GLOBALS['gt_fragment_count'] = intval($r->get_param('count') ?: 0);
+      return gt_rest_render_fragment('template-parts/home/intro.php');
+    }
+  ]);
+
+  // 2) Fragment ACTUS
+  register_rest_route('gt/v1','/fragment/actus', [
+    'methods'=>'GET','permission_callback'=>'__return_true',
+    'callback'=>function(WP_REST_Request $r){
+      $GLOBALS['gt_actus_count'] = max(1, intval($r->get_param('count') ?: 3));
+      return gt_rest_render_fragment('template-parts/home/actus.php');
+    }
+  ]);
+
+  // 3) Dump routes GT (debug)
+  register_rest_route('gt/v1','/routes', [
+    'methods'=>'GET','permission_callback'=>'__return_true',
+    'callback'=>function(){
+      $srv = rest_get_server(); $out=[];
+      foreach($srv->get_routes() as $route=>$handlers){
+        if(strpos($route,'/gt/v1/')===0){ $out[$route] = array_keys((array)$handlers); }
+      }
+      return rest_ensure_response($out);
+    }
+  ]);
+});
+
+/**
+ * Ultime filet: si un plugin ré‑encode en JSON, on force le service en text/html
+ */
+add_filter('rest_pre_serve_request', function($served,$result,$request,$server){
+  $route = $request->get_route();
+  if (strpos($route,'/gt/v1/fragment/') === 0) {
+    $html = ($result instanceof WP_REST_Response) ? $result->get_data() : (string)$result;
+    header('Content-Type: text/html; charset=utf-8');
+    header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
+    header('Pragma: no-cache'); header('Expires: 0');
+    echo is_string($html) ? $html : '';
+    return true; // court-circuite la sérialisation JSON
+  }
+  return $served;
+}, 10, 4);
+
+// ===== [GT] Enqueue du JS fragments (jQuery avant) =====
+add_action('wp_enqueue_scripts', function(){
+  $uri  = get_stylesheet_directory_uri();
+  $path = get_stylesheet_directory().'/assets/js/gt-fragments.js';
+  if (file_exists($path)) {
+    wp_enqueue_script('gt-fragments', $uri.'/assets/js/gt-fragments.js', ['jquery'], filemtime($path), true);
+  }
+}, 20);
+
+add_action('wp_enqueue_scripts', function () {
+  $uri  = get_stylesheet_directory_uri();
+
+  // 1) Slick CSS + JS (avant gt-fragments)
+  wp_enqueue_style('slick', $uri.'/assets/slick/slick.css', [], '1.8.1');
+  wp_enqueue_style('slick-theme', $uri.'/assets/slick/slick-theme.css', ['slick'], '1.8.1');
+  wp_enqueue_script('slick', $uri.'/assets/slick/slick.min.js', ['jquery'], '1.8.1', true);
+
+  // 2) JS fragments (dépend de jQuery, et arrive APRÈS slick)
+  $path = get_stylesheet_directory().'/assets/js/gt-fragments.js';
+  if (file_exists($path)) {
+    wp_enqueue_script('gt-fragments', $uri.'/assets/js/gt-fragments.js', ['jquery','slick'], filemtime($path), true);
+  }
+}, 20);
+
+add_action('wp_enqueue_scripts', function () {
+  // Slick depuis jsDelivr
+  wp_enqueue_style('slick',  'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', [], '1.8.1');
+  wp_enqueue_style('slick-theme', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css', ['slick'], '1.8.1');
+  wp_enqueue_script('slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', ['jquery'], '1.8.1', true);
+
+  // ton fichier
+  $uri  = get_stylesheet_directory_uri();
+  $path = get_stylesheet_directory().'/assets/js/gt-fragments.js';
+  if (file_exists($path)) {
+    wp_enqueue_script('gt-fragments', $uri.'/assets/js/gt-fragments.js', ['jquery','slick'], filemtime($path), true);
+  }
+}, 20);
+add_action('wp_enqueue_scripts', function () {
+  // Slick (CSS + JS)
+  wp_enqueue_style('slick',       'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', [], '1.8.1');
+  wp_enqueue_style('slick-theme', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css', ['slick'], '1.8.1');
+  wp_enqueue_script('slick',      'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', ['jquery'], '1.8.1', true);
+
+  // Ton JS fragments, dépend de slick
+  $uri  = get_stylesheet_directory_uri();
+  $path = get_stylesheet_directory().'/assets/js/gt-fragments.js';
+  if (file_exists($path)) {
+    wp_enqueue_script('gt-fragments', $uri.'/assets/js/gt-fragments.js', ['jquery','slick'], filemtime($path), true);
+  }
+}, 20);
+
+add_action('wp_enqueue_scripts', function () {
+  // Slick (CDN propre)
+  wp_enqueue_style('slick',       'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', [], '1.8.1');
+  wp_enqueue_style('slick-theme', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css', ['slick'], '1.8.1');
+  wp_enqueue_script('slick',      'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', ['jquery'], '1.8.1', true);
+
+  // Ton JS (après slick)
+  $uri  = get_stylesheet_directory_uri();
+  $path = get_stylesheet_directory().'/assets/js/gt-fragments.js';
+  if (file_exists($path)) {
+    wp_enqueue_script('gt-fragments', $uri.'/assets/js/gt-fragments.js', ['jquery','slick'], filemtime($path), true);
+  }
+}, 20);
+// Injecte un CSS "anti-superposition" *après* tout le reste
+add_action('wp_head', function () {
+  ?>
+  <style id="gt-slick-nuke" type="text/css">
+    /* force slick à n'afficher qu'1 slide */
+    .block__frontpage--actus__slider .slick-slide{display:none!important;visibility:hidden!important;opacity:0!important;float:left!important;width:100%!important;min-height:1px!important;position:relative!important}
+    .block__frontpage--actus__slider .slick-slide.slick-active{display:block!important;visibility:visible!important;opacity:1!important}
+
+    /* empêche le thème de casser le layout en desktop (flex/grid/height) */
+    .block__frontpage--actus__slider__inner{display:block!important}
+    .block__frontpage--actus__slider,
+    .block__frontpage--actus__slider .slick-list,
+    .block__frontpage--actus__slider .slick-track{height:auto!important}
+    .block__frontpage--actus__slider .slick-track:before,
+    .block__frontpage--actus__slider .slick-track:after{content:""!important;display:table!important}
+    .block__frontpage--actus__slider .slick-track:after{clear:both!important}
+
+    /* images propres */
+    .block__frontpage--actus__slider .slide-block__img img{display:block!important;max-width:100%!important;height:auto!important}
+  </style>
+  <?php
+}, 999);
+
+add_action('wp_enqueue_scripts', function(){
+  // Slick CSS/JS (CDN) — OK pour dev
+  wp_enqueue_style('slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', [], '1.8.1');
+  wp_enqueue_style('slick-theme', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css', ['slick'], '1.8.1');
+  wp_enqueue_script('slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', ['jquery'], '1.8.1', true);
+
+  // Ton JS des fragments (si présent)
+  $path = get_stylesheet_directory().'/assets/js/gt-fragments.js';
+  if (file_exists($path)) {
+    wp_enqueue_script('gt-fragments', get_stylesheet_directory_uri().'/assets/js/gt-fragments.js', ['jquery','slick'], filemtime($path), true);
+  }
+}, 20);
+
+add_action('wp_enqueue_scripts', function(){
+  $p = get_stylesheet_directory().'/assets/js/gt-counter.js';
+  if (file_exists($p)) {
+    wp_enqueue_script('gt-counter', get_stylesheet_directory_uri().'/assets/js/gt-counter.js', [], filemtime($p), true);
+  }
+}, 20);
+
 

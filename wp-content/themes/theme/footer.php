@@ -1,9 +1,9 @@
 <?php
 $o_fields = get_fields('options');
 ?>
-<div class="pre-footer">
+<!-- <div class="pre-footer">
     <a href="<?php echo get_site_url(); ?>/je-publie-mon-action" class="bnt-action-page-footer">JE PUBLIE MON ACTION</a>
-</div>
+</div> -->
 <div id="footer" class="footer">
     <div class="wrap">
         <div class="footer__left">
@@ -18,7 +18,7 @@ $o_fields = get_fields('options');
 
                     )
                 );
-                
+
                 ?>
                 <?php
                 // wp_nav_menu( array(
@@ -190,7 +190,7 @@ window.addEventListener('load', function () {
       jQuery.fn.slick = function(){
         // si déjà initialisé, on ignore l'appel suivant
         if (this.hasClass && this.hasClass('slick-initialized')) {
-          return this; 
+          return this;
           return this;
         }
         try { return _slick.apply(this, arguments); }
@@ -199,6 +199,124 @@ window.addEventListener('load', function () {
     }
     setTimeout(GT_initSliderOnce, 250); // notre init unique
   });
+})();
+</script>
+<script>
+(function(){
+  // --- Config ---
+  var SELECTOR = '[data-lazy][data-fragment]';
+  var MAX_RETRIES = 2;
+
+  function once(el){ el.__gt_loaded = true; }
+  function done(el){ el.removeAttribute('aria-busy'); el.classList.remove('is-loading'); }
+  function fail(el, msg){
+    el.classList.add('is-error');
+    el.setAttribute('data-fragment-error', msg || 'load_error');
+    done(el);
+  }
+
+  function fetchFragment(url, opts){
+    opts = opts || {};
+    var controller = ('AbortController' in window) ? new AbortController() : null;
+    var timeout = parseInt(opts.timeout || 0, 10);
+    var timer = null;
+    if (controller && timeout > 0) {
+      timer = setTimeout(function(){ controller.abort(); }, timeout);
+    }
+    var headers = {'X-Requested-With':'XMLHttpRequest'};
+    // Si tu veux un nonce en dev/prod : headers['X-WP-Nonce'] = window.wpApiSettings?.nonce;
+
+    return fetch(url, {
+      method: 'GET',
+      headers: headers,
+      credentials: 'same-origin',
+      signal: controller ? controller.signal : undefined
+    }).then(function(res){
+      if (!res.ok) throw new Error('HTTP '+res.status);
+      // Option A (HTML) :
+      return res.text();
+      // Option B (JSON) : return res.json().then(d => d.html);
+    }).finally(function(){
+      if (timer) clearTimeout(timer);
+    });
+  }
+
+  function injectHTML(el, html){
+    // Sécurité simple : vider le skeleton, injecter le fragment
+    el.innerHTML = html;
+  }
+
+  function load(el, attempt){
+    attempt = attempt || 0;
+    if (el.__gt_loaded) return;
+    var url = el.getAttribute('data-fragment');
+    if (!url) return fail(el, 'missing_url');
+
+    el.classList.add('is-loading');
+    var to = parseInt(el.getAttribute('data-timeout') || '0', 10);
+
+    fetchFragment(url, {timeout: to}).then(function(html){
+      if (!html || typeof html !== 'string') throw new Error('empty_response');
+      // Anti-“page entière”
+      if (html.indexOf('<body') !== -1 || html.indexOf('</html>') !== -1) {
+        throw new Error('invalid_fragment_full_doc');
+      }
+      injectHTML(el, html);
+      once(el);
+      done(el);
+    }).catch(function(err){
+      if (attempt < MAX_RETRIES) {
+        // petit backoff
+        setTimeout(function(){ load(el, attempt+1); }, 300*(attempt+1));
+      } else {
+        fail(el, err && err.message ? err.message : 'unknown_error');
+      }
+    });
+  }
+
+  function bootIO(){
+    if (!('IntersectionObserver' in window)) {
+      // Fallback sans IO : on charge tout de suite
+      document.querySelectorAll(SELECTOR).forEach(function(el){ load(el, 0); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      for (var i=0;i<entries.length;i++){
+        var e = entries[i];
+        if (e.isIntersecting) {
+          io.unobserve(e.target);
+          load(e.target, 0);
+        }
+      }
+    }, {rootMargin: '200px 0px 200px 0px', threshold: 0.01});
+
+    document.querySelectorAll(SELECTOR).forEach(function(el){
+      if (!el.__gt_observed && !el.__gt_loaded) {
+        el.__gt_observed = true;
+        io.observe(el);
+      }
+    });
+  }
+
+  function init(){
+    bootIO();
+    // MutationObserver pour éléments insérés après coup (SPA/plugins)
+    try{
+      var mo = new MutationObserver(function(muts){
+        for (var i=0;i<muts.length;i++){
+          var t = muts[i].target;
+          if (t && t.nodeType === 1) bootIO();
+        }
+      });
+      mo.observe(document.documentElement, {childList:true, subtree:true});
+    }catch(e){}
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init, {once:true});
+  } else {
+    init();
+  }
 })();
 </script>
 

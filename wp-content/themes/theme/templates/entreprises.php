@@ -1,19 +1,15 @@
 
-<div class="block block--propos block--propos__intro block-size-a">
+<div class="block block--propos block--propos__intro block-size-a no-padding">
     ﻿<iframe border="0" frameborder="0" style="display:block; width:100%; height:100vh;" loading="lazy" allowfullscreen
 src=https://givingtuesday.charitips.com/></iframe>
-<div style="padding:10px; display:flex;">
-  <img src="https://apicivique.s3.eu-west-3.amazonaws.com/jvalogo.svg"/>
-  <div style="color:#A5A5A5; font-style:normal; font-size:13px; padding:8px;">Proposé par la plateforme publique du bénévolat
-    <a href="https://www.jeveuxaider.gouv.fr/" target="_blank">JeVeuxAider.gouv.fr</a>
-  </div>
-</div>
 </div>
 
 <style>
 .block__actions--form {
     background-image: url('<?php echo $image;  ?>');
 }
+
+
 </style>
 
 
@@ -164,10 +160,10 @@ function hideCheckboxes(t) {
     <div class="inner-wrapper form-wrapper">
     </div>
 </div> -->
-<div class="pre-footer pre-footer-2">
+<!-- <div class="pre-footer pre-footer-2">
     <a href="https://givingtuesday.fr/comment-participer/actions-a-decouvrir/" class="bnt-action-page-footer">actions
         à découvrir</a>
-</div>
+</div> -->
 <!-- <div class="block block__actions block__actions--form block__form">
     <img src="<?php //echo get_site_url(); ?>/wp-content/uploads/2018/10/bg-06.jpg" class="block__actions--form--pre-img"/>
     <div class="inner-wrapper form-wrapper">
