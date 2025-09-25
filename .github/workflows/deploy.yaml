@@ -1,13 +1,55 @@
 name: Deploy Theme
+
 on:
   push:
     branches: [dev, prod]
     paths:
       - 'wp-content/themes/theme/**'
   workflow_dispatch:
+
 jobs:
-  ping:
+  deploy-dev:
+    if: github.ref == 'refs/heads/dev'
     runs-on: ubuntu-latest
     steps:
-      - run: echo "OK"
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Deploy to DEV (FTPS)
+        uses: SamKirkland/FTP-Deploy-Action@v4
+        with:
+          server: ${{ secrets.DEV_FTP_SERVER }}
+          username: ${{ secrets.DEV_FTP_USERNAME }}
+          password: ${{ secrets.DEV_FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: wp-content/themes/theme/
+          server-dir: ${{ secrets.DEV_SERVER_DIR }}   # ex: /htdocs/wp-content/themes/theme/
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.DS_Store
+            **/node_modules/**
+            **/src/**
 
+  deploy-prod:
+    if: github.ref == 'refs/heads/prod'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Deploy to PROD (SFTP)
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        with:
+          server: ${{ secrets.PRO_SFTP_SERVER }}
+          username: ${{ secrets.PRO_SFTP_USERNAME }}
+          password: ${{ secrets.PRO_SFTP_PASSWORD }}
+          port: 22
+          local_path: 'wp-content/themes/theme/*'
+          remote_path: ${{ secrets.SERVER_DIR }}       # ex: /srv/.../htdocs/wp-content/themes/theme/
+          sftp_only: true
+          remove: false
+          exclude: |
+            **/.git*
+            **/.DS_Store
+            **/node_modules/**
+            **/src/**
