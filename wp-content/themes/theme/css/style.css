@@ -8681,6 +8681,10 @@ body:not(.home) .header-sticky {
 	background: url(../images/header/GT-en-region.png) center no-repeat;
     background-size: 50px auto;
 }
+.nav1 .company > a:before{
+	background: url(../images/header/company.png) center no-repeat;
+    background-size: 50px auto;
+}
 .nav1 .jedonne > a:before{
 	background: url(../images/header/Je-donne.png) center no-repeat;
     background-size: 50px auto;
@@ -8723,6 +8727,9 @@ body:not(.home) .header-sticky {
 }
 .nav1 .gtregion >a:hover:before, .nav1 .gtregion.current-menu-item >a:before{
 	background-image: url(../images/header/GT-en-region-hover.png);
+}
+.nav1 .company >a:hover:before, .nav1 .company.current-menu-item >a:before{
+	background-image: url(../images/header/company-hover.png);
 }
 .nav1 .jedonne >a:hover:before, .nav1 .jedonne.current-menu-item >a:before{
 	background-image: url(../images/header/Je-donne-hover.png);
