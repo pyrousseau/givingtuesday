@@ -1,52 +1,33 @@
-name: Deploy Theme
+name: Deploy Theme (PRO)
 
 on:
   push:
-    branches: [dev, prod]
+    branches: [prod]
     paths:
       - 'wp-content/themes/theme/**'
   workflow_dispatch:
 
+concurrency:
+  group: deploy-prod
+  cancel-in-progress: false
+
 jobs:
-  deploy-dev:
-    if: github.ref == 'refs/heads/dev'
+  deploy-prod:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Deploy to DEV (FTPS)
-        uses: SamKirkland/FTP-Deploy-Action@v4
+
+      - name: Deploy to PROD (FTPS)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: ${{ secrets.DEV_FTP_SERVER }}
-          username: ${{ secrets.DEV_FTP_USERNAME }}
-          password: ${{ secrets.DEV_FTP_PASSWORD }}
+          server: ${{ secrets.PRO_SFTP_SERVER }}
+          username: ${{ secrets.PRO_SFTP_USERNAME }}
+          password: ${{ secrets.PRO_SFTP_PASSWORD }}
           protocol: ftps
           port: 21
           local-dir: wp-content/themes/theme/
-          server-dir: ${{ secrets.DEV_SERVER_DIR }}   # ex: /htdocs/wp-content/themes/theme/
-          dangerous-clean-slate: false
-          exclude: |
-            **/.git*
-            **/.DS_Store
-            **/node_modules/**
-            **/src/**
-
-  deploy-prod:
-    if: github.ref == 'refs/heads/prod'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Deploy to PROD (FTPS)
-        uses: SamKirkland/FTP-Deploy-Action@v4
-        with:
-          server: ${{ secrets.PRO_SFTP_SERVER }}       # on réutilise TON secret existant
-          username: ${{ secrets.PRO_SFTP_USERNAME }}
-          password: ${{ secrets.PRO_SFTP_PASSWORD }}
-          protocol: ftps                               # FTPS pour éviter l’erreur SFTP
-          port: 21
-          local-dir: wp-content/themes/theme/
-          server-dir: ${{ secrets.SERVER_DIR }}        # ex: /srv/.../htdocs/wp-content/themes/theme/
+          server-dir: ${{ secrets.SERVER_DIR }}
           dangerous-clean-slate: false
           exclude: |
             **/.git*
