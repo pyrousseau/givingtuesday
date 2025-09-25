@@ -1,61 +1,8 @@
-name: Find correct remote path (SFTP)
-
+name: _Ping
 on:
   workflow_dispatch:
-
 jobs:
-  probe-paths:
+  ping:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Make minimal theme tree + marker
-        run: |
-          mkdir -p wp-content/themes/theme
-          echo "Marker $(date -u +'%Y-%m-%d %H:%M:%S') UTC | $GITHUB_SHA" > wp-content/themes/theme/.deploy-marker.txt
-          ls -la wp-content/themes/theme
-
-      - name: Upload to /wp-content/themes/theme/
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-        with:
-          server:      ${{ secrets.PROD_SFTP_SERVER }}
-          username:    ${{ secrets.PROD_SFTP_USERNAME }}
-          password:    ${{ secrets.PROD_SFTP_PASSWORD }}
-          port:        22
-          sftp_only:   true
-          local_path:  'wp-content/themes/theme/.deploy-marker.txt'
-          remote_path: '/wp-content/themes/theme/'
-
-      - name: Upload to /htdocs/wp-content/themes/theme/
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-        with:
-          server:      ${{ secrets.PROD_SFTP_SERVER }}
-          username:    ${{ secrets.PROD_SFTP_USERNAME }}
-          password:    ${{ secrets.PROD_SFTP_PASSWORD }}
-          port:        22
-          sftp_only:   true
-          local_path:  'wp-content/themes/theme/.deploy-marker.txt'
-          remote_path: '/htdocs/wp-content/themes/theme/'
-
-      - name: Upload to /www/wp-content/themes/theme/
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-        with:
-          server:      ${{ secrets.PROD_SFTP_SERVER }}
-          username:    ${{ secrets.PROD_SFTP_USERNAME }}
-          password:    ${{ secrets.PROD_SFTP_PASSWORD }}
-          port:        22
-          sftp_only:   true
-          local_path:  'wp-content/themes/theme/.deploy-marker.txt'
-          remote_path: '/www/wp-content/themes/theme/'
-
-      - name: Upload to /srv/data/.../htdocs/wp-content/themes/theme/
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-        with:
-          server:      ${{ secrets.PROD_SFTP_SERVER }}
-          username:    ${{ secrets.PROD_SFTP_USERNAME }}
-          password:    ${{ secrets.PROD_SFTP_PASSWORD }}
-          port:        22
-          sftp_only:   true
-          local_path:  'wp-content/themes/theme/.deploy-marker.txt'
-          remote_path: '/srv/data/web/vhosts/webdevserver.fr/htdocs/wp-content/themes/theme/'
+      - run: echo "OK"
