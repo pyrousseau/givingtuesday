@@ -3,12 +3,12 @@
     <h1><?php echo get_the_title(); ?></h1>
     <div class="inner-wrapper">
         <div class="cententPage">
-           
+
             <?php if( have_rows('parametres_de_page') ): ?>
                 <?php while( have_rows('parametres_de_page') ): the_row(); ?>
                     <?php if( have_rows('section_description') ): ?>
                         <?php while( have_rows('section_description') ): the_row(); ?>
-                            <?php 
+                            <?php
                                 $titre_section = get_sub_field('titre_section');
                                 $description = get_sub_field('description');
                                 $lien = get_sub_field('lien');
@@ -26,21 +26,21 @@
                     <?php endif; ?>
                     <?php if( have_rows('section_actions_phares') ): ?>
                         <?php while( have_rows('section_actions_phares') ): the_row(); ?>
-                            <?php 
-                                $titre_section = get_sub_field('titre_section_actions_phares'); 
-                                $liste_de_poste = get_sub_field('liste_de_poste'); 
+                            <?php
+                                $titre_section = get_sub_field('titre_section_actions_phares');
+                                $liste_de_poste = get_sub_field('liste_de_poste');
                             ?>
                             <h2><?php echo $titre_section; ?></h2>
 
                             <?php if( $liste_de_poste ): ?>
                                 <div class="conteneur_actions_phares">
-                                <?php 
+                                <?php
                                 foreach ($liste_de_poste as $list_post) {
-                                    $image = $list_post['image']; 
-                                    $titre_poste = $list_post['titre_poste']; 
-                                    $contenu_du_poste = $list_post['contenu_du_poste']; 
+                                    $image = $list_post['image'];
+                                    $titre_poste = $list_post['titre_poste'];
+                                    $contenu_du_poste = $list_post['contenu_du_poste'];
                                     $bold_texte = $list_post['bold_texte'];
-                                    
+
                                     ?>
                                     <div class="item_actions_phares">
                                         <div class="pic_actions_phares">
@@ -51,43 +51,42 @@
                                         <span><?php echo $bold_texte; ?></span>
                                     </div>
                                 <?php
-                                    } 
+                                    }
                                 ?>
                                 </div>
                             <?php endif; ?>
 
                         <?php endwhile; ?>
                     <?php endif; ?>
-                    
                     <?php if( have_rows('section_partenaire') ): ?>
                         <?php while( have_rows('section_partenaire') ): the_row(); ?>
-                            <?php 
-                                $titre = get_sub_field('titre_section'); 
-                                $liste_de_logo = get_sub_field('liste_de_logo'); 
+                            <?php
+                                $titre = get_sub_field('titre_section');
+                                $liste_de_logo = get_sub_field('liste_de_logo');
                                 $description = get_sub_field('description');
-                                
+
                             ?>
                             <h2><?php echo $titre; ?></h2>
 
                             <?php if( $liste_de_logo ): ?>
 
-                                <?php 
+                                <?php
                                 foreach ($liste_de_logo as $list_logo) {
                                     $image_url = $list_logo['image'];
-                                    $lien = $list_logo['lien'];  
+                                    $lien = $list_logo['lien'];
                                     ?>
                                         <p style="text-align: center;">
                                         <a href="<?php  if($lien['url'] !=''){ echo esc_url( $lien['url']);}else{ echo '#';} ?>" target="_blank" style="width: 200px;">
                                             <img src="<?php echo esc_url($image_url['url']); ?>">
                                         </a></p>
                                         <?php if( $description ): ?>
-                                        
+
                                         <h3 style="text-align: center; max-width:500px; margin:0 auto;"> <?php echo $description; ?> </h3>
                                         <?php endif; ?>
                                 <?php
-                                    } 
+                                    }
                                 ?>
-                                
+
 
                             <?php endif; ?>
 
@@ -95,19 +94,19 @@
 
                     <?php if( have_rows('section_acteurs') ): ?>
                         <?php while( have_rows('section_acteurs') ): the_row(); ?>
-                            <?php 
-                                $titre = get_sub_field('titre_section'); 
-                                $liste_de_logo = get_sub_field('liste_de_logo'); 
-                                
+                            <?php
+                                $titre = get_sub_field('titre_section');
+                                $liste_de_logo = get_sub_field('liste_de_logo');
+
                             ?>
                             <h2><?php echo $titre; ?></h2>
 
                             <?php if( $liste_de_logo ): ?>
                                 <ul class="banners-block">
-                                <?php 
+                                <?php
                                 foreach ($liste_de_logo as $list_logo) {
                                     $image_url = $list_logo['image'];
-                                    $lien = $list_logo['lien'];  
+                                    $lien = $list_logo['lien'];
                                     ?>
                                     <li>
                                         <a href="<?php  if($lien['url'] !=''){ echo esc_url( $lien['url']);}else{ echo '#';} ?>" class="block-wrapper">
@@ -115,9 +114,9 @@
                                         </a>
                                     </li>
                                 <?php
-                                    } 
+                                    }
                                 ?>
-                                
+
                                 </ul>
                             <?php endif; ?>
 
@@ -126,10 +125,10 @@
 
                     <?php if( have_rows('section_ambassadeur') ): ?>
                         <?php while( have_rows('section_ambassadeur') ): the_row(); ?>
-                            <?php 
-                                $titre_section = get_sub_field('titre'); 
-                                $image_user = get_sub_field('image'); 
-                                $texte_user = get_sub_field('bio'); 
+                            <?php
+                                $titre_section = get_sub_field('titre');
+                                $image_user = get_sub_field('image');
+                                $texte_user = get_sub_field('bio');
                             ?>
                             <?php if( $titre_section !='' ): ?>
                                 <h2><?php echo $titre_section; ?></h2>
@@ -154,7 +153,7 @@
 <!-- <div class="pre-footer pre-footer-2">
     <a href="https://givingtuesday.fr/comment-participer/actions-a-decouvrir/" class="bnt-action-page-footer">actions
         à découvrir</a> -->
-</div> 
+</div>
 <script>
     $('.banners-block').slick({
             slidesToShow: 5,

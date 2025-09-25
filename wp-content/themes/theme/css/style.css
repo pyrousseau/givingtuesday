@@ -5959,7 +5959,7 @@ body.parent-enseignant .block--download-files {
       .block--propos__intro p:first-child {
         display: block; } }
 
-.block--propos__intro, .no-padding{
+.entreprises .block--propos__intro, .no-padding{
   padding-top:0px;
 }
 
