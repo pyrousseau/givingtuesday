@@ -1,9 +1,9 @@
 <?php
 $o_fields = get_fields('options');
 ?>
-<div class="pre-footer">
+<!-- <div class="pre-footer">
     <a href="<?php echo get_site_url(); ?>/je-publie-mon-action" class="bnt-action-page-footer">JE PUBLIE MON ACTION</a>
-</div>
+</div> -->
 <div id="footer" class="footer">
     <div class="wrap">
         <div class="footer__left">
@@ -18,7 +18,7 @@ $o_fields = get_fields('options');
 
                     )
                 );
-                
+
                 ?>
                 <?php
                 // wp_nav_menu( array(
@@ -190,7 +190,7 @@ window.addEventListener('load', function () {
       jQuery.fn.slick = function(){
         // si déjà initialisé, on ignore l'appel suivant
         if (this.hasClass && this.hasClass('slick-initialized')) {
-          return this; 
+          return this;
           return this;
         }
         try { return _slick.apply(this, arguments); }
