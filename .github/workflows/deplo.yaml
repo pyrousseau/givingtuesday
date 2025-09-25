@@ -7,16 +7,40 @@ on:
       - 'wp-content/themes/theme/**'
   workflow_dispatch:
 
-concurrency:
-  group: deploy-prod
-  cancel-in-progress: false
-
 jobs:
   deploy-prod:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      # Debug: montre ce que le runner va vraiment déployer
+      - name: Show changed files & head of key files
+        run: |
+          echo "=== GIT STATUS ==="
+          git status
+          echo "=== TREE THEME ==="
+          ls -la wp-content/themes/theme || true
+          echo "=== HEAD footer.php ==="
+          sed -n '1,60p' wp-content/themes/theme/footer.php 2>/dev/null || true
+          echo "=== HEAD style.css ==="
+          sed -n '1,60p' wp-content/themes/theme/style.css 2>/dev/null || true
+
+      # Build optionnel : ne s'exécute que si un package.json existe dans le thème
+      - name: Build assets if package.json exists
+        run: |
+          if [ -f "wp-content/themes/theme/package.json" ]; then
+            echo "package.json found -> building assets"
+            pushd wp-content/themes/theme
+            corepack enable || true
+            node -v || true
+            npm -v || true
+            npm ci
+            npm run build
+            popd
+          else
+            echo "No package.json in theme -> skipping build"
+          fi
 
       - name: Validate required secrets
         run: |
@@ -26,6 +50,11 @@ jobs:
           test -n "${{ secrets.SERVER_DIR }}"         || (echo "❌ SERVER_DIR is empty" && exit 1)
           echo "✅ All required secrets are present."
 
+      # Marqueur pour vérifier le bon répertoire côté serveur
+      - name: Create deploy marker
+        run: |
+          echo "Deployed $(date -u +'%Y-%m-%d %H:%M:%S') UTC | commit $GITHUB_SHA" > wp-content/themes/theme/.deploy-marker.txt
+
       - name: Deploy to PROD (SFTP)
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
@@ -34,7 +63,5 @@ jobs:
           password:    ${{ secrets.PROD_SFTP_PASSWORD }}
           port:        22
           sftp_only:   true
-          # Upload UNIQUEMENT le thème
           local_path:  'wp-content/themes/theme/*'
-          # Doit pointer EXACTEMENT sur le dossier du thème côté serveur
           remote_path: ${{ secrets.SERVER_DIR }}
