@@ -14,20 +14,30 @@ concurrency:
 jobs:
   deploy-prod:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # Pré-check : on vérifie que les 4 secrets sont bien NON vides
+      - name: Validate required secrets
+        run: |
+          test -n "${{ secrets.PRO_SFTP_SERVER }}"    || (echo "❌ PRO_SFTP_SERVER is empty" && exit 1)
+          test -n "${{ secrets.PRO_SFTP_USERNAME }}"  || (echo "❌ PRO_SFTP_USERNAME is empty" && exit 1)
+          test -n "${{ secrets.PRO_SFTP_PASSWORD }}"  || (echo "❌ PRO_SFTP_PASSWORD is empty" && exit 1)
+          test -n "${{ secrets.SERVER_DIR }}"         || (echo "❌ SERVER_DIR is empty" && exit 1)
+          echo "✅ All required secrets are present."
+
       - name: Deploy to PROD (FTPS)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: ${{ secrets.PRO_SFTP_SERVER }}
+          server:   ${{ secrets.PRO_SFTP_SERVER }}
           username: ${{ secrets.PRO_SFTP_USERNAME }}
           password: ${{ secrets.PRO_SFTP_PASSWORD }}
           protocol: ftps
           port: 21
-          local-dir: wp-content/themes/theme/
-          server-dir: ${{ secrets.SERVER_DIR }}
+          local-dir:  wp-content/themes/theme/
+          server-dir: ${{ secrets.SERVER_DIR }}   # ex: /wp-content/themes/theme/
           dangerous-clean-slate: false
           exclude: |
             **/.git*
