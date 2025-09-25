@@ -15,7 +15,6 @@ $fields = get_fields();
 //        } ?>
 <!--    </div>-->
 
-
     <div class="block block--banner block--banner--section">
         <div class="block--banner__inner">
             <div class="block--banner__bg block--banner__bg"></div>
