@@ -1,326 +1,99 @@
 <?php
-$o_fields = get_fields('options');
+$o_fields = get_fields('option') ?: get_fields('options');
 ?>
-<!-- <div class="pre-footer">
-    <a href="<?php echo get_site_url(); ?>/je-publie-mon-action" class="bnt-action-page-footer">JE PUBLIE MON ACTION</a>
-</div> -->
+
 <div id="footer" class="footer">
-    <div class="wrap">
-        <div class="footer__left">
-            <div class="links">
-                <?php
-                wp_nav_menu( array(
-                        'container'=> false,
-                        'theme_location'=> 'header-menu',
-                        'menu_id'=> 'menu-footer_navigation',
-                        'menu_class'=> 'f_nav',
-                        'walker'    => new WP_First_Level_Navwalker()
+  <div class="wrap">
+    <div class="footer__left">
+      <div class="links">
+        <?php
+        wp_nav_menu(array(
+          'container'      => false,
+          'theme_location' => 'header-menu',
+          'menu_id'        => 'menu-footer_navigation',
+          'menu_class'     => 'f_nav',
+          'walker'         => class_exists('WP_First_Level_Navwalker') ? new WP_First_Level_Navwalker() : null
+        ));
+        ?>
+      </div>
 
-                    )
-                );
+      <div class="select-block">
+        <label for="footer__select">
+          Pour un contenu personnalisé <br>indiquez-nous votre profil...
+          <span>Vous êtes&nbsp;:</span>
+        </label>
+        <select id="footer__select">
+          <option value="select"><?php echo esc_html($o_fields['header_select_subtitle'] ?? ''); ?></option>
+          <?php foreach ($o_fields['header_select'] ?? [] as $field): ?>
+            <option value="<?php echo esc_url($field['lien'] ?? '#'); ?>">
+              <?php echo esc_html($field['texte'] ?? ''); ?>
+            </option>
+          <?php endforeach; ?>
+        </select>
+      </div>
+    </div>
 
-                ?>
-                <?php
-                // wp_nav_menu( array(
-                //         'container'=> false,
-                //         'theme_location'=> 'footer-2',
-                //         'menu_id'=> 'menu-footer_navigation2',
-                //         'menu_class'=> 'f_nav'
-                //     )
-                // );
-                ?>
-            </div>
-            <div class="select-block">
-                <label for="footer__select">Pour un contenu personnalisé <br>indiquez-nous votre profil... <span>Vous êtes&nbsp;:</span></label>
-                <select id="footer__select" name="Un particulier">
-                    <option value="select"><?php echo $o_fields['header_select_subtitle']; ?></option>
-                    <?php foreach ($o_fields['header_select'] as $field): ?>
-                        <option value='<?php echo $field['lien'];?>'><?php echo $field['texte'];?></option>
-                    <?php endforeach; ?>
-                </select>
-            </div>
-        </div>
-        <div class="footer__right">
-            <p class="share-title">Suivez nous sur les réseaux sociaux&nbsp;:</p>
-            <ul class="footer__share">
-                <li><a href="<?php the_field('linkedin_lien','option'); ?>" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-                <li><a href="<?php the_field('instagramm_lien','option'); ?>" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="<?php the_field('facebook_lien','option'); ?>" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href="<?php the_field('tiktok_lien','option'); ?>" target="_blank"><i class="fab fa-tiktok"></i></a></li>
-                <li><a href="<?php the_field('twitter_lien','option'); ?>" target="_blank"><i class="fab fa-x-twitter"></i></a></li>
-                <li><a href="<?php the_field('youtube_lien','option'); ?>" target="_blank"><i class="fab fa-youtube"></i></a></li>
-            </ul>
-            <div class="text-block">
-                <?php echo get_field('footer_texte','option'); ?>
-            </div>
-        </div>
+    <div class="footer__right">
+      <p class="share-title">Suivez nous sur les réseaux sociaux&nbsp;:</p>
+      <ul class="footer__share">
+        <li><a href="<?php the_field('linkedin_lien','option'); ?>" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a></li>
+        <li><a href="<?php the_field('instagramm_lien','option'); ?>" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="<?php the_field('facebook_lien','option'); ?>" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="<?php the_field('tiktok_lien','option'); ?>" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a></li>
+        <li><a href="<?php the_field('twitter_lien','option'); ?>" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i></a></li>
+        <li><a href="<?php the_field('youtube_lien','option'); ?>" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a></li>
+      </ul>
+      <div class="text-block">
+        <?php echo get_field('footer_texte','option'); ?>
+      </div>
     </div>
-    <div class="footer__ml">
-        <a href="<?php echo get_page_link(94); ?>" class="ml-link">Mentions légales</a>
-    </div>
+  </div>
+
+  <div class="footer__ml">
+    <a href="<?php echo esc_url(get_page_link(94)); ?>" class="ml-link">Mentions légales</a>
+  </div>
 </div>
 
 <div id="cookie-bar" class="fixed bottom" style="z-index:1000;">
-    <div class="wrap">
-        <div class="cookie-texte"><div><?php echo get_field('cookie_bar_texte', 'option'); ?></div>
-        </div>
-        <div class="cookie-cta"><button><?php echo get_field('cookie_bar_bouton_texte', 'option'); ?></button></div><!-- /.cookie-cta -->
-    </div><!-- /.wrap -->
-</div>
-<div class="popup-block cookie-block">
-    <div class="popup-content">
-        <div class="close"></div>
-        <?php // go for content blocks
-        echo the_field('content',94);
-         ?>
+  <div class="wrap">
+    <div class="cookie-texte">
+      <div><?php echo get_field('cookie_bar_texte', 'option'); ?></div>
     </div>
+    <div class="cookie-cta">
+      <button><?php echo esc_html(get_field('cookie_bar_bouton_texte', 'option')); ?></button>
+    </div>
+  </div>
 </div>
+
+<div class="popup-block cookie-block">
+  <div class="popup-content">
+    <div class="close"></div>
+    <?php echo the_field('content', 94); ?>
+  </div>
+</div>
+
 <?php wp_footer(); ?>
+
+<style>
+/* Flèches visibles pour .block--ideas__list (hors home) */
+body:not(.home) .block--ideas__list .slick-arrow{display:block!important;opacity:1!important;visibility:visible!important}
+body:not(.home) .block--ideas__list .slick-prev,
+body:not(.home) .block--ideas__list .slick-next{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:42px;height:42px;border:0;border-radius:9999px;background:#fff;
+  box-shadow:0 2px 10px rgba(0,0,0,.15);cursor:pointer
+}
+body:not(.home) .block--ideas__list .slick-prev{left:8px}
+body:not(.home) .block--ideas__list .slick-next{right:8px}
+</style>
+
 <script>
-window.addEventListener('load', function () {
-  // Laisse le héros (LCP) se peindre, puis seulement après on init le slider
-  setTimeout(function () {
-    if (window.initHomeSlider) window.initHomeSlider();
-    // charge d'autres scripts lourds à l'idle
-    if ('requestIdleCallback' in window) {
-      requestIdleCallback(function(){
-        // ex: charger une carte, analytics custom, etc.
-      }, {timeout: 2000});
-    }
-  }, 250);
+/* Redirection select footer */
+document.getElementById('footer__select')?.addEventListener('change', e=>{
+  const v=e.target.value; if(v && v!=='select'){ if(/^https?:\/\//i.test(v)||v[0]==='/') location.href=v; }
 });
-</script>
-<script>
-(function(){
-  function initSlider(){
-    const root = document.querySelector('.block--banner__slider');
-    if (!root) return;
-    root.classList.add('is-ready'); // lève le display:none du fallback
-
-    // 1) Si ton site a déjà une fonction d'init, on la lance
-    if (typeof window.initHomeSlider === 'function') { window.initHomeSlider(); return; }
-
-    // 2) Sinon, si Slick est là
-    if (window.jQuery && jQuery.fn && jQuery.fn.slick && jQuery(root).length) {
-      jQuery(root).slick({autoplay:true, dots:true, arrows:true, adaptiveHeight:true});
-      return;
-    }
-
-    // 3) Sinon, si Swiper est là
-    if (window.Swiper && typeof Swiper === 'function') {
-      /* eslint-disable no-new */
-      new Swiper('.block--banner__slider', {loop:true, slidesPerView:1, autoplay:{delay:4000}});
-      return;
-    }
-
-    // 4) Plan C : mini-rotateur maison (au cas où aucune lib n'est chargée)
-    const slides = root.querySelectorAll('.slide-block');
-    if (slides.length <= 1) return;
-    let i = 0;
-    slides.forEach((s,idx)=>s.style.display = idx===0 ? 'block' : 'none');
-    setInterval(() => {
-      slides[i].style.display = 'none';
-      i = (i+1) % slides.length;
-      slides[i].style.display = 'block';
-    }, 4000);
-  }
-
-  // Laisse le héros se peindre, puis initialise
-  window.addEventListener('load', function(){ setTimeout(initSlider, 250); });
-})();
-</script>
-<script>
-(function(){
-  // 1) Garde anti double-initialisation
-  var GT_SLICK_ALREADY = false;
-
-  function GT_initSliderOnce(){
-    if (GT_SLICK_ALREADY) { console.warn('[GT] skip duplicate init'); return; }
-    GT_SLICK_ALREADY = true;
-
-    var root = document.querySelector('.block--banner__slider');
-    if (!root) return;
-    root.classList.add('is-ready');
-
-    if (!window.jQuery || !jQuery.fn || !jQuery.fn.slick) {
-      console.warn('[GT] Slick absent -> skip');
-      return;
-    }
-
-    var $root = jQuery(root);
-    if ($root.hasClass('slick-initialized')) {
-      try { $root.slick('unslick'); } catch(e){}
-    }
-
-    // Conteneurs sûrs pour dots/arrows
-    var dots  = root.querySelector('.gt-slick-dots')  || root.appendChild(Object.assign(document.createElement('div'),{className:'gt-slick-dots'}));
-    var arrws = root.querySelector('.gt-slick-arrows')|| root.appendChild(Object.assign(document.createElement('div'),{className:'gt-slick-arrows'}));
-    var prev = document.createElement('button'); prev.type='button'; prev.className='slick-prev'; prev.setAttribute('aria-label','Précédent'); prev.innerHTML='‹';
-    var next = document.createElement('button'); next.type='button'; next.className='slick-next'; next.setAttribute('aria-label','Suivant');   next.innerHTML='›';
-    arrws.appendChild(prev); arrws.appendChild(next);
-
-    try {
-      $root.slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
-        autoplay: true,
-        autoplaySpeed: 4000,
-        adaptiveHeight: true,
-        dots: true,
-        appendDots:   dots,
-        appendArrows: arrws,
-        prevArrow:    prev,
-        nextArrow:    next
-      });
-      console.log('[GT] Slick ready (single)');
-    } catch (e) {
-      console.error('[GT] Slick init error:', e);
-    }
-  }
-
-  // 2) Rediriger tout appel externe vers notre init unique
-  var _origInitHome = window.initHomeSlider;
-  window.initHomeSlider = function(){ GT_initSliderOnce(); };
-
-  // 3) Bloquer toute tentative de ré-init via jQuery.fn.slick
-  window.addEventListener('load', function(){
-    if (window.jQuery && jQuery.fn && jQuery.fn.slick) {
-      var _slick = jQuery.fn.slick;
-      jQuery.fn.slick = function(){
-        // si déjà initialisé, on ignore l'appel suivant
-        if (this.hasClass && this.hasClass('slick-initialized')) {
-          return this;
-          return this;
-        }
-        try { return _slick.apply(this, arguments); }
-        catch(e){ console.warn('[GT] slick init prevented:', e); return this; }
-      };
-    }
-    setTimeout(GT_initSliderOnce, 250); // notre init unique
-  });
-})();
-</script>
-<script>
-(function(){
-  // --- Config ---
-  var SELECTOR = '[data-lazy][data-fragment]';
-  var MAX_RETRIES = 2;
-
-  function once(el){ el.__gt_loaded = true; }
-  function done(el){ el.removeAttribute('aria-busy'); el.classList.remove('is-loading'); }
-  function fail(el, msg){
-    el.classList.add('is-error');
-    el.setAttribute('data-fragment-error', msg || 'load_error');
-    done(el);
-  }
-
-  function fetchFragment(url, opts){
-    opts = opts || {};
-    var controller = ('AbortController' in window) ? new AbortController() : null;
-    var timeout = parseInt(opts.timeout || 0, 10);
-    var timer = null;
-    if (controller && timeout > 0) {
-      timer = setTimeout(function(){ controller.abort(); }, timeout);
-    }
-    var headers = {'X-Requested-With':'XMLHttpRequest'};
-    // Si tu veux un nonce en dev/prod : headers['X-WP-Nonce'] = window.wpApiSettings?.nonce;
-
-    return fetch(url, {
-      method: 'GET',
-      headers: headers,
-      credentials: 'same-origin',
-      signal: controller ? controller.signal : undefined
-    }).then(function(res){
-      if (!res.ok) throw new Error('HTTP '+res.status);
-      // Option A (HTML) :
-      return res.text();
-      // Option B (JSON) : return res.json().then(d => d.html);
-    }).finally(function(){
-      if (timer) clearTimeout(timer);
-    });
-  }
-
-  function injectHTML(el, html){
-    // Sécurité simple : vider le skeleton, injecter le fragment
-    el.innerHTML = html;
-  }
-
-  function load(el, attempt){
-    attempt = attempt || 0;
-    if (el.__gt_loaded) return;
-    var url = el.getAttribute('data-fragment');
-    if (!url) return fail(el, 'missing_url');
-
-    el.classList.add('is-loading');
-    var to = parseInt(el.getAttribute('data-timeout') || '0', 10);
-
-    fetchFragment(url, {timeout: to}).then(function(html){
-      if (!html || typeof html !== 'string') throw new Error('empty_response');
-      // Anti-“page entière”
-      if (html.indexOf('<body') !== -1 || html.indexOf('</html>') !== -1) {
-        throw new Error('invalid_fragment_full_doc');
-      }
-      injectHTML(el, html);
-      once(el);
-      done(el);
-    }).catch(function(err){
-      if (attempt < MAX_RETRIES) {
-        // petit backoff
-        setTimeout(function(){ load(el, attempt+1); }, 300*(attempt+1));
-      } else {
-        fail(el, err && err.message ? err.message : 'unknown_error');
-      }
-    });
-  }
-
-  function bootIO(){
-    if (!('IntersectionObserver' in window)) {
-      // Fallback sans IO : on charge tout de suite
-      document.querySelectorAll(SELECTOR).forEach(function(el){ load(el, 0); });
-      return;
-    }
-    var io = new IntersectionObserver(function(entries){
-      for (var i=0;i<entries.length;i++){
-        var e = entries[i];
-        if (e.isIntersecting) {
-          io.unobserve(e.target);
-          load(e.target, 0);
-        }
-      }
-    }, {rootMargin: '200px 0px 200px 0px', threshold: 0.01});
-
-    document.querySelectorAll(SELECTOR).forEach(function(el){
-      if (!el.__gt_observed && !el.__gt_loaded) {
-        el.__gt_observed = true;
-        io.observe(el);
-      }
-    });
-  }
-
-  function init(){
-    bootIO();
-    // MutationObserver pour éléments insérés après coup (SPA/plugins)
-    try{
-      var mo = new MutationObserver(function(muts){
-        for (var i=0;i<muts.length;i++){
-          var t = muts[i].target;
-          if (t && t.nodeType === 1) bootIO();
-        }
-      });
-      mo.observe(document.documentElement, {childList:true, subtree:true});
-    }catch(e){}
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init, {once:true});
-  } else {
-    init();
-  }
-})();
 </script>
 
 
 </body>
-
 </html>

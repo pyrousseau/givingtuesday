@@ -39,7 +39,7 @@ $fields = get_fields();
     <div class="block--ideas">
         <div class="wrap">
             <h2 class="block--ideas__title"><?php echo $fields['block_3_title']; ?></h2>
-            <ul class="block--ideas__list">
+            <ul class="block--ideas__list" data-no-slick="1">
                 <?php foreach ($fields['block_3_repeater'] as $field): ?>
                     <li class="block--ideas__item">
                         <div class="block--ideas__icon">

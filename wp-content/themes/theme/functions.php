@@ -717,7 +717,7 @@ function load_more_cpts() {
                     </div>
                     <div class="action-block categorie-<?php the_field('categorie_event'); ?>"
                         id="<?php echo get_the_ID(); ?>" data-date="<?php echo get_field('event_date'); ?>">
-                        <?php 
+                        <?php
                         $image_infos = get_field('event_photo');
                         if (isset($image_infos['url']) && ($image_infos['url'] != '')) {
                             ?>
@@ -1754,3 +1754,7 @@ add_action('wp_enqueue_scripts', function(){
 }, 20);
 
 
+// functions.php (ou un mu-plugin)
+add_filter('wp_image_editors', function() {
+  return ['WP_Image_Editor_GD', 'WP_Image_Editor_Imagick'];
+});

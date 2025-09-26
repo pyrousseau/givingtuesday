@@ -165,7 +165,7 @@ window.addEventListener('load', function () {
                         'link_after'  => '</span></span>'
                     )
                 );
-                
+
                 ?>
                 <?php //theme_nav('header-menu', 'nav1'); ?>
 <!--                    <li class="nav__btn">-->
