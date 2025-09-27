@@ -186,8 +186,8 @@ $f4 = gt_src('version_fallback_slide4');
 
     <div class="text">
 
-    
-        
+
+
         <img src="<?php the_field('logo-top','option'); ?>" alt="#GIVINGTUESDAY">
 <!--        <p><span>--><?php //the_field('text-top','option'); ?><!--</span>-->
 <!--            --><?php //$date = get_field('date', 'option');  ?>
@@ -195,16 +195,16 @@ $f4 = gt_src('version_fallback_slide4');
 <!---->
 <!--        </p>-->
         <div class="date">
-            
+
         </div>
         <h1><?php echo $o_fields['text-top'];?></h1>
-        
+
         <div class="btn--wrapper">
             <a href="#" class="btn form-scroll-btn">
                 <span><?php the_field('cta_bouton_text','option'); ?></span>
             </a>
         </div>
-        <?php 
+        <?php
         $date = $o_fields['date_copie'];
         if ( wp_date('Y-m-d', current_time('timestamp')) === wp_date('Y-m-d', strtotime($date)) ) { ?>
 
@@ -252,11 +252,11 @@ $f4 = gt_src('version_fallback_slide4');
 
 
 <section data-lazy>
-     </template>   
+     </template>
 <!--<div class="block block__form" --><?php //echo 'style="background-image:url('.get_field('form_fond','33').')"'; ?><!-->
 <div class="block block__form" style="background-image:url('<?php echo $o_fields['universal_form_image']['url']; ?>')";>
 <!--<div class="block block__form" style="background-image:url('wp-content/themes/theme/images/front/bg-form.jpg')";>-->
- 
+
 <a id="block-form"></a>
     <div class="wrap-container">
         <div class="form-wrapper">
