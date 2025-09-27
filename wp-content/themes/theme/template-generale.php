@@ -79,6 +79,7 @@ if (is_array($partners)) {
           if (empty($img) && empty($txt)) continue;
         ?>
           <li class="block--partners__item">
+            <a href="https://givingtuesday.charitips.com/" target="blank" style="color:#fff">
             <?php if (!empty($img['url'])): ?>
               <div class="block--partners__icon">
                 <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt'] ?? ''); ?>">
@@ -87,6 +88,7 @@ if (is_array($partners)) {
             <?php if (!empty($txt)): ?>
               <h3 class="block--partners__item__title"><?php echo esc_html($txt); ?></h3>
             <?php endif; ?>
+            </a>
           </li>
         <?php endforeach; ?>
       </ul>

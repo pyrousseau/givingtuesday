@@ -239,21 +239,57 @@ $f4 = gt_src('version_fallback_slide4');
   <div class="skeleton" style="height:320px"></div>
 </section>
 
-<section
+<!-- <section
   id="home-actus"
   class="ssr-fragment"
   data-lazy
   data-fragment="/wp-json/gt/v1/fragment/actus?count=3"
   aria-busy="true">
   <div class="skeleton" style="height:400px"></div>
-</section>
+</section> -->
+
+<div id="gt-actus" class="block__frontpage--actus">
+  <h2 class="block__frontpage--actus__title"><?php the_field('actu_bloc_titre','option'); ?></h2>
+
+  <div class="gt-actus-grid">
+    <?php
+    $q = new WP_Query([
+  'post_type'           => 'post',
+  'post_status'         => 'publish',
+  'ignore_sticky_posts' => true,
+  'posts_per_page'      => 5,
+  'orderby'             => 'date',
+  'order'               => 'DESC',
+]);
+
+    if ($q->have_posts()):
+      while ($q->have_posts()): $q->the_post(); ?>
+        <article class="gt-actus-card">
+          <a class="gt-actus-thumb" href="<?php the_permalink(); ?>">
+            <?php the_post_thumbnail('actu-thumb'); ?>
+          </a>
+          <h3 class="gt-actus-title">
+            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+          </h3>
+          <p class="gt-actus-excerpt"><?php echo esc_html(wp_trim_words(get_the_excerpt(), 28, '…')); ?></p>
+          <a class="gt-actus-link" href="<?php the_permalink(); ?>">Lire la suite</a>
+        </article>
+    <?php endwhile; wp_reset_postdata(); endif; ?>
+  </div>
+
+  <p class="block__frontpage--actus__footer">
+    <a class="block__frontpage--actus__footer__link" href="<?php echo esc_url( get_permalink(23) ); ?>">
+      Voir toutes les actualités
+    </a>
+  </p>
+</div>
 
 
 
 
 <section data-lazy>
-     </template>
-<!--<div class="block block__form" --><?php //echo 'style="background-image:url('.get_field('form_fond','33').')"'; ?><!-->
+     <template>
+      <!--<div class="block block__form" --><?php //echo 'style="background-image:url('.get_field('form_fond','33').')"'; ?><!-->
 <div class="block block__form" style="background-image:url('<?php echo $o_fields['universal_form_image']['url']; ?>')";>
 <!--<div class="block block__form" style="background-image:url('wp-content/themes/theme/images/front/bg-form.jpg')";>-->
 

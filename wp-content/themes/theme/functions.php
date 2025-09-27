@@ -1753,9 +1753,11 @@ add_action('wp_enqueue_scripts', function(){
   }
 }, 20);
 
+// Empêche WordPress d'ajouter sizes="auto" aux <img>
+add_filter('wp_img_tag_add_auto_sizes', '__return_false');
 
-// functions.php (ou un mu-plugin)
-add_filter('wp_image_editors', function() {
-  return ['WP_Image_Editor_GD', 'WP_Image_Editor_Imagick'];
-});
+add_filter('the_content', function ($html) {
+    return str_replace(' sizes="auto"', '', $html);
+}, 20);
+
 
