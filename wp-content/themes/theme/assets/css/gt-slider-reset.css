@@ -1,0 +1,50 @@
+/* --- RESET SLICK POUR ACTUS --- */
+
+.block__frontpage--actus .slick-list {
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+.block__frontpage--actus .slick-track {
+  display: block !important;
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important;
+  transform: none !important;
+  width: 100000px !important;
+}
+
+.block__frontpage--actus .slick-slide {
+  float: left !important;
+  height: auto !important;
+  min-height: 1px !important;
+  display: block !important;
+  position: relative !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  width: auto !important;
+  box-sizing: border-box !important;
+  z-index: 2;
+}
+
+.block__frontpage--actus .slide-block__inner {
+  max-width: 360px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #e6eef6;
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.block__frontpage--actus .slide-block__img {
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+.block__frontpage--actus .slide-block__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}

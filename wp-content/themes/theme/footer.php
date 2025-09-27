@@ -22,7 +22,7 @@ $o_fields = get_fields('option') ?: get_fields('options');
           Pour un contenu personnalisé <br>indiquez-nous votre profil...
           <span>Vous êtes&nbsp;:</span>
         </label>
-        <select id="footer__select">
+        <select id="footer__select" class="gt-select">
           <option value="select"><?php echo esc_html($o_fields['header_select_subtitle'] ?? ''); ?></option>
           <?php foreach ($o_fields['header_select'] ?? [] as $field): ?>
             <option value="<?php echo esc_url($field['lien'] ?? '#'); ?>">
@@ -72,20 +72,49 @@ $o_fields = get_fields('option') ?: get_fields('options');
   </div>
 </div>
 
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  if (!document.body.classList.contains('actualites')) return;
+
+  function fixActuStatic() {
+    document.querySelectorAll('.block__actualites--last-news .slick-slide img').forEach(function (img) {
+      // Neutralise la "taille fantôme" et toute contrainte HTML
+      img.removeAttribute('width');
+      img.removeAttribute('height');
+      img.style.contentVisibility   = 'visible';
+      img.style.containIntrinsicSize = 'auto';
+
+      // Affichage proportionnel, SANS absolute
+      img.style.position   = 'static';
+      img.style.inset      = 'auto';
+      img.style.display    = 'block';
+      img.style.width      = '100%';
+      img.style.height     = 'auto';
+      img.style.maxHeight  = 'none';
+      img.style.objectFit  = 'cover'; // ne gêne pas avec height:auto, évite quelques cas
+      img.style.visibility = 'visible';
+      img.style.opacity    = '1';
+      img.style.clip       = 'auto';
+      img.style.clipPath   = 'none';
+    });
+  }
+
+  // au chargement
+  fixActuStatic();
+
+  // si Slick réagit (init / resize / lazy), on réapplique
+  if (window.jQuery) {
+    var $ = window.jQuery;
+    $('.block__actualites--last-news .slick-slider')
+      .on('init reInit setPosition lazyLoaded', fixActuStatic);
+  }
+});
+</script>
+
+
 <?php wp_footer(); ?>
 
-<style>
-/* Flèches visibles pour .block--ideas__list (hors home) */
-body:not(.home) .block--ideas__list .slick-arrow{display:block!important;opacity:1!important;visibility:visible!important}
-body:not(.home) .block--ideas__list .slick-prev,
-body:not(.home) .block--ideas__list .slick-next{
-  position:absolute;top:50%;transform:translateY(-50%);
-  width:42px;height:42px;border:0;border-radius:9999px;background:#fff;
-  box-shadow:0 2px 10px rgba(0,0,0,.15);cursor:pointer
-}
-body:not(.home) .block--ideas__list .slick-prev{left:8px}
-body:not(.home) .block--ideas__list .slick-next{right:8px}
-</style>
+
 
 <script>
 /* Redirection select footer */
@@ -94,6 +123,69 @@ document.getElementById('footer__select')?.addEventListener('change', e=>{
 });
 
 </script>
+<script>
+jQuery(function ($) {
+  var SELECTOR = '.block_actions_filter select, .block__frontpage select, select.gt-select';
+
+  function initSelectric(ctx) {
+    $(ctx || document).find(SELECTOR).each(function () {
+      var $sel = $(this);
+      // déjà initialisé ? on ne touche pas
+      if ($sel.data('selectric')) return;
+      // init 1 fois
+      $sel.selectric({
+        disableOnMobile: false,
+        nativeOnMobile: false
+      });
+    });
+  }
+
+  // 1) init au chargement
+  initSelectric(document);
+
+  // 2) Observer SÉLECTIF (ne réagit qu’à des <select> nouveaux)
+  try {
+    var debounceT = null;
+    var pending = [];
+
+    var mo = new MutationObserver(function (muts) {
+      for (var m of muts) {
+        for (var n of m.addedNodes) {
+          if (n.nodeType !== 1) continue;
+          // si le nœud lui‑même est un <select>
+          if (n.matches && n.matches('select')) pending.push(n);
+          // ou s’il en contient
+          $(n).find('select').each(function(){ pending.push(this); });
+        }
+      }
+      if (!pending.length) return;
+
+      clearTimeout(debounceT);
+      debounceT = setTimeout(function () {
+        // n’initialise QUE les nouveaux select, une seule fois
+        $(pending).each(function () {
+          var $sel = $(this);
+          if (!$sel.data('selectric')) {
+            $sel.selectric({
+              disableOnMobile: false,
+              nativeOnMobile: false
+            });
+          } else {
+            // si déjà initialisé, un petit refresh suffit
+            $sel.selectric('refresh');
+          }
+        });
+        pending = [];
+      }, 120);
+    });
+
+    mo.observe(document.documentElement, { childList: true, subtree: true });
+  } catch (e) {
+    // no-op
+  }
+});
+</script>
+
 
 
 </body>

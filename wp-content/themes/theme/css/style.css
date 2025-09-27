@@ -5499,7 +5499,7 @@ h1, h2 {
         font-size: 30px;
         line-height: 36px; } }
   .block--partners__icon {
-    max-width: 600px;
+    max-width: 700px;
     margin:0 auto;
     }
     @media (max-width: 1023px) {
@@ -5534,7 +5534,11 @@ h1, h2 {
     .block--partners__item__title {
       color: #ffffff;
       font-weight: normal;
-      font-size: 20px; }
+      font-size: 20px;
+      max-width:700px;
+      margin:0 auto;
+      font-weight: 700;
+      margin-top: 20px;;}
       @media (max-width: 1023px) {
         .block--partners__item__title {
           font-size: 18px; }
@@ -8811,8 +8815,8 @@ body:not(.home) .header-sticky {
 
 
 
-.block--ideas__list .slick-next{right:-50px!important;}
-.block--ideas__list .slick-prev{left:-50px!important;}
+.block--ideas__list .slick-next{right:-50px!important; border-left-color:#fff!important}
+.block--ideas__list .slick-prev{left:-50px!important; border-right-color:#fff!important}
 
 .slick-next:before {
     content: '';
@@ -8859,235 +8863,224 @@ body:not(.home) .header-sticky {
 
 /* AFF (bloc porteur) un peu plus petit */
 .block__frontpage--intro__logos .gt-porteur__logo img{ max-height:94px; }
+/*************************************************
+ *  #GT-ACTUS — GRILLE D’ACTUALITÉS (SANS SLIDER)
+ *  Scope strict : #gt-actus …
+ *************************************************/
 
+/* Variables */
+#gt-actus{
+  --gt-gap:24px;
+  --gt-gap-sm:16px;
+  --gt-max:1200px;     /* largeur conteneur desktop */
+  --gt-max-xl:1600px;  /* largeur conteneur ≥1600px */
+  --gt-bg:#fff;
+  --gt-border:#e6eef6;
+  --gt-shadow:0 6px 24px rgba(0,0,0,.08);
+  --gt-primary:#002a57;
+  --gt-text:#222;
+}
 
-/* ===== Fix mobile – Les Actus du #GivingTuesday (PROD) ===== */
-@media (max-width: 767.98px) {
+/* Titre */
+#gt-actus .block__frontpage--actus__title{
+  max-width:var(--gt-max);
+  margin:0 auto var(--gt-gap);
+  padding:0 20px;
+  color:#fff; /* adapter si besoin */
+}
 
-  /* Empêche les débordements horizontaux */
-  .block__frontpage--actus,
-  .block__frontpage--actus .slick-list { overflow: hidden; }
+/* Grille — desktop par défaut: 3 colonnes */
+#gt-actus .gt-actus-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:var(--gt-gap);
+  max-width:var(--gt-max);
+  margin:0 auto;
+  padding:0 20px;
+}
 
-  /* Track en flex = hauteurs cohérentes et slides auto */
-  .block__frontpage--actus .slick-track { display: flex !important; }
-  .block__frontpage--actus .slick-slide {
-    height: auto !important;
-    float: none !important;
-    padding: 0 8px;                 /* respirations latérales */
-    box-sizing: border-box;
-  }
-  .block__frontpage--actus .slick-slide > div { height: 100%; }
-
-  /* Carte / inner : supprime les hauteurs forcées et réduit le padding */
-  .block__frontpage--actus .slide-block__inner,
-  .block__frontpage--actus .news-card {
-    min-height: 0 !important;       /* <- key: évite l'écrasement */
-    padding: 12px 14px 20px;
-    max-width: 100%;
-    box-sizing: border-box;
-    overflow: hidden;
-  }
-
-  /* Médias toujours fluides, ratio stable */
-  .block__frontpage--actus img {
-    display: block;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-  .block__frontpage--actus .slide-block__media,
-  .block__frontpage--actus .news-card__media {
-    position: relative;
-    aspect-ratio: 16/9;             /* limite les sauts de layout */
-    overflow: hidden;
-  }
-  .block__frontpage--actus .slide-block__media > img,
-  .block__frontpage--actus .news-card__media > img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  /* Flèches : re-centre verticalement (override un éventuel top:74%) */
-  .block__frontpage--actus .slick-prev,
-  .block__frontpage--actus .slick-next,
-  .block__frontpage--actus .slick-slider .slick-prev,
-  .block__frontpage--actus .slick-slider .slick-next {
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-  }
-
-  /* Titres longueurs : évite le débordement */
-  .block__frontpage--actus .slide-block__title,
-  .block__frontpage--actus .news-card h3,
-  .block__frontpage--actus .entry-title {
-    line-height: 1.2;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;          /* coupe à 2 lignes */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+/* Tablette: 2 colonnes (641–1024px) */
+@media (max-width:1024px){
+  #gt-actus .gt-actus-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:var(--gt-gap);
+    padding:0 16px;
   }
 }
 
-/* ===== PROD — Réduire la taille des ACTUS sur mobile ===== */
-@media (max-width: 767.98px) {
-  .block__frontpage--actus {
-    --card-max: 360px;   /* largeur max d’une carte */
-    --side-gap: 14px;    /* marge latérale dans la slide */
-  }
-
-  /* respirations autour des slides */
-  .block__frontpage--actus .slick-list { padding: 0 var(--side-gap); }
-  .block__frontpage--actus .slick-slide { padding: 0 var(--side-gap); box-sizing: border-box; }
-
-  /* la carte elle-même : moins large + centrée */
-  .block__frontpage--actus .slide-block__inner,
-  .block__frontpage--actus .news-card {
-    width: min(100%, var(--card-max));
-    margin: 0 auto;
-    padding: 12px 14px 16px;
-    border-radius: 10px;
-    box-sizing: border-box;
-  }
-
-  /* médias plus compacts (évite les cartes très hautes) */
-  .block__frontpage--actus .slide-block__media,
-  .block__frontpage--actus .news-card__media {
-    position: relative;
-    aspect-ratio: 3/2;        /* visuel un peu moins haut */
-    max-height: 48vw;         /* garde un plafond visuel */
-    overflow: hidden;
-  }
-  .block__frontpage--actus .slide-block__media > img,
-  .block__frontpage--actus .news-card__media > img {
-    width: 100%; height: 100%; object-fit: cover; display: block;
-  }
-
-  /* typos plus fines */
-  .block__frontpage--actus .slide-block__title,
-  .block__frontpage--actus .news-card h3,
-  .block__frontpage--actus .entry-title {
-    font-size: clamp(16px, 3.8vw, 18px);
-    line-height: 1.25;
-    display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;
-  }
-  .block__frontpage--actus .slide-block__text { font-size: clamp(14px, 3.4vw, 16px); }
-
-  /* boutons/links plus discrets */
-  .block__frontpage--actus .btn,
-  .block__frontpage--actus a.more-link {
-    font-size: 14px; padding: 8px 10px;
-  }
-
-  /* flèches: centrées verticalement par rapport à la carte réduite */
-  .block__frontpage--actus .slick-slider { position: relative; }
-  .block__frontpage--actus .slick-prev,
-  .block__frontpage--actus .slick-next {
-    top: 50% !important; transform: translateY(-50%) !important; z-index: 2;
-  }
-}
-/* iPhone / mobile : forcer l'affichage en liste empilée sans JS */
-@media (max-width: 767.98px) {
-  /* neutralise la mécanique de layout de Slick */
-  .block__frontpage--actus .slick-list { overflow: visible !important; }
-  .block__frontpage--actus .slick-track {
-    display: block !important;
-    transform: none !important;
-    width: auto !important;
-  }
-  .block__frontpage--actus .slick-slide {
-    display: block !important;
-    float: none !important;
-    position: static !important;
-    left: auto !important;
-    width: 100% !important;
-    margin: 0 0 16px !important;   /* espacement entre cartes */
-  }
-  .block__frontpage--actus .slick-slide > div {
-    width: 100% !important;
-    height: auto !important;
-  }
-
-  /* images fluides */
-  .block__frontpage--actus .slide-block__media,
-  .block__frontpage--actus .news-card__media {
-    position: relative;
-    aspect-ratio: 16/9;
-    overflow: hidden;
-  }
-  .block__frontpage--actus .slide-block__media img,
-  .block__frontpage--actus .news-card__media img {
-    width: 100%; height: 100%; object-fit: cover; display: block;
-  }
-
-  /* masquer la navigation car on n'est plus en carrousel */
-  .block__frontpage--actus .slick-prev,
-  .block__frontpage--actus .slick-next,
-  .block__frontpage--actus .slick-dots {
-    display: none !important;
-  }
-}
-/* ===== Empiler TOUTES les actus en mobile, même celles marquées non actives par Slick ===== */
-@media (max-width: 767.98px) {
-  .block__frontpage--actus .slick-list,
-  .block__frontpage--actus .slick-track { height: auto !important; }
-
-  /* Montre toutes les slides (certains thèmes cachent les non-actives) */
-  .block__frontpage--actus .slick-slide {
-    display: block !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    float: none !important;
-    position: static !important;
-    width: 100% !important;
-    margin: 0 0 16px !important;
-  }
-  .block__frontpage--actus .slick-slide[aria-hidden="true"],
-  .block__frontpage--actus .slick-slide:not(.slick-active) {
-    display: block !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
-
-  /* On n’a pas besoin des clones en mode liste */
-  .block__frontpage--actus .slick-cloned { display: none !important; }
-
-  /* Masque la nav car plus de carrousel en mobile */
-  .block__frontpage--actus .slick-prev,
-  .block__frontpage--actus .slick-next,
-  .block__frontpage--actus .slick-dots { display: none !important; }
-}
-
-/* iPhone/mobile : liste empilée SANS clones */
-@media (max-width: 767.98px) {
-  .block__frontpage--actus .slick-list { overflow: visible !important; }
-  .block__frontpage--actus .slick-track { display: block !important; transform: none !important; width: auto !important; }
-
-  /* Affiche uniquement les vraies slides, cache les clones */
-  .block__frontpage--actus .slick-slider .slick-slide:not(.slick-cloned) {
-    display: block !important;
-    float: none !important;
-    position: static !important;
-    width: 100% !important;
-    margin: 0 0 16px !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
-  .block__frontpage--actus .slick-slider .slick-slide.slick-cloned {
-    display: none !important;
-  }
-
-  /* Masque la nav du carrousel en mode liste */
-  .block__frontpage--actus .slick-prev,
-  .block__frontpage--actus .slick-next,
-  .block__frontpage--actus .slick-dots {
-    display: none !important;
+/* Mobile: 1 colonne (≤640px) */
+@media (max-width:640px){
+  #gt-actus .gt-actus-grid{
+    grid-template-columns:1fr;
+    gap:var(--gt-gap-sm);
+    padding:0 16px;
   }
 }
 
-.block--ideas__list{
-  justify-content: center!important;
+/* Grand desktop: 4 colonnes (≥1280px) */
+@media (min-width:1280px){
+  #gt-actus .gt-actus-grid{
+    grid-template-columns:repeat(4,minmax(0,1fr));
+  }
 }
 
-.block__ideas_list li { width: 220px; max-width: 220px; }
+/* Très grand: 5 colonnes (≥1600px) */
+@media (min-width:1600px){
+  #gt-actus .gt-actus-grid{
+    max-width:var(--gt-max-xl);
+    grid-template-columns:repeat(5,minmax(220px,1fr));
+    gap:20px;
+  }
+}
 
+/* Carte */
+#gt-actus .gt-actus-card{
+  background:var(--gt-bg);
+  border:1px solid var(--gt-border);
+  border-radius:12px;
+  box-shadow:var(--gt-shadow);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  min-height:100%;
+  transition:transform .12s ease-out, box-shadow .12s ease-out;
+}
+#gt-actus .gt-actus-card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 30px rgba(0,0,0,.12);
+}
+
+/* Vignette (fallback iOS sans aspect-ratio) */
+#gt-actus .gt-actus-thumb{position:relative;display:block;overflow:hidden}
+#gt-actus .gt-actus-thumb::before{content:"";display:block;padding-top:56.25%} /* 16:9 */
+#gt-actus .gt-actus-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+
+/* Titre / texte / lien */
+#gt-actus .gt-actus-title{margin:16px 16px 8px;font-size:1.1rem;line-height:1.3}
+#gt-actus .gt-actus-title a{color:var(--gt-primary);text-decoration:none}
+#gt-actus .gt-actus-title a:hover{text-decoration:underline}
+#gt-actus .gt-actus-excerpt{margin:0 16px 12px;color:var(--gt-text);line-height:1.5;flex-grow:1}
+#gt-actus .gt-actus-link{margin:0 16px 16px;font-weight:600;color:var(--gt-primary);text-decoration:none;align-self:flex-start}
+#gt-actus .gt-actus-link:hover{text-decoration:underline}
+
+/* Pied de bloc */
+#gt-actus .block__frontpage--actus__footer{
+  max-width:var(--gt-max);
+  margin:var(--gt-gap) auto 0;
+  padding:0 20px;
+}
+#gt-actus .block__frontpage--actus__footer__link{color:#fff;text-decoration:underline;font-weight:600}
+
+/* Compactage léger en 5 colonnes */
+@media (min-width:1600px){
+  #gt-actus .gt-actus-title{margin:12px 12px 6px;font-size:1rem}
+  #gt-actus .gt-actus-excerpt{margin:0 12px 10px;font-size:.95rem;line-height:1.45}
+  #gt-actus .gt-actus-link{margin:0 12px 14px}
+}
+
+/* ===== Limitation du nombre d’actus visibles par palier ===== */
+/* Mobile (≤640px) : max 3 */
+@media (max-width:640px){
+  #gt-actus .gt-actus-grid > *:nth-child(n+4){display:none!important}
+}
+/* Tablette (641–1024px) : max 3 (sur 2 colonnes → 2 + 1) */
+@media (min-width:641px) and (max-width:1024px){
+  #gt-actus .gt-actus-grid > *:nth-child(n+4){display:none!important}
+}
+/* Desktop “standard” (1025–1279px) : 3 colonnes → 1 seule ligne */
+@media (min-width:1025px) and (max-width:1279px){
+  #gt-actus .gt-actus-grid > *:nth-child(n+4){display:none!important}
+}
+/* Grand desktop (1280–1599px) : 4 colonnes → 1 seule ligne */
+@media (min-width:1280px) and (max-width:1599px){
+  #gt-actus .gt-actus-grid > *:nth-child(n+5){display:none!important}
+}
+/* Très grand (≥1600px) : 5 colonnes → 1 seule ligne */
+@media (min-width:1600px){
+  #gt-actus .gt-actus-grid > *:nth-child(n+6){display:none!important}
+}
+
+/* Accessibilité : focus visible */
+#gt-actus a:focus-visible{outline:2px solid #5aa9ff;outline-offset:2px}
+
+/********* ACTUS — grille sans slider (markup existant) *********/
+
+/* conteneur largeur */
+.block__frontpage--actus__slider{
+  max-width:1200px; margin:0 auto; padding:0 20px;
+}
+
+/* GRILLE : desktop par défaut = 3 colonnes */
+.block__frontpage--actus__slider__inner{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:24px;
+}
+
+/* cartes (tes classes actuelles) */
+.block__frontpage--actus__slider__inner > .slide-block .slide-block__inner{
+  background:#fff; border:1px solid #e6eef6; border-radius:12px;
+  box-shadow:0 6px 24px rgba(0,0,0,.08); overflow:hidden;
+  display:flex; flex-direction:column; min-height:100%;
+}
+
+/* image 16:9 compatible iOS (sans aspect-ratio) */
+.block__frontpage--actus__slider__inner > .slide-block .slide-block__img{
+  position:relative; overflow:hidden;
+}
+.block__frontpage--actus__slider__inner > .slide-block .slide-block__img::before{
+  content:""; display:block; padding-top:56.25%;
+}
+.block__frontpage--actus__slider__inner > .slide-block .slide-block__img img{
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;
+}
+
+/* titres & textes */
+.slide-block__title{ margin:16px 16px 8px; font-size:1.1rem; line-height:1.3; color:#002a57; }
+.slide-block__text{  margin:0 16px 12px; color:#222; line-height:1.5; flex-grow:1; }
+.slide-block__link{  margin:0 16px 16px; font-weight:600; color:#002a57; text-decoration:none; }
+.slide-block__link:hover{ text-decoration:underline; }
+
+/* TABLETTE ≤1024px : 2 colonnes, max 3 actus (2 + 1) */
+@media (max-width:1024px){
+  .block__frontpage--actus__slider__inner{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:16px; padding:0 16px;
+  }
+  .block__frontpage--actus__slider__inner > .slide-block:nth-child(n+4){ display:none !important; }
+}
+
+/* MOBILE ≤640px : 1 colonne, max 3 actus */
+@media (max-width:640px){
+  .block__frontpage--actus__slider__inner{
+    grid-template-columns:1fr;
+    gap:16px; padding:0 16px;
+  }
+  .block__frontpage--actus__slider__inner > .slide-block:nth-child(n+4){ display:none !important; }
+}
+
+/* GRAND DESKTOP ≥1280px : 4 colonnes, 1 seule ligne (cacher au-delà de 4) */
+@media (min-width:1280px){
+  .block__frontpage--actus__slider__inner{ grid-template-columns:repeat(4,minmax(0,1fr)); }
+  .block__frontpage--actus__slider__inner > .slide-block:nth-child(n+5){ display:none !important; }
+}
+
+/* TRÈS GRAND ≥1600px : 5 colonnes, 1 seule ligne (cacher au-delà de 5) */
+@media (min-width:1600px){
+  .block__frontpage--actus__slider{ max-width:1600px; }
+  .block__frontpage--actus__slider__inner{
+    grid-template-columns:repeat(5,minmax(220px,1fr));
+    gap:20px;
+  }
+  .block__frontpage--actus__slider__inner > .slide-block:nth-child(n+6){ display:none !important; }
+}
+
+/* Actualités – annule sizes="auto" de Chrome dans "À la une" */
+.actualites .block__actualites--last-news img[sizes="auto"],
+.actualites .block__actualites--last-news img[sizes^="auto,"]{
+  content-visibility: visible !important;
+  contain-intrinsic-size: auto !important; /* stoppe le 3000x1500 */
+  height: auto !important;
+  width: 100% !important;
+  max-height: none !important;
+}
