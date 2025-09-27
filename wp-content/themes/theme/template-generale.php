@@ -52,21 +52,49 @@ $fields = get_fields();
             <a class="block--ideas__link" href="/comment-participer/actions-a-decouvrir/">Découvrir toutes les actions déjà mises en place</a>
         </div>
     </div>
-        <div class="block--partners">
-        <div class="wrap">
-            <h2 class="block--partners__title"><?php echo $fields['block_6_title']; ?></h2>
-            <ul class="block--partners__list">
-                 <?php foreach ($fields['block_6_repeater'] as $field): ?>
-                    <li class="block--partners__item">
-                        <div class="block--partners__icon">
-                            <img src="<?php echo $field['image']['url']; ?>" alt="<?php echo $field['image']['alt']; ?>">
-                        </div>
-                        <h3 class="block--partners__item__title"><?php echo $field['text']; ?></h3>
-                    </li>
-                <?php endforeach; ?>
-            </ul>
-        </div>
-    </div>
+<?php
+$title    = $fields['block_6_title']    ?? '';
+$partners = $fields['block_6_repeater'] ?? [];
+
+$has_items = false;
+if (is_array($partners)) {
+  foreach ($partners as $p) {
+    if (!empty($p['image']) || !empty($p['text'])) { $has_items = true; break; }
+  }
+}
+?>
+
+<?php if (!empty($title) || $has_items): ?>
+<div class="block--partners">
+  <div class="wrap">
+    <?php if (!empty($title)): ?>
+      <h2 class="block--partners__title"><?php echo esc_html($title); ?></h2>
+    <?php endif; ?>
+
+    <?php if ($has_items): ?>
+      <ul class="block--partners__list">
+        <?php foreach ($partners as $p):
+          $img = $p['image'] ?? null;
+          $txt = $p['text']  ?? '';
+          if (empty($img) && empty($txt)) continue;
+        ?>
+          <li class="block--partners__item">
+            <?php if (!empty($img['url'])): ?>
+              <div class="block--partners__icon">
+                <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt'] ?? ''); ?>">
+              </div>
+            <?php endif; ?>
+            <?php if (!empty($txt)): ?>
+              <h3 class="block--partners__item__title"><?php echo esc_html($txt); ?></h3>
+            <?php endif; ?>
+          </li>
+        <?php endforeach; ?>
+      </ul>
+    <?php endif; ?>
+  </div>
+</div>
+<?php endif; ?>
+
 <!--     <div class="block--download-files">
         <h2 class="block--download-files__title"><?php echo $fields['block_4_title']; ?></h2>
         <div class="block--download-files__content">

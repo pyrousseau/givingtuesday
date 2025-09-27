@@ -92,6 +92,7 @@ body:not(.home) .block--ideas__list .slick-next{right:8px}
 document.getElementById('footer__select')?.addEventListener('change', e=>{
   const v=e.target.value; if(v && v!=='select'){ if(/^https?:\/\//i.test(v)||v[0]==='/') location.href=v; }
 });
+
 </script>
 
 

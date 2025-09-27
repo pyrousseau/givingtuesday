@@ -8810,6 +8810,10 @@ body:not(.home) .header-sticky {
 #home-actus .slide-block__img img{ display:block; max-width:100%; height:auto; }
 
 
+
+.block--ideas__list .slick-next{right:-50px!important;}
+.block--ideas__list .slick-prev{left:-50px!important;}
+
 .slick-next:before {
     content: '';
 }
@@ -8856,4 +8860,234 @@ body:not(.home) .header-sticky {
 /* AFF (bloc porteur) un peu plus petit */
 .block__frontpage--intro__logos .gt-porteur__logo img{ max-height:94px; }
 
+
+/* ===== Fix mobile – Les Actus du #GivingTuesday (PROD) ===== */
+@media (max-width: 767.98px) {
+
+  /* Empêche les débordements horizontaux */
+  .block__frontpage--actus,
+  .block__frontpage--actus .slick-list { overflow: hidden; }
+
+  /* Track en flex = hauteurs cohérentes et slides auto */
+  .block__frontpage--actus .slick-track { display: flex !important; }
+  .block__frontpage--actus .slick-slide {
+    height: auto !important;
+    float: none !important;
+    padding: 0 8px;                 /* respirations latérales */
+    box-sizing: border-box;
+  }
+  .block__frontpage--actus .slick-slide > div { height: 100%; }
+
+  /* Carte / inner : supprime les hauteurs forcées et réduit le padding */
+  .block__frontpage--actus .slide-block__inner,
+  .block__frontpage--actus .news-card {
+    min-height: 0 !important;       /* <- key: évite l'écrasement */
+    padding: 12px 14px 20px;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  /* Médias toujours fluides, ratio stable */
+  .block__frontpage--actus img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  .block__frontpage--actus .slide-block__media,
+  .block__frontpage--actus .news-card__media {
+    position: relative;
+    aspect-ratio: 16/9;             /* limite les sauts de layout */
+    overflow: hidden;
+  }
+  .block__frontpage--actus .slide-block__media > img,
+  .block__frontpage--actus .news-card__media > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Flèches : re-centre verticalement (override un éventuel top:74%) */
+  .block__frontpage--actus .slick-prev,
+  .block__frontpage--actus .slick-next,
+  .block__frontpage--actus .slick-slider .slick-prev,
+  .block__frontpage--actus .slick-slider .slick-next {
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+  }
+
+  /* Titres longueurs : évite le débordement */
+  .block__frontpage--actus .slide-block__title,
+  .block__frontpage--actus .news-card h3,
+  .block__frontpage--actus .entry-title {
+    line-height: 1.2;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;          /* coupe à 2 lignes */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* ===== PROD — Réduire la taille des ACTUS sur mobile ===== */
+@media (max-width: 767.98px) {
+  .block__frontpage--actus {
+    --card-max: 360px;   /* largeur max d’une carte */
+    --side-gap: 14px;    /* marge latérale dans la slide */
+  }
+
+  /* respirations autour des slides */
+  .block__frontpage--actus .slick-list { padding: 0 var(--side-gap); }
+  .block__frontpage--actus .slick-slide { padding: 0 var(--side-gap); box-sizing: border-box; }
+
+  /* la carte elle-même : moins large + centrée */
+  .block__frontpage--actus .slide-block__inner,
+  .block__frontpage--actus .news-card {
+    width: min(100%, var(--card-max));
+    margin: 0 auto;
+    padding: 12px 14px 16px;
+    border-radius: 10px;
+    box-sizing: border-box;
+  }
+
+  /* médias plus compacts (évite les cartes très hautes) */
+  .block__frontpage--actus .slide-block__media,
+  .block__frontpage--actus .news-card__media {
+    position: relative;
+    aspect-ratio: 3/2;        /* visuel un peu moins haut */
+    max-height: 48vw;         /* garde un plafond visuel */
+    overflow: hidden;
+  }
+  .block__frontpage--actus .slide-block__media > img,
+  .block__frontpage--actus .news-card__media > img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+
+  /* typos plus fines */
+  .block__frontpage--actus .slide-block__title,
+  .block__frontpage--actus .news-card h3,
+  .block__frontpage--actus .entry-title {
+    font-size: clamp(16px, 3.8vw, 18px);
+    line-height: 1.25;
+    display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;
+  }
+  .block__frontpage--actus .slide-block__text { font-size: clamp(14px, 3.4vw, 16px); }
+
+  /* boutons/links plus discrets */
+  .block__frontpage--actus .btn,
+  .block__frontpage--actus a.more-link {
+    font-size: 14px; padding: 8px 10px;
+  }
+
+  /* flèches: centrées verticalement par rapport à la carte réduite */
+  .block__frontpage--actus .slick-slider { position: relative; }
+  .block__frontpage--actus .slick-prev,
+  .block__frontpage--actus .slick-next {
+    top: 50% !important; transform: translateY(-50%) !important; z-index: 2;
+  }
+}
+/* iPhone / mobile : forcer l'affichage en liste empilée sans JS */
+@media (max-width: 767.98px) {
+  /* neutralise la mécanique de layout de Slick */
+  .block__frontpage--actus .slick-list { overflow: visible !important; }
+  .block__frontpage--actus .slick-track {
+    display: block !important;
+    transform: none !important;
+    width: auto !important;
+  }
+  .block__frontpage--actus .slick-slide {
+    display: block !important;
+    float: none !important;
+    position: static !important;
+    left: auto !important;
+    width: 100% !important;
+    margin: 0 0 16px !important;   /* espacement entre cartes */
+  }
+  .block__frontpage--actus .slick-slide > div {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* images fluides */
+  .block__frontpage--actus .slide-block__media,
+  .block__frontpage--actus .news-card__media {
+    position: relative;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+  }
+  .block__frontpage--actus .slide-block__media img,
+  .block__frontpage--actus .news-card__media img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+
+  /* masquer la navigation car on n'est plus en carrousel */
+  .block__frontpage--actus .slick-prev,
+  .block__frontpage--actus .slick-next,
+  .block__frontpage--actus .slick-dots {
+    display: none !important;
+  }
+}
+/* ===== Empiler TOUTES les actus en mobile, même celles marquées non actives par Slick ===== */
+@media (max-width: 767.98px) {
+  .block__frontpage--actus .slick-list,
+  .block__frontpage--actus .slick-track { height: auto !important; }
+
+  /* Montre toutes les slides (certains thèmes cachent les non-actives) */
+  .block__frontpage--actus .slick-slide {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    float: none !important;
+    position: static !important;
+    width: 100% !important;
+    margin: 0 0 16px !important;
+  }
+  .block__frontpage--actus .slick-slide[aria-hidden="true"],
+  .block__frontpage--actus .slick-slide:not(.slick-active) {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* On n’a pas besoin des clones en mode liste */
+  .block__frontpage--actus .slick-cloned { display: none !important; }
+
+  /* Masque la nav car plus de carrousel en mobile */
+  .block__frontpage--actus .slick-prev,
+  .block__frontpage--actus .slick-next,
+  .block__frontpage--actus .slick-dots { display: none !important; }
+}
+
+/* iPhone/mobile : liste empilée SANS clones */
+@media (max-width: 767.98px) {
+  .block__frontpage--actus .slick-list { overflow: visible !important; }
+  .block__frontpage--actus .slick-track { display: block !important; transform: none !important; width: auto !important; }
+
+  /* Affiche uniquement les vraies slides, cache les clones */
+  .block__frontpage--actus .slick-slider .slick-slide:not(.slick-cloned) {
+    display: block !important;
+    float: none !important;
+    position: static !important;
+    width: 100% !important;
+    margin: 0 0 16px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  .block__frontpage--actus .slick-slider .slick-slide.slick-cloned {
+    display: none !important;
+  }
+
+  /* Masque la nav du carrousel en mode liste */
+  .block__frontpage--actus .slick-prev,
+  .block__frontpage--actus .slick-next,
+  .block__frontpage--actus .slick-dots {
+    display: none !important;
+  }
+}
+
+.block--ideas__list{
+  justify-content: center!important;
+}
+
+.block__ideas_list li { width: 220px; max-width: 220px; }
 

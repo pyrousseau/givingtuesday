@@ -1758,3 +1758,4 @@ add_action('wp_enqueue_scripts', function(){
 add_filter('wp_image_editors', function() {
   return ['WP_Image_Editor_GD', 'WP_Image_Editor_Imagick'];
 });
+
