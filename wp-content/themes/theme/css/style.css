@@ -9084,3 +9084,36 @@ body:not(.home) .header-sticky {
   width: 100% !important;
   max-height: none !important;
 }
+.webinaire-img{display:block;max-width:100%;height:auto}
+.webinaire-desc{margin:.5rem 0 1.25rem}
+
+.webinaire-img{
+  display:block;
+  margin-inline:auto;   /* centre horizontalement */
+  max-width:80%;
+  height:auto;
+      width: 100%;
+    display: block;
+    height: 100%;
+    object-fit: cover;
+}
+.webinaire-link {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  text-decoration: none!important;
+}
+.gt-conseils__desc{
+  max-width: 80%;
+  font-size:22px;
+  margin: 0 auto;
+}
+.gt-conseils__cta a{
+  font-size:22px;
+}
+
+.webinaire-wrap p, .webinaire-wrap ul{
+   max-width: 80%;
+  font-size:22px;
+  margin: 0 auto;
+}

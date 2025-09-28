@@ -24,6 +24,123 @@
                             </div>
                         <?php endwhile; ?>
                     <?php endif; ?>
+
+                    <?php if ( have_rows('section_webinaires') ) : ?>
+                      <?php while ( have_rows('section_webinaires') ) : the_row();
+
+                        // Champs ACF
+                        $titre = get_sub_field('titre');
+                        $image = get_sub_field('image');
+                        $desc  = (string) get_sub_field('description');
+                        $lien  = get_sub_field('lien'); // Peut être array, string ou post ID
+
+                        // Normalisation URL
+                        $href = '';
+                        $target = '_self';
+
+                        if (is_array($lien)) {
+                          $href   = $lien['url'] ?? '';
+                          $target = $lien['target'] ?? '_self';
+                        } elseif (is_string($lien)) {
+                          $href = $lien;
+                        } elseif (is_numeric($lien)) {
+                          $href = get_permalink((int)$lien) ?: '';
+                        }
+
+                        $href = trim($href);
+
+                        // Nettoyage : supprime doublons de https://
+                        $href = preg_replace('#^(https?:\/\/)+#i', 'https://', $href);
+
+                        // Si l’URL commence par "www." sans schéma, ajoute "https://"
+                        if ($href && preg_match('#^www\.#i', $href)) {
+                          $href = 'https://' . $href;
+                        }
+
+                        // Escaping final + rel
+                        $href = esc_url($href);
+                        $rel  = ($target === '_blank') ? 'noopener' : '';
+
+                        // Génération image
+                        $img_html = '';
+                        if (is_array($image) && !empty($image['ID'])) {
+                          $img_html = wp_get_attachment_image(
+                            $image['ID'], 'large', false, [
+                              'class'   => 'webinaire-img',
+                              'alt'     => esc_attr($image['alt'] ?: ($titre ?: 'Webinaire')),
+                              'loading' => 'lazy'
+                            ]
+                          );
+                        } elseif (is_array($image) && !empty($image['url'])) {
+                          $alt = esc_attr($image['alt'] ?? ($titre ?: 'Webinaire'));
+                          $img_html = '<img class="webinaire-img" src="'.esc_url($image['url']).'" alt="'.$alt.'" loading="lazy">';
+                        }
+
+                      ?>
+
+                        <?php if ($titre): ?>
+                          <h2><?php echo esc_html($titre); ?></h2>
+                        <?php endif; ?>
+
+                        <div class="webinaire-wrap">
+                          <a class="webinaire-link"
+                            href="<?php echo $href ?: '#'; ?>"
+                            target="_blank"
+                            <?php echo $rel ? 'rel="'.$rel.'"' : ''; ?>>
+
+                            <?php echo $img_html; ?>
+
+                            <?php if ($desc): ?>
+                              <p class="webinaire-desc"><?php echo wp_kses_post($desc); ?></p>
+                            <?php endif; ?>
+                          </a>
+                        </div>
+
+                      <?php endwhile; ?>
+                    <?php endif; ?>
+
+
+                    <?php if ( have_rows('section_conseils') ) : ?>
+                      <?php while ( have_rows('section_conseils') ) : the_row();
+                        $titre = get_sub_field('titre');
+                        $desc  = get_sub_field('description');
+                        $cta   = trim((string) get_sub_field('cta'));
+
+                        // Nettoyage URL
+                        if ($cta !== '') {
+                          $cta = preg_replace('#^(https?:\/\/)+#i', 'https://', $cta);
+                          if (preg_match('#^www\.#i', $cta)) $cta = 'https://' . $cta;
+                          $cta = esc_url($cta);
+                        }
+                      ?>
+
+                      <section class="gt-conseils" style="text-align:center; margin:2.5rem 0;">
+                        <?php if ($titre): ?>
+                          <h2><?php echo esc_html($titre); ?></h2>
+                        <?php endif; ?>
+
+                        <?php if ($desc): ?>
+                          <div class="gt-conseils__desc" >
+                            <?php echo apply_filters('the_content', $desc); ?>
+                          </div>
+                        <?php endif; ?>
+
+                        <?php if (!empty($cta)): ?>
+                          <p class="gt-conseils__cta">
+                            <a class="btn btn--primary"
+                              href="<?php echo $cta; ?>"
+                              target="_blank" rel="noopener"
+                              style="display:inline-block;padding:.75rem 1.25rem;border-radius:999px;background:#002a57;color:#fff;text-decoration:none;">
+                              Vous êtes fundraiser, rejoignez l'opération !
+                            </a>
+                          </p>
+                        <?php endif; ?>
+                      </section>
+
+                      <?php endwhile; ?>
+                    <?php endif; ?>
+
+
                     <?php if( have_rows('section_actions_phares') ): ?>
                         <?php while( have_rows('section_actions_phares') ): the_row(); ?>
                             <?php
