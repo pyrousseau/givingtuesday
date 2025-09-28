@@ -120,7 +120,7 @@
                         <?php endif; ?>
 
                         <?php if ($desc): ?>
-                          <div class="gt-conseils__desc" >
+                          <div class="gt-conseils__desc">
                             <?php echo apply_filters('the_content', $desc); ?>
                           </div>
                         <?php endif; ?>

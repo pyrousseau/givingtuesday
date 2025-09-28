@@ -111,6 +111,86 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
+<script>
+(function () {
+  const TARGET_ID  = 'gt-formulaire';                   // l'ancre visée
+  const BTN_SEL    = 'a.form-scroll-btn';               // ton CTA
+  const HEADER_SEL = 'header.site-header, .site-header, .header';
+  const MAX_WAIT   = 8000; // ms pour attendre l'injection lazy
+
+  function headerOffset() {
+    const h = document.querySelector(HEADER_SEL);
+    return h ? h.getBoundingClientRect().height : 0;
+  }
+
+  // trouve le scroller (fenêtre OU conteneur overflow:auto)
+  function getScroller() {
+    const docScroller = document.scrollingElement || document.documentElement;
+    const candidates = document.querySelectorAll('main, .site, .site-wrapper, .wrapper, .content, body, html');
+    for (const el of candidates) {
+      const cs = getComputedStyle(el);
+      if (/(auto|scroll)/.test(cs.overflowY) && el.scrollHeight > el.clientHeight) return el;
+    }
+    return docScroller;
+  }
+
+  function getTarget() {
+    return document.getElementById(TARGET_ID) || document.querySelector('[data-form-anchor]');
+  }
+
+  function doScroll() {
+    const target = getTarget(); if (!target) return false;
+    const scroller = getScroller();
+    const off = headerOffset();
+
+    if (scroller === document.documentElement || scroller === document.body) {
+      const y = target.getBoundingClientRect().top + window.pageYOffset - off;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    } else {
+      const y = target.getBoundingClientRect().top + scroller.scrollTop - off;
+      scroller.scrollTo({ top: y, behavior: 'smooth' });
+    }
+    return true;
+  }
+
+  function waitThenScroll() {
+    if (doScroll()) return;
+    const deadline = Date.now() + MAX_WAIT;
+
+    const mo = new MutationObserver(() => {
+      if (Date.now() > deadline) { mo.disconnect(); return; }
+      if (doScroll()) mo.disconnect();
+    });
+    mo.observe(document.documentElement, { childList: true, subtree: true });
+
+    const tick = setInterval(() => {
+      if (Date.now() > deadline || doScroll()) clearInterval(tick);
+    }, 250);
+  }
+
+  // Intercepte le CTA (capture=true pour passer avant d'éventuels preventDefault)
+  document.addEventListener('click', function (e) {
+    const a = e.target.closest(BTN_SEL);
+    if (!a) return;
+    e.preventDefault(); e.stopPropagation();
+    // 👉 si tu dois déclencher manuellement le lazy‑loader, fais-le ici :
+    // window.loadLazyForm?.();
+    waitThenScroll();
+  }, true);
+
+  // Si on arrive avec #gt-formulaire dans l’URL
+  if (location.hash === '#'+TARGET_ID) {
+    window.addEventListener('load', waitThenScroll, { once:true });
+  }
+
+  // met à jour une variable CSS pour scroll-margin-top éventuel
+  function setHeaderVar(){
+    document.documentElement.style.setProperty('--header-h', headerOffset() + 'px');
+  }
+  setHeaderVar();
+  window.addEventListener('resize', setHeaderVar, { passive:true });
+})();
+</script>
 
 <?php wp_footer(); ?>
 

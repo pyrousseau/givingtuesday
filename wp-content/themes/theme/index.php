@@ -200,9 +200,24 @@ $f4 = gt_src('version_fallback_slide4');
         <h1><?php echo $o_fields['text-top'];?></h1>
 
         <div class="btn--wrapper">
-            <a href="#" class="btn form-scroll-btn">
-                <span><?php the_field('cta_bouton_text','option'); ?></span>
-            </a>
+        <?php
+        $cta_text = get_field('cta_bouton_text','option') ?: __('Je rejoins le mouvement mondial','gt');
+        $cta_link = trim((string) get_field('cta_bouton_lien','option'));
+        $href = '#gt-formulaire'; // valeur par défaut
+
+        // Si ACF contient une URL avec un fragment, on garde juste le fragment
+        if ($cta_link !== '' && $cta_link !== '#') {
+          $p = wp_parse_url($cta_link);
+          if (!empty($p['fragment'])) {
+            $href = '#'.$p['fragment'];
+          }
+        }
+        ?>
+      <a href="#gt-formulaire" class="btn form-scroll-btn">
+        <span><?php the_field('cta_bouton_text','option'); ?></span>
+      </a>
+
+
         </div>
         <?php
         $date = $o_fields['date_copie'];
@@ -286,7 +301,7 @@ $f4 = gt_src('version_fallback_slide4');
 
 
 
-
+<div id="gt-formulaire" class="anchor" aria-hidden="true"></div>
 <section data-lazy>
      <template>
       <!--<div class="block block__form" --><?php //echo 'style="background-image:url('.get_field('form_fond','33').')"'; ?><!-->

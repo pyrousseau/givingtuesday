@@ -9117,3 +9117,11 @@ body:not(.home) .header-sticky {
   font-size:22px;
   margin: 0 auto;
 }
+/* scrolling fluide */
+html { scroll-behavior: smooth; }
+
+/* corrige la position quand le header est sticky */
+#gt-formulaire.anchor {
+  scroll-margin-top: var(--header-h, 0px);
+}
+:root { --header-h: 96px; } /* valeur de secours si besoin */
